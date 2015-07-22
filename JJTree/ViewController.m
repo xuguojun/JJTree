@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <MMMarkdown/MMMarkdown.h>
 
 @interface ViewController ()
 
@@ -19,7 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSString *htmlString = @"<h1>Header</h1><h2>Subheader</h2><p>Some <em>text</em></p>";
+    NSString *markdown = [self readFile];
+    NSString *htmlString = [MMMarkdown HTMLStringWithMarkdown:markdown extensions:MMMarkdownExtensionsGitHubFlavored error:NULL];
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding]
                                                                             options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
                                                                  documentAttributes:nil
@@ -27,9 +29,14 @@
     self.blockTextView.attributedText = attributedString;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSString *)readFile{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"fakeData"
+                                                     ofType:@"txt"];
+    NSString *content = [NSString stringWithContentsOfFile:path
+                                                  encoding:NSUTF8StringEncoding
+                                                     error:NULL];
+    
+    return content;
 }
 
 @end

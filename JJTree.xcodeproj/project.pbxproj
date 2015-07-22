@@ -16,6 +16,7 @@
 		9A834F5B1B5F6D4F005D6E2F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A834F591B5F6D4F005D6E2F /* LaunchScreen.xib */; };
 		9A834F671B5F6D4F005D6E2F /* JJTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F661B5F6D4F005D6E2F /* JJTreeTests.m */; };
 		9A866C9A1B5FE6E300258146 /* fakeData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A866C991B5FE6E300258146 /* fakeData.txt */; };
+		9A866D7F1B5FEA5F00258146 /* libMMMarkdown-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A866D7A1B5FEA4600258146 /* libMMMarkdown-iOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +26,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9A834F431B5F6D4F005D6E2F;
 			remoteInfo = JJTree;
+		};
+		9A866D771B5FEA4600258146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A866D701B5FEA4500258146 /* MMMarkdown.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE813DD614F893EB00EC9469;
+			remoteInfo = "MMMarkdown-Mac";
+		};
+		9A866D791B5FEA4600258146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A866D701B5FEA4500258146 /* MMMarkdown.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE813E0E14F8961D00EC9469;
+			remoteInfo = "MMMarkdown-iOS";
+		};
+		9A866D7B1B5FEA4600258146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A866D701B5FEA4500258146 /* MMMarkdown.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE813DEA14F893EB00EC9469;
+			remoteInfo = MMMarkdownTests;
+		};
+		9A866D7D1B5FEA4600258146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A866D701B5FEA4500258146 /* MMMarkdown.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE813E1314F92B6100EC9469;
+			remoteInfo = mmmarkdown;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -44,6 +73,7 @@
 		9A834F651B5F6D4F005D6E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A834F661B5F6D4F005D6E2F /* JJTreeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTreeTests.m; sourceTree = "<group>"; };
 		9A866C991B5FE6E300258146 /* fakeData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fakeData.txt; sourceTree = "<group>"; };
+		9A866D701B5FEA4500258146 /* MMMarkdown.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MMMarkdown.xcodeproj; path = MMMarkdown/MMMarkdown.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A866D7F1B5FEA5F00258146 /* libMMMarkdown-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +98,7 @@
 		9A834F3B1B5F6D4F005D6E2F = {
 			isa = PBXGroup;
 			children = (
+				9A866D701B5FEA4500258146 /* MMMarkdown.xcodeproj */,
 				9A834F461B5F6D4F005D6E2F /* JJTree */,
 				9A834F631B5F6D4F005D6E2F /* JJTreeTests */,
 				9A834F451B5F6D4F005D6E2F /* Products */,
@@ -131,6 +163,17 @@
 			children = (
 			);
 			name = Vendor;
+			sourceTree = "<group>";
+		};
+		9A866D711B5FEA4500258146 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A866D781B5FEA4600258146 /* libMMMarkdown-Mac.a */,
+				9A866D7A1B5FEA4600258146 /* libMMMarkdown-iOS.a */,
+				9A866D7C1B5FEA4600258146 /* MMMarkdownTests.xctest */,
+				9A866D7E1B5FEA4600258146 /* mmmarkdown */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +243,12 @@
 			mainGroup = 9A834F3B1B5F6D4F005D6E2F;
 			productRefGroup = 9A834F451B5F6D4F005D6E2F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A866D711B5FEA4500258146 /* Products */;
+					ProjectRef = 9A866D701B5FEA4500258146 /* MMMarkdown.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9A834F431B5F6D4F005D6E2F /* JJTree */,
@@ -207,6 +256,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9A866D781B5FEA4600258146 /* libMMMarkdown-Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMMMarkdown-Mac.a";
+			remoteRef = 9A866D771B5FEA4600258146 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A866D7A1B5FEA4600258146 /* libMMMarkdown-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMMMarkdown-iOS.a";
+			remoteRef = 9A866D791B5FEA4600258146 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A866D7C1B5FEA4600258146 /* MMMarkdownTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MMMarkdownTests.xctest;
+			remoteRef = 9A866D7B1B5FEA4600258146 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A866D7E1B5FEA4600258146 /* mmmarkdown */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = mmmarkdown;
+			remoteRef = 9A866D7D1B5FEA4600258146 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9A834F421B5F6D4F005D6E2F /* Resources */ = {
@@ -363,6 +443,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(CONFIGURATION_BUILD_DIR)/MMMarkdown-iOS/public/",
+				);
 				INFOPLIST_FILE = JJTree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -374,6 +459,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(CONFIGURATION_BUILD_DIR)/MMMarkdown-iOS/public/",
+				);
 				INFOPLIST_FILE = JJTree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -12,6 +12,8 @@
 	<dict>
 		<key>43E10A7BE4AEB007761D6C373194C775C9E25D70</key>
 		<string>https://github.com/xuguojun/JJTree.git</string>
+		<key>8E756A5F3B3088D21C2995D34B375B49B53EB485</key>
+		<string>https://github.com/mdiep/MMMarkdown</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>JJTree.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>43E10A7BE4AEB007761D6C373194C775C9E25D70</key>
 		<string>../..</string>
+		<key>8E756A5F3B3088D21C2995D34B375B49B53EB485</key>
+		<string>../../MMMarkdown/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/xuguojun/JJTree.git</string>
@@ -35,6 +39,14 @@
 			<string>43E10A7BE4AEB007761D6C373194C775C9E25D70</string>
 			<key>IDESourceControlWCCName</key>
 			<string>JJTree</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8E756A5F3B3088D21C2995D34B375B49B53EB485</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MMMarkdown</string>
 		</dict>
 	</array>
 </dict>
