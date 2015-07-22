@@ -1,0 +1,37 @@
+```objective-c
+//
+//  ViewController.m
+//  JJTestApp
+//
+//  Created by guojun on 7/22/15.
+//  Copyright (c) 2015 guojunxu. All rights reserved.
+//
+
+#import "ViewController.h"
+#import "JJTBlockRender.h"
+
+@interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *handleBarButtonItem;
+@property (weak, nonatomic) IBOutlet UITextView *blockTextView;
+
+@end
+
+@implementation ViewController
+- (IBAction)handleBarButtonDidPress:(id)sender {
+    if (self.blockTextView.text.length > 0) {
+        [JJTBlockRender convertPlainText:self.blockTextView.text];
+    }
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end
+```

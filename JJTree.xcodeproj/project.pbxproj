@@ -15,6 +15,7 @@
 		9A834F581B5F6D4F005D6E2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A834F571B5F6D4F005D6E2F /* Images.xcassets */; };
 		9A834F5B1B5F6D4F005D6E2F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A834F591B5F6D4F005D6E2F /* LaunchScreen.xib */; };
 		9A834F671B5F6D4F005D6E2F /* JJTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F661B5F6D4F005D6E2F /* JJTreeTests.m */; };
+		9A866C9A1B5FE6E300258146 /* fakeData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A866C991B5FE6E300258146 /* fakeData.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		9A834F601B5F6D4F005D6E2F /* JJTreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JJTreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A834F651B5F6D4F005D6E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A834F661B5F6D4F005D6E2F /* JJTreeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTreeTests.m; sourceTree = "<group>"; };
+		9A866C991B5FE6E300258146 /* fakeData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fakeData.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +85,10 @@
 		9A834F461B5F6D4F005D6E2F /* JJTree */ = {
 			isa = PBXGroup;
 			children = (
+				9A866C981B5FE6B400258146 /* Vendor */,
 				9A834F4B1B5F6D4F005D6E2F /* AppDelegate.h */,
 				9A834F4C1B5F6D4F005D6E2F /* AppDelegate.m */,
+				9A866C991B5FE6E300258146 /* fakeData.txt */,
 				9A834F511B5F6D4F005D6E2F /* ViewController.h */,
 				9A834F521B5F6D4F005D6E2F /* ViewController.m */,
 				9A834F541B5F6D4F005D6E2F /* Main.storyboard */,
@@ -120,6 +124,13 @@
 				9A834F651B5F6D4F005D6E2F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A866C981B5FE6B400258146 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 				9A834F561B5F6D4F005D6E2F /* Main.storyboard in Resources */,
 				9A834F5B1B5F6D4F005D6E2F /* LaunchScreen.xib in Resources */,
 				9A834F581B5F6D4F005D6E2F /* Images.xcassets in Resources */,
+				9A866C9A1B5FE6E300258146 /* fakeData.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +434,7 @@
 				9A834F6C1B5F6D4F005D6E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A834F6D1B5F6D4F005D6E2F /* Build configuration list for PBXNativeTarget "JJTreeTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +443,7 @@
 				9A834F6F1B5F6D4F005D6E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
