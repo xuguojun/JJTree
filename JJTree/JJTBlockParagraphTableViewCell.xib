@@ -15,15 +15,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W47-42-4Jc">
-                        <rect key="frame" x="8" y="8" width="304" height="27.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </webView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="W47-42-4Jc" secondAttribute="trailing" constant="8" id="182-Xs-KE1"/>
-                    <constraint firstAttribute="bottom" secondItem="W47-42-4Jc" secondAttribute="bottom" constant="8" id="Szj-7v-fsa"/>
-                    <constraint firstItem="W47-42-4Jc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Zna-J3-AMM"/>
-                    <constraint firstItem="W47-42-4Jc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="qfI-6l-rgw"/>
+                    <constraint firstAttribute="trailing" secondItem="W47-42-4Jc" secondAttribute="trailing" id="182-Xs-KE1"/>
+                    <constraint firstAttribute="bottom" secondItem="W47-42-4Jc" secondAttribute="bottom" id="Szj-7v-fsa"/>
+                    <constraint firstItem="W47-42-4Jc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Zna-J3-AMM"/>
+                    <constraint firstItem="W47-42-4Jc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qfI-6l-rgw"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
