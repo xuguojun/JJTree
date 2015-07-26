@@ -51,6 +51,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="GvR-B0-XnJ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="articleTableView" destination="oEU-f7-Rcc" id="6Iw-2E-rkJ"/>
                         <outlet property="filterSegmentedControl" destination="TmD-IC-M6y" id="kl8-ii-1Sp"/>
                         <outlet property="leftBarButtonItem" destination="rEj-fF-aEs" id="3gs-bg-N3m"/>
                         <outlet property="searchBarButtonItem" destination="rEj-fF-aEs" id="iaw-5O-b8b"/>

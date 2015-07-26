@@ -32,7 +32,7 @@
         JJTArticle *article = [JJTArticle MR_createEntity];
         article.articleID = @(i);
         article.createdAt = [NSDate new];
-        article.title = [NSString stringWithFormat:@"Artitle Title %d", (i + 1)];
+        article.title = [NSString stringWithFormat:@"Article Title %d", (i + 1)];
         article.usefulValue = @(100 + i);
         article.rewardGotAmount = @(99 + i);
         

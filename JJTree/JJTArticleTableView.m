@@ -81,7 +81,7 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 48.f;
+    return 55.f;
 }
 
 #pragma mark - Getters & Setters
