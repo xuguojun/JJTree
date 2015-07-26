@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--机经图谱-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="JJTArticleListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -17,28 +17,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vki-PV-TV5">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TmD-IC-M6y">
+                                <rect key="frame" x="160.5" y="72" width="280" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="1NL-Qv-Okk"/>
+                                    <constraint firstAttribute="width" constant="280" id="mN5-W1-BZS"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Top机经"/>
+                                    <segment title="最新机经"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="E2R-cp-iSa">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="ueK-5e-sc9"/>
-                                </connections>
-                            </textView>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vki-PV-TV5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="0tj-hx-HxS"/>
-                            <constraint firstItem="vki-PV-TV5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NTY-ni-8gq"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="vki-PV-TV5" secondAttribute="bottom" id="V3i-lX-j40"/>
-                            <constraint firstAttribute="trailing" secondItem="vki-PV-TV5" secondAttribute="trailing" id="yRp-Xp-vP6"/>
+                            <constraint firstItem="TmD-IC-M6y" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="1Jr-el-85J"/>
+                            <constraint firstItem="E2R-cp-iSa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="GoU-TS-eq2"/>
+                            <constraint firstItem="E2R-cp-iSa" firstAttribute="top" secondItem="TmD-IC-M6y" secondAttribute="bottom" constant="8" id="jCn-Zz-uHg"/>
+                            <constraint firstAttribute="trailing" secondItem="E2R-cp-iSa" secondAttribute="trailing" id="pbc-2S-0bT"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="E2R-cp-iSa" secondAttribute="bottom" id="pgj-Gd-ph8"/>
+                            <constraint firstAttribute="centerX" secondItem="TmD-IC-M6y" secondAttribute="centerX" constant="-0.5" id="yQp-c9-QVA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rEj-fF-aEs"/>
+                    <navigationItem key="navigationItem" title="机经图谱" id="rEj-fF-aEs">
+                        <barButtonItem key="leftBarButtonItem" title="登录" id="TT6-LE-KFl"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="GvR-B0-XnJ"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="blockTextView" destination="vki-PV-TV5" id="Jsr-s7-bBv"/>
+                        <outlet property="filterSegmentedControl" destination="TmD-IC-M6y" id="kl8-ii-1Sp"/>
+                        <outlet property="leftBarButtonItem" destination="rEj-fF-aEs" id="3gs-bg-N3m"/>
+                        <outlet property="searchBarButtonItem" destination="rEj-fF-aEs" id="iaw-5O-b8b"/>
+                        <outletCollection property="leftButtonDidPress" destination="rEj-fF-aEs" id="Y4b-eI-usm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
