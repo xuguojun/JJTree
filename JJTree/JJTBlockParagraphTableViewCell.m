@@ -37,7 +37,7 @@
 }
 
 - (void)loadWebPage:(NSString *)blockUrl{
-    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/JJTree/JJTreeServlet"];
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/JJTree/index.html"];
     [self.blockWebView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 #pragma mark - Getters & Setters

@@ -26,6 +26,9 @@
                     <constraint firstItem="W47-42-4Jc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="qfI-6l-rgw"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="blockWebView" destination="W47-42-4Jc" id="kro-oD-QJh"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
