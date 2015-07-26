@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2845C02480D7EE171EF4C73C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3E9DDCF0F65FA1492EE4A2 /* libPods.a */; };
 		9A834F4A1B5F6D4F005D6E2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F491B5F6D4F005D6E2F /* main.m */; };
 		9A834F4D1B5F6D4F005D6E2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F4C1B5F6D4F005D6E2F /* AppDelegate.m */; };
 		9A834F501B5F6D4F005D6E2F /* JJTree.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F4E1B5F6D4F005D6E2F /* JJTree.xcdatamodeld */; };
@@ -29,6 +30,7 @@
 		9AA1A3CA1B64E337007BBA25 /* JJTReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A3C91B64E337007BBA25 /* JJTReader.m */; };
 		9AA1A3CD1B64E337007BBA25 /* JJTAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A3CC1B64E337007BBA25 /* JJTAuthor.m */; };
 		9AA1A3D01B64E337007BBA25 /* JJTEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A3CF1B64E337007BBA25 /* JJTEditor.m */; };
+		9AA1A3D41B64E9C4007BBA25 /* NSDate+JJTDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A3D31B64E9C4007BBA25 /* NSDate+JJTDate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1ECC9AE29CE3270506B1286D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5A3E9DDCF0F65FA1492EE4A2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A834F441B5F6D4F005D6E2F /* JJTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A834F481B5F6D4F005D6E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A834F491B5F6D4F005D6E2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,6 +84,9 @@
 		9AA1A3CC1B64E337007BBA25 /* JJTAuthor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAuthor.m; sourceTree = "<group>"; };
 		9AA1A3CE1B64E337007BBA25 /* JJTEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTEditor.h; sourceTree = "<group>"; };
 		9AA1A3CF1B64E337007BBA25 /* JJTEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTEditor.m; sourceTree = "<group>"; };
+		9AA1A3D21B64E9C4007BBA25 /* NSDate+JJTDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JJTDate.h"; sourceTree = "<group>"; };
+		9AA1A3D31B64E9C4007BBA25 /* NSDate+JJTDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JJTDate.m"; sourceTree = "<group>"; };
+		B4DAFD98FB8B5FA0354A2A2E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2845C02480D7EE171EF4C73C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,12 +108,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B3D61A468E2D61878529218 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A3E9DDCF0F65FA1492EE4A2 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7046A88F246DE40F9B061CC6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1ECC9AE29CE3270506B1286D /* Pods.debug.xcconfig */,
+				B4DAFD98FB8B5FA0354A2A2E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9A834F3B1B5F6D4F005D6E2F = {
 			isa = PBXGroup;
 			children = (
 				9A834F461B5F6D4F005D6E2F /* JJTree */,
 				9A834F631B5F6D4F005D6E2F /* JJTreeTests */,
 				9A834F451B5F6D4F005D6E2F /* Products */,
+				7046A88F246DE40F9B061CC6 /* Pods */,
+				4B3D61A468E2D61878529218 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +202,7 @@
 				9A834F511B5F6D4F005D6E2F /* JJTArticleListViewController.h */,
 				9A834F521B5F6D4F005D6E2F /* JJTArticleListViewController.m */,
 				9A834F541B5F6D4F005D6E2F /* Main.storyboard */,
+				9AA1A3D11B64E9B1007BBA25 /* Utilities */,
 				9AA1A3B81B64E21B007BBA25 /* Entities */,
 				9AA1A3A91B64D26F007BBA25 /* Views */,
 			);
@@ -225,6 +253,15 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		9AA1A3D11B64E9B1007BBA25 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9AA1A3D21B64E9C4007BBA25 /* NSDate+JJTDate.h */,
+				9AA1A3D31B64E9C4007BBA25 /* NSDate+JJTDate.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,9 +269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A834F6A1B5F6D4F005D6E2F /* Build configuration list for PBXNativeTarget "JJTree" */;
 			buildPhases = (
+				7D8F3C26B40C2C83ACD8F6EC /* Check Pods Manifest.lock */,
 				9A834F401B5F6D4F005D6E2F /* Sources */,
 				9A834F411B5F6D4F005D6E2F /* Frameworks */,
 				9A834F421B5F6D4F005D6E2F /* Resources */,
+				C5325CE702E1AB472A5FC086 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,6 +362,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7D8F3C26B40C2C83ACD8F6EC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C5325CE702E1AB472A5FC086 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A834F401B5F6D4F005D6E2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -339,6 +411,7 @@
 				9AA1A3C41B64E320007BBA25 /* JJTRole.m in Sources */,
 				9AA1A3D01B64E337007BBA25 /* JJTEditor.m in Sources */,
 				9AA1A3B21B64D4DE007BBA25 /* JJTArticleTableView.m in Sources */,
+				9AA1A3D41B64E9C4007BBA25 /* NSDate+JJTDate.m in Sources */,
 				9AA1A3B71B64D9C0007BBA25 /* JJUser.xcdatamodeld in Sources */,
 				9AA1A3C11B64E2BE007BBA25 /* JJTArticle.m in Sources */,
 				9AA1A3A51B64D153007BBA25 /* JJTArticleViewController.m in Sources */,
@@ -466,6 +539,7 @@
 		};
 		9A834F6B1B5F6D4F005D6E2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ECC9AE29CE3270506B1286D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = (
@@ -482,6 +556,7 @@
 		};
 		9A834F6C1B5F6D4F005D6E2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4DAFD98FB8B5FA0354A2A2E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = (

@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSNumber * uselessValue;
 @property (nonatomic, retain) NSNumber * viewCount;
 @property (nonatomic, retain) NSNumber * isPrivate;
+@property (nonatomic, retain) NSNumber * rewardGotAmount;
 @property (nonatomic, retain) NSOrderedSet *paragraphs;
 @end
 

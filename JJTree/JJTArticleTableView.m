@@ -7,6 +7,8 @@
 //
 
 #import "JJTArticleTableView.h"
+#import "JJTArticle.h"
+#import "JJTArticleTableCell.h"
 
 @interface JJTArticleTableView()<UITableViewDataSource, UITableViewDelegate>
 
@@ -53,18 +55,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.articles.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"cellIdentifier";
     
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    JJTArticleTableCell *cell = (JJTArticleTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+        cell = [[JJTArticleTableCell alloc] initWithStyle:UITableViewCellStyleValue1
                                       reuseIdentifier:cellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+    
+    cell.article = self.articles[indexPath.row];
     
     return cell;
 }
@@ -80,4 +85,10 @@
 }
 
 #pragma mark - Getters & Setters
+- (void)setArticles:(NSArray *)articles{
+    if (_articles != articles) {
+        _articles = articles;
+        [self.articlesTableView reloadData];
+    }
+}
 @end

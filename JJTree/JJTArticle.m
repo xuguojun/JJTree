@@ -20,5 +20,6 @@
 @dynamic viewCount;
 @dynamic isPrivate;
 @dynamic paragraphs;
+@dynamic rewardGotAmount;
 
 @end
