@@ -24,7 +24,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self = [[[NSBundle mainBundle] loadNibNamed:@"JJTArticleTableCell"
+        self = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
                                               owner:self
                                             options:nil] lastObject];
     }

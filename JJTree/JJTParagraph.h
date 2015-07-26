@@ -9,10 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+typedef enum : NSUInteger {
+    JJTParagraphPlainText,
+    JJTParagraphBlock,
+    JJTParagraphPicture,
+} JJTParagraphType;
+
 @class JJTArticle;
 
 @interface JJTParagraph : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * type;
 @property (nonatomic, retain) NSNumber * paragraphID;
 @property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSNumber * position;

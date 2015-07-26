@@ -15,10 +15,11 @@
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="paragraphID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="whichArticle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTArticle" inverseName="paragraphs" inverseEntity="JJTArticle" syncable="YES"/>
     </entity>
     <elements>
         <element name="JJTArticle" positionX="0" positionY="0" width="128" height="178"/>
-        <element name="JJTParagraph" positionX="358" positionY="-90" width="128" height="105"/>
+        <element name="JJTParagraph" positionX="358" positionY="-90" width="128" height="118"/>
     </elements>
 </model>

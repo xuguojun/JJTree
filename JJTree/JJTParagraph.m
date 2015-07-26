@@ -12,6 +12,7 @@
 
 @implementation JJTParagraph
 
+@dynamic type;
 @dynamic paragraphID;
 @dynamic content;
 @dynamic position;

@@ -9,10 +9,21 @@
 #import "JJTArticleTableView.h"
 #import "JJTAuthorHeaderView.h"
 
+#import "JJTParagraph.h"
+
+#import "JJTPlainTextParagraphTableCell.h"
+#import "JJTBlockParagraphTableViewCell.h"
+#import "JJTPictureParagraphTableViewCell.h"
+
+static NSString *PLAIN_TEXT = @"PLAINTEXT";
+static NSString *BLOCK = @"BLOCK";
+static NSString *PICTURE = @"PICTURE";
+
 @interface JJTArticleTableView()
 
 @property (nonatomic, weak) IBOutlet UITableView *articleTableView;
 @property (nonatomic, strong) JJTAuthorHeaderView *authorHeaderView;
+@property (nonatomic, strong) NSArray *paragraphs;
 
 @end
 
@@ -61,22 +72,48 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.paragraphs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIdentifier = @"cellIdentifier";
     
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    JJTParagraph *paragrah = self.paragraphs[indexPath.row];
+    if ([paragrah.type isEqualToNumber:@(JJTParagraphPlainText)]) {// PLAIN TEXT
+        JJTPlainTextParagraphTableCell *cell = (JJTPlainTextParagraphTableCell *)[tableView dequeueReusableCellWithIdentifier:PLAIN_TEXT];
     
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                      reuseIdentifier:cellIdentifier];
+        if (!cell) {
+            cell = [[JJTPlainTextParagraphTableCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                                         reuseIdentifier:PLAIN_TEXT];
+        }
+        
+        cell.text = paragrah.content;
+        
+        return cell;
+    } else if ([paragrah.type isEqualToNumber:@(JJTParagraphBlock)]){// BLOCK
+        JJTBlockParagraphTableViewCell *cell = (JJTBlockParagraphTableViewCell *)[tableView dequeueReusableCellWithIdentifier:BLOCK];
+        
+        if (!cell) {
+            cell = [[JJTBlockParagraphTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                                         reuseIdentifier:PLAIN_TEXT];
+        }
+        
+        cell.blockURL = paragrah.content;
+        
+        return cell;
+    } else if ([paragrah.type isEqualToNumber:@(JJTParagraphPicture)]){
+        JJTPictureParagraphTableViewCell *cell = (JJTPictureParagraphTableViewCell *)[tableView dequeueReusableCellWithIdentifier:BLOCK];
+        
+        if (!cell) {
+            cell = [[JJTPictureParagraphTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                                         reuseIdentifier:PICTURE];
+        }
+        
+        cell.pictureURL = paragrah.content;
+        
+        return cell;
     }
     
-    cell.textLabel.text = @"Paragraph";
-    
-    return cell;
+    return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -86,7 +123,17 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 48.f;
+
+    JJTParagraph *paragrah = self.paragraphs[indexPath.row];
+    if ([paragrah.type isEqualToNumber:@(JJTParagraphPlainText)]) {// PLAIN TEXT
+        return 120;
+    } else if ([paragrah.type isEqualToNumber:@(JJTParagraphBlock)]){// BLOCK
+        return 240;
+    } else if ([paragrah.type isEqualToNumber:@(JJTParagraphPicture)]){
+        return 120;
+    }
+    
+    return 0.0f;;
 }
 
 #pragma mark - Getters & Setters
@@ -107,6 +154,9 @@
         _article = article;
         
         self.authorHeaderView.article = article;
+        self.paragraphs = [article.paragraphs array];
+        
+        [self.articleTableView reloadData];
     }
 }
 

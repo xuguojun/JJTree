@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2845C02480D7EE171EF4C73C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3E9DDCF0F65FA1492EE4A2 /* libPods.a */; };
+		9A29A04B1B65370A006FA11B /* JJTPlainTextParagraphTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A29A0491B65370A006FA11B /* JJTPlainTextParagraphTableCell.m */; };
+		9A29A04C1B65370A006FA11B /* JJTPlainTextParagraphTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A29A04A1B65370A006FA11B /* JJTPlainTextParagraphTableCell.xib */; };
+		9A29A0501B653A22006FA11B /* JJTBlockParagraphTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A29A04E1B653A22006FA11B /* JJTBlockParagraphTableViewCell.m */; };
+		9A29A0511B653A22006FA11B /* JJTBlockParagraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A29A04F1B653A22006FA11B /* JJTBlockParagraphTableViewCell.xib */; };
+		9A29A0551B653B01006FA11B /* JJTPictureParagraphTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A29A0531B653B01006FA11B /* JJTPictureParagraphTableViewCell.m */; };
+		9A29A0561B653B01006FA11B /* JJTPictureParagraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A29A0541B653B01006FA11B /* JJTPictureParagraphTableViewCell.xib */; };
 		9A834F4A1B5F6D4F005D6E2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F491B5F6D4F005D6E2F /* main.m */; };
 		9A834F4D1B5F6D4F005D6E2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F4C1B5F6D4F005D6E2F /* AppDelegate.m */; };
 		9A834F501B5F6D4F005D6E2F /* JJTree.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F4E1B5F6D4F005D6E2F /* JJTree.xcdatamodeld */; };
@@ -52,6 +58,15 @@
 /* Begin PBXFileReference section */
 		1ECC9AE29CE3270506B1286D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5A3E9DDCF0F65FA1492EE4A2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A29A0481B65370A006FA11B /* JJTPlainTextParagraphTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTPlainTextParagraphTableCell.h; sourceTree = "<group>"; };
+		9A29A0491B65370A006FA11B /* JJTPlainTextParagraphTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTPlainTextParagraphTableCell.m; sourceTree = "<group>"; };
+		9A29A04A1B65370A006FA11B /* JJTPlainTextParagraphTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTPlainTextParagraphTableCell.xib; sourceTree = "<group>"; };
+		9A29A04D1B653A22006FA11B /* JJTBlockParagraphTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTBlockParagraphTableViewCell.h; sourceTree = "<group>"; };
+		9A29A04E1B653A22006FA11B /* JJTBlockParagraphTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTBlockParagraphTableViewCell.m; sourceTree = "<group>"; };
+		9A29A04F1B653A22006FA11B /* JJTBlockParagraphTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTBlockParagraphTableViewCell.xib; sourceTree = "<group>"; };
+		9A29A0521B653B01006FA11B /* JJTPictureParagraphTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTPictureParagraphTableViewCell.h; sourceTree = "<group>"; };
+		9A29A0531B653B01006FA11B /* JJTPictureParagraphTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTPictureParagraphTableViewCell.m; sourceTree = "<group>"; };
+		9A29A0541B653B01006FA11B /* JJTPictureParagraphTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTPictureParagraphTableViewCell.xib; sourceTree = "<group>"; };
 		9A834F441B5F6D4F005D6E2F /* JJTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A834F481B5F6D4F005D6E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A834F491B5F6D4F005D6E2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -143,6 +158,15 @@
 		9A29A0471B652F2F006FA11B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9A29A0481B65370A006FA11B /* JJTPlainTextParagraphTableCell.h */,
+				9A29A0491B65370A006FA11B /* JJTPlainTextParagraphTableCell.m */,
+				9A29A04A1B65370A006FA11B /* JJTPlainTextParagraphTableCell.xib */,
+				9A29A04D1B653A22006FA11B /* JJTBlockParagraphTableViewCell.h */,
+				9A29A04E1B653A22006FA11B /* JJTBlockParagraphTableViewCell.m */,
+				9A29A04F1B653A22006FA11B /* JJTBlockParagraphTableViewCell.xib */,
+				9A29A0521B653B01006FA11B /* JJTPictureParagraphTableViewCell.h */,
+				9A29A0531B653B01006FA11B /* JJTPictureParagraphTableViewCell.m */,
+				9A29A0541B653B01006FA11B /* JJTPictureParagraphTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -386,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AA1A3A61B64D153007BBA25 /* JJTArticleViewController.xib in Resources */,
+				9A29A0511B653A22006FA11B /* JJTBlockParagraphTableViewCell.xib in Resources */,
 				9A834F561B5F6D4F005D6E2F /* Main.storyboard in Resources */,
 				9AA1A3DA1B65267A007BBA25 /* JJTAuthorHeaderView.xib in Resources */,
 				9A834F5B1B5F6D4F005D6E2F /* LaunchScreen.xib in Resources */,
@@ -393,6 +418,8 @@
 				9AA1A3AE1B64D2A3007BBA25 /* JJTArticleTableCell.xib in Resources */,
 				9AA1A3B41B64D4EF007BBA25 /* JJTArticleListTableView.xib in Resources */,
 				9AA1A3DF1B652A4A007BBA25 /* JJTRateView.xib in Resources */,
+				9A29A04C1B65370A006FA11B /* JJTPlainTextParagraphTableCell.xib in Resources */,
+				9A29A0561B653B01006FA11B /* JJTPictureParagraphTableViewCell.xib in Resources */,
 				9AA1A3E41B652DE0007BBA25 /* JJTArticleTableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A29A04B1B65370A006FA11B /* JJTPlainTextParagraphTableCell.m in Sources */,
 				9AA1A3CA1B64E337007BBA25 /* JJTReader.m in Sources */,
 				9A834F4D1B5F6D4F005D6E2F /* AppDelegate.m in Sources */,
 				9A834F4A1B5F6D4F005D6E2F /* main.m in Sources */,
@@ -453,6 +481,7 @@
 				9AA1A3E21B652DD5007BBA25 /* JJTArticleTableView.m in Sources */,
 				9AA1A3CD1B64E337007BBA25 /* JJTAuthor.m in Sources */,
 				9A834F501B5F6D4F005D6E2F /* JJTree.xcdatamodeld in Sources */,
+				9A29A0551B653B01006FA11B /* JJTPictureParagraphTableViewCell.m in Sources */,
 				9AA1A3BE1B64E2BD007BBA25 /* JJTParagraph.m in Sources */,
 				9AA1A3C41B64E320007BBA25 /* JJTRole.m in Sources */,
 				9AA1A3D01B64E337007BBA25 /* JJTEditor.m in Sources */,
@@ -460,6 +489,7 @@
 				9AA1A3B21B64D4DE007BBA25 /* JJTArticleListTableView.m in Sources */,
 				9AA1A3D41B64E9C4007BBA25 /* NSDate+JJTDate.m in Sources */,
 				9AA1A3B71B64D9C0007BBA25 /* JJUser.xcdatamodeld in Sources */,
+				9A29A0501B653A22006FA11B /* JJTBlockParagraphTableViewCell.m in Sources */,
 				9AA1A3C11B64E2BE007BBA25 /* JJTArticle.m in Sources */,
 				9AA1A3A51B64D153007BBA25 /* JJTArticleViewController.m in Sources */,
 				9AA1A3C71B64E337007BBA25 /* JJTUser.m in Sources */,
