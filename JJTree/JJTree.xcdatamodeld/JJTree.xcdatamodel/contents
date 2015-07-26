@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="JJArticle" syncable="YES">
+    <entity name="JJTArticle" representedClassName="JJTArticle" syncable="YES">
         <attribute name="articleID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="isPrivate" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -10,14 +10,14 @@
         <attribute name="viewCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="paragraphs" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="JJTParagraph" inverseName="whichArticle" inverseEntity="JJTParagraph" syncable="YES"/>
     </entity>
-    <entity name="JJTParagraph" syncable="YES">
+    <entity name="JJTParagraph" representedClassName="JJTParagraph" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="paragraphID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="whichArticle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJArticle" inverseName="paragraphs" inverseEntity="JJArticle" syncable="YES"/>
+        <relationship name="whichArticle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTArticle" inverseName="paragraphs" inverseEntity="JJTArticle" syncable="YES"/>
     </entity>
     <elements>
-        <element name="JJTParagraph" positionX="637" positionY="-22" width="128" height="103"/>
-        <element name="JJArticle" positionX="385" positionY="27" width="128" height="165"/>
+        <element name="JJTArticle" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="JJTParagraph" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
