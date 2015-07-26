@@ -8,19 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "JJTArticle.h"
+#import "JJTAuthor.h"
 
 @class JJTArticleTableView;
 @protocol JJTArticleTableViewDelegate <NSObject>
 
 @required
-- (void)articleTableView:(JJTArticleTableView *)tableView
-     didSelectRowAtIndex:(NSInteger)index
-             withArticle:(JJTArticle *)article;
+- (void)articleTableView:(JJTArticleTableView *)tableView didSelectRowAtIndex:(NSInteger)index;
 
 @end
 @interface JJTArticleTableView : UIView
 
-@property (nonatomic, strong) NSArray *articles;
+@property (nonatomic, strong) JJTArticle *article;
+@property (nonatomic, strong) JJTAuthor *author;
+
 @property (nonatomic, weak) IBOutlet id<JJTArticleTableViewDelegate> delegate;
 
 @end

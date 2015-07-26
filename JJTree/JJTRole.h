@@ -13,5 +13,8 @@
 @interface JJTRole : NSManagedObject
 
 @property (nonatomic, retain) NSString * roleTitle;
+@property (nonatomic, retain) NSString * roleName;
+@property (nonatomic, retain) NSString * avatarURL;
+@property (nonatomic, retain) NSNumber * roleID;
 
 @end

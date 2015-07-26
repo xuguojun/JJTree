@@ -6,24 +6,22 @@
 //  Copyright (c) 2015 guojunxu. All rights reserved.
 //
 
-#import "JJTArticleTableView.h"
-#import "JJTAuthorHeaderView.h"
+#import "JJTArticleListTableView.h"
+#import "JJTArticleTableCell.h"
 
-@interface JJTArticleTableView()
+@interface JJTArticleListTableView()<UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, weak) IBOutlet UITableView *articleTableView;
-@property (nonatomic, strong) JJTAuthorHeaderView *authorHeaderView;
+@property (nonatomic, weak) IBOutlet UITableView *articlesTableView;
 
 @end
 
-@implementation JJTArticleTableView
+@implementation JJTArticleListTableView
 
 - (id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if (self) {
         
         [self loadView];
-        [self addTableHead];
     }
     
     return self;
@@ -34,7 +32,6 @@
     if (self) {
         
         [self loadView];
-        [self addTableHead];
     }
     
     return self;
@@ -51,70 +48,58 @@
     [self addSubview:view];
 }
 
-- (void)addTableHead{
-    self.articleTableView.tableHeaderView = self.authorHeaderView;
-}
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.articles.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"cellIdentifier";
     
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    JJTArticleTableCell *cell = (JJTArticleTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+        cell = [[JJTArticleTableCell alloc] initWithStyle:UITableViewCellStyleValue1
                                       reuseIdentifier:cellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    cell.textLabel.text = @"Paragraph";
+    cell.article = self.articles[indexPath.row];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    if ([self.delegate respondsToSelector:@selector(articleTableView:didSelectRowAtIndex:withArticle:)]) {
+        [self.delegate articleTableView:self
+                    didSelectRowAtIndex:indexPath.row
+                            withArticle:self.articles[indexPath.row]];
+    }
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 48.f;
+    return 55.f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0.01f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.01f;
 }
 
 #pragma mark - Getters & Setters
-- (JJTAuthorHeaderView *)authorHeaderView{
-    if (!_authorHeaderView) {
-        _authorHeaderView = [JJTAuthorHeaderView new];
-        _authorHeaderView.frame = CGRectMake(0, 0, self.articleTableView.bounds.size.width, 66);
-        
-        _authorHeaderView.article = self.article;
-        _authorHeaderView.author = self.author;
-    }
-    
-    return _authorHeaderView;
-}
-
-- (void)setArticle:(JJTArticle *)article{
-    if (_article != article) {
-        _article = article;
-        
-        self.authorHeaderView.article = article;
-    }
-}
-
-- (void)setAuthor:(JJTAuthor *)author{
-    if (_author != author) {
-        _author = author;
-        
-        self.authorHeaderView.author = author;
+- (void)setArticles:(NSArray *)articles{
+    if (_articles != articles) {
+        _articles = articles;
+        [self.articlesTableView reloadData];
     }
 }
 @end

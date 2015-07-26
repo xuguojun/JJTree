@@ -20,6 +20,9 @@
         <relationship name="whichUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTUser" inverseName="roleReader" inverseEntity="JJTUser" syncable="YES"/>
     </entity>
     <entity name="JJTRole" representedClassName="JJTRole" syncable="YES">
+        <attribute name="avatarURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roleID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="roleName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="roleTitle" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="JJTUser" representedClassName="JJTUser" syncable="YES">
@@ -33,10 +36,10 @@
         <relationship name="roleReader" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTReader" inverseName="whichUser" inverseEntity="JJTReader" syncable="YES"/>
     </entity>
     <elements>
-        <element name="JJTUser" positionX="-12033" positionY="4572" width="128" height="163"/>
         <element name="JJTAuthor" positionX="-11810" positionY="4428" width="128" height="88"/>
-        <element name="JJTReader" positionX="-11727" positionY="4574" width="128" height="133"/>
         <element name="JJTEditor" positionX="-11774" positionY="4811" width="128" height="103"/>
-        <element name="JJTRole" positionX="-11495" positionY="4581" width="128" height="58"/>
+        <element name="JJTReader" positionX="-11727" positionY="4574" width="128" height="133"/>
+        <element name="JJTRole" positionX="-11495" positionY="4581" width="128" height="103"/>
+        <element name="JJTUser" positionX="-12033" positionY="4572" width="128" height="163"/>
     </elements>
 </model>

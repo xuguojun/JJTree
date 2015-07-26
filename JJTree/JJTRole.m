@@ -12,5 +12,8 @@
 @implementation JJTRole
 
 @dynamic roleTitle;
+@dynamic roleID;
+@dynamic roleName;
+@dynamic avatarURL;
 
 @end

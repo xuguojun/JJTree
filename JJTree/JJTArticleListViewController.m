@@ -7,17 +7,17 @@
 //
 
 #import "JJTArticleListViewController.h"
-#import "JJTArticleTableView.h"
+#import "JJTArticleListTableView.h"
 #import "JJTArticle.h"
 #import "JJTArticleViewController.h"
 #import <MagicalRecord.h>
 
-@interface JJTArticleListViewController ()<JJTArticleTableViewDelegate>
+@interface JJTArticleListViewController ()<JJTArticleListTableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *searchBarButtonItem;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *filterSegmentedControl;
-@property (weak, nonatomic) IBOutlet JJTArticleTableView *articleTableView;
+@property (weak, nonatomic) IBOutlet JJTArticleListTableView *articleTableView;
 
 @end
 
@@ -44,7 +44,7 @@
 }
 
 #pragma mark - JJTArticleTableViewDelegate
-- (void)articleTableView:(JJTArticleTableView *)tableView didSelectRowAtIndex:(NSInteger)index withArticle:(JJTArticle *)article{
+- (void)articleTableView:(JJTArticleListTableView *)tableView didSelectRowAtIndex:(NSInteger)index withArticle:(JJTArticle *)article{
     JJTArticleViewController *articleVC = [JJTArticleViewController new];
     articleVC.article = article;
     [self.navigationController pushViewController:articleVC animated:YES];
