@@ -15,14 +15,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mba-n4-dPo">
-                        <rect key="frame" x="8" y="8" width="304" height="27.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="mba-n4-dPo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="6Ln-We-HhZ"/>
-                    <constraint firstAttribute="trailing" secondItem="mba-n4-dPo" secondAttribute="trailing" constant="8" id="cke-wQ-np8"/>
-                    <constraint firstItem="mba-n4-dPo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="eOi-m2-8As"/>
-                    <constraint firstAttribute="bottom" secondItem="mba-n4-dPo" secondAttribute="bottom" constant="8" id="g8B-uM-r6Z"/>
+                    <constraint firstItem="mba-n4-dPo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6Ln-We-HhZ"/>
+                    <constraint firstAttribute="trailing" secondItem="mba-n4-dPo" secondAttribute="trailing" id="cke-wQ-np8"/>
+                    <constraint firstItem="mba-n4-dPo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eOi-m2-8As"/>
+                    <constraint firstAttribute="bottom" secondItem="mba-n4-dPo" secondAttribute="bottom" id="g8B-uM-r6Z"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
