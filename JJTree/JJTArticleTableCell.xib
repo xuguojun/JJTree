@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ved-SN-lhl">
-                        <rect key="frame" x="216" y="6" width="96" height="21"/>
+                        <rect key="frame" x="216" y="6" width="76" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="Exd-39-b5h"/>
                             <constraint firstAttribute="height" constant="21" id="UjO-UD-YBP"/>
@@ -50,7 +50,7 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bva-BE-t0O">
-                        <rect key="frame" x="166" y="27.5" width="146" height="21"/>
+                        <rect key="frame" x="166" y="27" width="126" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Yiy-vG-ppU"/>
                             <constraint firstAttribute="width" constant="44" id="oHp-n5-fwg"/>
@@ -64,17 +64,29 @@
                             </mask>
                         </variation>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fi4-Oo-NXh">
+                        <rect key="frame" x="294" y="17" width="26" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="0nf-5N-GEf"/>
+                            <constraint firstAttribute="height" constant="21" id="h1x-pO-eMl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="QCc-fv-scg" secondAttribute="bottom" constant="8" id="6XM-ws-f6b"/>
-                    <constraint firstAttribute="trailing" secondItem="Bva-BE-t0O" secondAttribute="trailing" constant="8" id="8Kj-KP-Cc3"/>
+                    <constraint firstAttribute="trailing" secondItem="Bva-BE-t0O" secondAttribute="trailing" constant="28" id="8Kj-KP-Cc3"/>
                     <constraint firstItem="ved-SN-lhl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="H8f-IR-8It"/>
                     <constraint firstItem="bG0-s3-TAX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="NSx-VS-X56"/>
                     <constraint firstAttribute="bottom" secondItem="Bva-BE-t0O" secondAttribute="bottom" constant="6" id="NaZ-Yo-sMk"/>
+                    <constraint firstAttribute="centerY" secondItem="fi4-Oo-NXh" secondAttribute="centerY" constant="-0.25" id="R8z-Gm-9Ni"/>
                     <constraint firstItem="Bva-BE-t0O" firstAttribute="leading" secondItem="QCc-fv-scg" secondAttribute="trailing" constant="8" id="WKl-Qt-afC"/>
-                    <constraint firstAttribute="trailing" secondItem="ved-SN-lhl" secondAttribute="trailing" constant="8" id="dRM-sk-WbI"/>
+                    <constraint firstAttribute="trailing" secondItem="ved-SN-lhl" secondAttribute="trailing" constant="28" id="dRM-sk-WbI"/>
                     <constraint firstItem="QCc-fv-scg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="dpO-ML-DS5"/>
                     <constraint firstItem="bG0-s3-TAX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="enr-JS-PhV"/>
+                    <constraint firstAttribute="trailing" secondItem="fi4-Oo-NXh" secondAttribute="trailing" id="ntp-fg-MBp"/>
                     <constraint firstItem="ved-SN-lhl" firstAttribute="leading" secondItem="bG0-s3-TAX" secondAttribute="trailing" constant="8" id="wjd-B7-Nbf"/>
                 </constraints>
             </tableViewCellContentView>
@@ -82,6 +94,7 @@
                 <outlet property="amountValueLabel" destination="Bva-BE-t0O" id="rSv-VE-LiD"/>
                 <outlet property="articleTitleLabel" destination="bG0-s3-TAX" id="aA0-bo-hVM"/>
                 <outlet property="publishDateLabel" destination="QCc-fv-scg" id="KTB-Ab-uVD"/>
+                <outlet property="tagLabel" destination="fi4-Oo-NXh" id="vHk-dJ-lYy"/>
                 <outlet property="usefulValueLabel" destination="ved-SN-lhl" id="EaE-Ac-Ldu"/>
             </connections>
         </tableViewCell>
