@@ -57,7 +57,7 @@
 		9AA1A3AC1B64D2A3007BBA25 /* JJTArticleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTArticleTableCell.xib; sourceTree = "<group>"; };
 		9AA1A3B01B64D4DE007BBA25 /* JJTArticleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTArticleTableView.h; sourceTree = "<group>"; };
 		9AA1A3B11B64D4DE007BBA25 /* JJTArticleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTArticleTableView.m; sourceTree = "<group>"; };
-		9AA1A3B31B64D4EF007BBA25 /* JJTArticleTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JJTArticleTableView.xib; path = ../JJTArticleTableView.xib; sourceTree = "<group>"; };
+		9AA1A3B31B64D4EF007BBA25 /* JJTArticleTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTArticleTableView.xib; sourceTree = "<group>"; };
 		9AA1A3B61B64D9C0007BBA25 /* JJUser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JJUser.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
