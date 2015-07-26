@@ -39,6 +39,7 @@
         article.usefulValue = @(100 + i);
         article.uselessValue = @(10 + i);
         article.rewardGotAmount = @(99 + i);
+        article.viewCount = @(1009);
         
         JJTParagraph *p1 = [JJTParagraph MR_createEntity];
         p1.type = @(JJTParagraphPlainText);

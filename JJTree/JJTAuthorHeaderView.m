@@ -68,7 +68,7 @@
         _article = article;
         
         self.statisticLabel.text = [NSString stringWithFormat:@"👍%@,👇%@ | 👀%@", article.usefulValue, article.uselessValue, article.viewCount];
-        self.rateView.rate = ([article.usefulValue integerValue] / ([article.usefulValue integerValue] + [article.uselessValue integerValue]));
+        self.rateView.rate = ([article.usefulValue floatValue] / ([article.usefulValue floatValue] + [article.uselessValue floatValue]));
         self.createdAtLabel.text = [article.createdAt toString];
     }
 }
