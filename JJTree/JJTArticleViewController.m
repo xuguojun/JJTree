@@ -8,12 +8,13 @@
 
 #import "JJTArticleViewController.h"
 
-@interface JJTArticleViewController ()
+@interface JJTArticleViewController ()<UIActionSheetDelegate>
 
 @property (nonatomic, weak) IBOutlet UIWebView *blockWebView;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *usefulBarButtonItem;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *uselessBarButtonItem;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *moreButton;
+@property (nonatomic, strong) UIBarButtonItem *moreButton;
+@property (nonatomic, strong) UIActionSheet *moreActionSheet;
 
 @end
 
@@ -24,7 +25,7 @@
     
     self.title = self.article.title;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.navigationController.navigationItem.rightBarButtonItem = self.moreButton;
+    self.navigationItem.rightBarButtonItem = self.moreButton;
     [self loadWebPage];
 }
 
@@ -56,6 +57,25 @@
     
 }
 
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        // share
+        NSLog(@"share");
+    } else if (buttonIndex == 1){
+        // collect
+        NSLog(@"collect");
+    } else if (buttonIndex == 2){
+        // comment
+        NSLog(@"comment");        
+    }
+}
+
+#pragma mark - Private Methods
+- (void)moreButtonDidPress:(id)sender{
+    [self.moreActionSheet showFromBarButtonItem:self.moreButton animated:YES];
+}
+
 #pragma mark - Getters & Setters
 - (UIBarButtonItem *)moreButton{
     if (!_moreButton) {
@@ -67,8 +87,16 @@
     return _moreButton;
 }
 
-- (void)moreButtonDidPress:(id)sender{
+- (UIActionSheet *)moreActionSheet{
+    if (!_moreActionSheet) {
+        _moreActionSheet = [[UIActionSheet alloc] initWithTitle:@"更多操作"
+                                                       delegate:self
+                                              cancelButtonTitle:@"取消"
+                                         destructiveButtonTitle:nil
+                                              otherButtonTitles:@"分享", @"收藏", @"评论", nil];
+    }
     
+    return _moreActionSheet;
 }
 
 @end
