@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJTArticleViewController">
             <connections>
+                <outlet property="articleTableView" destination="Vhl-3W-ksQ" id="eCe-5H-1qS"/>
                 <outlet property="usefulBarButtonItem" destination="0rN-Sy-Fwk" id="eRW-VM-0vF"/>
                 <outlet property="uselessBarButtonItem" destination="suA-Nh-jkY" id="Cbm-W8-Cmr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

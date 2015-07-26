@@ -68,16 +68,16 @@ static NSString *PICTURE = @"PICTURE";
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return self.paragraphs.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.paragraphs.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    JJTParagraph *paragrah = self.paragraphs[indexPath.row];
+    JJTParagraph *paragrah = self.paragraphs[indexPath.section];
     if ([paragrah.type isEqualToNumber:@(JJTParagraphPlainText)]) {// PLAIN TEXT
         JJTPlainTextParagraphTableCell *cell = (JJTPlainTextParagraphTableCell *)[tableView dequeueReusableCellWithIdentifier:PLAIN_TEXT];
     
@@ -124,7 +124,7 @@ static NSString *PICTURE = @"PICTURE";
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    JJTParagraph *paragrah = self.paragraphs[indexPath.row];
+    JJTParagraph *paragrah = self.paragraphs[indexPath.section];
     if ([paragrah.type isEqualToNumber:@(JJTParagraphPlainText)]) {// PLAIN TEXT
         return 120;
     } else if ([paragrah.type isEqualToNumber:@(JJTParagraphBlock)]){// BLOCK

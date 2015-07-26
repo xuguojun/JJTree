@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moi" translatesAutoresizingMaskIntoConstraints="NO" id="QiZ-J1-RVB">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QiZ-J1-RVB">
                     <rect key="frame" x="8" y="9" width="48" height="48"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="48" id="DLb-D8-W6f"/>
@@ -87,7 +87,4 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
-    <resources>
-        <image name="Moi" width="106" height="139"/>
-    </resources>
 </document>

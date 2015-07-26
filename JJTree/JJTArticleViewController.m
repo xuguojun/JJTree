@@ -7,6 +7,7 @@
 //
 
 #import "JJTArticleViewController.h"
+#import "JJTArticleTableView.h"
 
 @interface JJTArticleViewController ()<UIActionSheetDelegate>
 
@@ -16,6 +17,8 @@
 @property (nonatomic, strong) UIBarButtonItem *moreButton;
 @property (nonatomic, strong) UIActionSheet *moreActionSheet;
 
+@property (nonatomic, weak) IBOutlet JJTArticleTableView *articleTableView;
+
 @end
 
 @implementation JJTArticleViewController
@@ -24,37 +27,9 @@
     [super viewDidLoad];
     
     self.title = self.article.title;
-    self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationItem.rightBarButtonItem = self.moreButton;
-    [self loadWebPage];
-}
-
-- (NSString *)readFile{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"fakeData"
-                                                     ofType:@"txt"];
-    NSString *content = [NSString stringWithContentsOfFile:path
-                                                  encoding:NSUTF8StringEncoding
-                                                     error:NULL];
     
-    return content;
-}
-
-- (void)loadWebPage{
-    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/JJTree/JJTreeServlet"];
-    [self.blockWebView loadRequest:[NSURLRequest requestWithURL:url]];
-}
-
-#pragma mark - UIWebViewDelegate
-- (void)webViewDidStartLoad:(UIWebView *)webView{
-    
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    
+    self.articleTableView.article = self.article;
 }
 
 #pragma mark - UIActionSheetDelegate

@@ -14,18 +14,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhZ-a8-gzW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhZ-a8-gzW">
+                        <rect key="frame" x="8" y="8" width="304" height="27.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="JhZ-a8-gzW" secondAttribute="trailing" id="6hf-wH-y3b"/>
-                    <constraint firstAttribute="bottom" secondItem="JhZ-a8-gzW" secondAttribute="bottom" id="H6k-AE-Pf7"/>
-                    <constraint firstItem="JhZ-a8-gzW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="m54-Ds-RCi"/>
-                    <constraint firstItem="JhZ-a8-gzW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yEZ-ww-gMr"/>
+                    <constraint firstAttribute="trailing" secondItem="JhZ-a8-gzW" secondAttribute="trailing" constant="8" id="6hf-wH-y3b"/>
+                    <constraint firstAttribute="bottom" secondItem="JhZ-a8-gzW" secondAttribute="bottom" constant="8" id="H6k-AE-Pf7"/>
+                    <constraint firstItem="JhZ-a8-gzW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="m54-Ds-RCi"/>
+                    <constraint firstItem="JhZ-a8-gzW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="yEZ-ww-gMr"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

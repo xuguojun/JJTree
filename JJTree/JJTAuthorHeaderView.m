@@ -9,6 +9,7 @@
 #import "JJTAuthorHeaderView.h"
 #import "JJTRateView.h"
 #import "NSDate+JJTDate.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface JJTAuthorHeaderView()
 
@@ -76,7 +77,8 @@
     if (_author != author) {
         _author = author;
         
-//        self.avatarImageView.image = author.avatarURL;
+        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:@"http://www.moviecricket.com/wp-content/uploads/2014/09/James-Cameron-Looking-To-Shoot-Avatar-Sequels-In-120-FPS.jpg"]
+                                placeholderImage:[UIImage imageNamed:@"Moi"]];
         self.authorNameLabel.text = author.roleName;
     }
 }
