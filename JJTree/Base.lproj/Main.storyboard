@@ -51,7 +51,6 @@
                         <outlet property="filterSegmentedControl" destination="TmD-IC-M6y" id="kl8-ii-1Sp"/>
                         <outlet property="leftBarButtonItem" destination="rEj-fF-aEs" id="3gs-bg-N3m"/>
                         <outlet property="searchBarButtonItem" destination="rEj-fF-aEs" id="iaw-5O-b8b"/>
-                        <outletCollection property="leftButtonDidPress" destination="rEj-fF-aEs" id="Y4b-eI-usm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

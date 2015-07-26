@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *searchBarButtonItem;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *filterSegmentedControl;
 
-
 @end
 
 @implementation JJTArticleListViewController
