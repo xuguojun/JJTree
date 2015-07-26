@@ -9,6 +9,7 @@
 #import "JJTArticleListViewController.h"
 #import "JJTArticleTableView.h"
 #import "JJTArticle.h"
+#import "JJTArticleViewController.h"
 #import <MagicalRecord.h>
 
 @interface JJTArticleListViewController ()<JJTArticleTableViewDelegate>
@@ -43,8 +44,10 @@
 }
 
 #pragma mark - JJTArticleTableViewDelegate
-- (void)articleTableView:(JJTArticleTableView *)tableView didSelectRowAtIndex:(NSInteger)index{
-    
+- (void)articleTableView:(JJTArticleTableView *)tableView didSelectRowAtIndex:(NSInteger)index withArticle:(JJTArticle *)article{
+    JJTArticleViewController *articleVC = [JJTArticleViewController new];
+    articleVC.article = article;
+    [self.navigationController pushViewController:articleVC animated:YES];
 }
 
 @end

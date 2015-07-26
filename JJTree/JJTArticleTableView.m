@@ -7,7 +7,6 @@
 //
 
 #import "JJTArticleTableView.h"
-#import "JJTArticle.h"
 #import "JJTArticleTableCell.h"
 
 @interface JJTArticleTableView()<UITableViewDataSource, UITableViewDelegate>
@@ -76,8 +75,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if ([self.delegate respondsToSelector:@selector(articleTableView:didSelectRowAtIndex:)]) {
-        [self.delegate articleTableView:self didSelectRowAtIndex:indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(articleTableView:didSelectRowAtIndex:withArticle:)]) {
+        [self.delegate articleTableView:self
+                    didSelectRowAtIndex:indexPath.row
+                            withArticle:self.articles[indexPath.row]];
     }
 }
 

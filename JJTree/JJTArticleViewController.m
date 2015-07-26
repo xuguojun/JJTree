@@ -11,6 +11,9 @@
 @interface JJTArticleViewController ()
 
 @property (nonatomic, weak) IBOutlet UIWebView *blockWebView;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *usefulBarButtonItem;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *uselessBarButtonItem;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *moreButton;
 
 @end
 
@@ -19,8 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"JJTree";
+    self.title = self.article.title;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationController.navigationItem.rightBarButtonItem = self.moreButton;
     [self loadWebPage];
 }
 
@@ -49,6 +53,21 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    
+}
+
+#pragma mark - Getters & Setters
+- (UIBarButtonItem *)moreButton{
+    if (!_moreButton) {
+        _moreButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                    target:self
+                                                                    action:@selector(moreButtonDidPress:)];
+    }
+    
+    return _moreButton;
+}
+
+- (void)moreButtonDidPress:(id)sender{
     
 }
 

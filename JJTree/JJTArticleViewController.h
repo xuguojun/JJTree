@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTArticle.h"
 
 @interface JJTArticleViewController : UIViewController
+
+@property (nonatomic, strong) JJTArticle *article;
 
 @end

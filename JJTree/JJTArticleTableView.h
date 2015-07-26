@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTArticle.h"
 
 @class JJTArticleTableView;
 @protocol JJTArticleTableViewDelegate <NSObject>
 
 @required
-- (void)articleTableView:(JJTArticleTableView *)tableView didSelectRowAtIndex:(NSInteger)index;
+- (void)articleTableView:(JJTArticleTableView *)tableView
+     didSelectRowAtIndex:(NSInteger)index
+             withArticle:(JJTArticle *)article;
 
 @end
 @interface JJTArticleTableView : UIView
