@@ -30,6 +30,7 @@
     self.navigationItem.rightBarButtonItem = self.moreButton;
     
     self.articleTableView.article = self.article;
+    self.articleTableView.author = self.author;
 }
 
 #pragma mark - UIActionSheetDelegate

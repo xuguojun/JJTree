@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "JJTArticle.h"
+#import "JJTAuthor.h"
 
 @interface JJTArticleViewController : UIViewController
 
 @property (nonatomic, strong) JJTArticle *article;
+@property (nonatomic, strong) JJTAuthor *author;
 
 @end

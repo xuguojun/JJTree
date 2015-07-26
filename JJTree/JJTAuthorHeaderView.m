@@ -77,7 +77,7 @@
     if (_author != author) {
         _author = author;
         
-        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:@"http://www.moviecricket.com/wp-content/uploads/2014/09/James-Cameron-Looking-To-Shoot-Avatar-Sequels-In-120-FPS.jpg"]
+        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:author.avatarURL]
                                 placeholderImage:[UIImage imageNamed:@"Moi"]];
         self.authorNameLabel.text = author.roleName;
     }
