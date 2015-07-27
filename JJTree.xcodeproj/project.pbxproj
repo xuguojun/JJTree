@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2845C02480D7EE171EF4C73C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3E9DDCF0F65FA1492EE4A2 /* libPods.a */; };
+		9A2852111B666C9100C827A5 /* JJTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28520F1B666C9100C827A5 /* JJTLoginViewController.m */; };
+		9A2852121B666C9100C827A5 /* JJTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2852101B666C9100C827A5 /* JJTLoginViewController.xib */; };
+		9A2852161B666CAF00C827A5 /* JJTFormTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2852151B666CAF00C827A5 /* JJTFormTableView.m */; };
+		9A2852181B666CBE00C827A5 /* JJTFormTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2852171B666CBE00C827A5 /* JJTFormTableView.xib */; };
+		9A28521D1B666DDC00C827A5 /* JJTFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28521B1B666DDC00C827A5 /* JJTFormTableViewCell.m */; };
+		9A28521E1B666DDC00C827A5 /* JJTFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A28521C1B666DDC00C827A5 /* JJTFormTableViewCell.xib */; };
+		9A2852211B66771500C827A5 /* NSString+JJTString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2852201B66771500C827A5 /* NSString+JJTString.m */; };
 		9A29A04B1B65370A006FA11B /* JJTPlainTextParagraphTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A29A0491B65370A006FA11B /* JJTPlainTextParagraphTableCell.m */; };
 		9A29A04C1B65370A006FA11B /* JJTPlainTextParagraphTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A29A04A1B65370A006FA11B /* JJTPlainTextParagraphTableCell.xib */; };
 		9A29A0501B653A22006FA11B /* JJTBlockParagraphTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A29A04E1B653A22006FA11B /* JJTBlockParagraphTableViewCell.m */; };
@@ -59,6 +66,17 @@
 /* Begin PBXFileReference section */
 		1ECC9AE29CE3270506B1286D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5A3E9DDCF0F65FA1492EE4A2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A28520E1B666C9100C827A5 /* JJTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTLoginViewController.h; sourceTree = "<group>"; };
+		9A28520F1B666C9100C827A5 /* JJTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTLoginViewController.m; sourceTree = "<group>"; };
+		9A2852101B666C9100C827A5 /* JJTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTLoginViewController.xib; sourceTree = "<group>"; };
+		9A2852141B666CAF00C827A5 /* JJTFormTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTFormTableView.h; sourceTree = "<group>"; };
+		9A2852151B666CAF00C827A5 /* JJTFormTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTFormTableView.m; sourceTree = "<group>"; };
+		9A2852171B666CBE00C827A5 /* JJTFormTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTFormTableView.xib; sourceTree = "<group>"; };
+		9A28521A1B666DDC00C827A5 /* JJTFormTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTFormTableViewCell.h; sourceTree = "<group>"; };
+		9A28521B1B666DDC00C827A5 /* JJTFormTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTFormTableViewCell.m; sourceTree = "<group>"; };
+		9A28521C1B666DDC00C827A5 /* JJTFormTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTFormTableViewCell.xib; sourceTree = "<group>"; };
+		9A28521F1B66771500C827A5 /* NSString+JJTString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JJTString.h"; sourceTree = "<group>"; };
+		9A2852201B66771500C827A5 /* NSString+JJTString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JJTString.m"; sourceTree = "<group>"; };
 		9A29A0481B65370A006FA11B /* JJTPlainTextParagraphTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTPlainTextParagraphTableCell.h; sourceTree = "<group>"; };
 		9A29A0491B65370A006FA11B /* JJTPlainTextParagraphTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTPlainTextParagraphTableCell.m; sourceTree = "<group>"; };
 		9A29A04A1B65370A006FA11B /* JJTPlainTextParagraphTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTPlainTextParagraphTableCell.xib; sourceTree = "<group>"; };
@@ -157,6 +175,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9A28520D1B666C6000C827A5 /* JJTLogin */ = {
+			isa = PBXGroup;
+			children = (
+				9A28520E1B666C9100C827A5 /* JJTLoginViewController.h */,
+				9A28520F1B666C9100C827A5 /* JJTLoginViewController.m */,
+				9A2852101B666C9100C827A5 /* JJTLoginViewController.xib */,
+				9A2852131B666C9B00C827A5 /* Views */,
+			);
+			name = JJTLogin;
+			sourceTree = "<group>";
+		};
+		9A2852131B666C9B00C827A5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A2852141B666CAF00C827A5 /* JJTFormTableView.h */,
+				9A2852151B666CAF00C827A5 /* JJTFormTableView.m */,
+				9A2852171B666CBE00C827A5 /* JJTFormTableView.xib */,
+				9A2852191B666DC000C827A5 /* Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9A2852191B666DC000C827A5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9A28521A1B666DDC00C827A5 /* JJTFormTableViewCell.h */,
+				9A28521B1B666DDC00C827A5 /* JJTFormTableViewCell.m */,
+				9A28521C1B666DDC00C827A5 /* JJTFormTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		9A29A0471B652F2F006FA11B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +249,9 @@
 				9A866C981B5FE6B400258146 /* Vendor */,
 				9A834F4B1B5F6D4F005D6E2F /* AppDelegate.h */,
 				9A834F4C1B5F6D4F005D6E2F /* AppDelegate.m */,
+				9A28521F1B66771500C827A5 /* NSString+JJTString.h */,
+				9A2852201B66771500C827A5 /* NSString+JJTString.m */,
+				9A28520D1B666C6000C827A5 /* JJTLogin */,
 				9AA1A3A71B64D189007BBA25 /* JJTArticleList */,
 				9AA1A3A81B64D19B007BBA25 /* JJTArticle */,
 				9A834F571B5F6D4F005D6E2F /* Images.xcassets */,
@@ -419,6 +472,9 @@
 				9A834F5B1B5F6D4F005D6E2F /* LaunchScreen.xib in Resources */,
 				9A834F581B5F6D4F005D6E2F /* Images.xcassets in Resources */,
 				9A29A0581B65416C006FA11B /* testText.txt in Resources */,
+				9A2852121B666C9100C827A5 /* JJTLoginViewController.xib in Resources */,
+				9A28521E1B666DDC00C827A5 /* JJTFormTableViewCell.xib in Resources */,
+				9A2852181B666CBE00C827A5 /* JJTFormTableView.xib in Resources */,
 				9AA1A3AE1B64D2A3007BBA25 /* JJTArticleTableCell.xib in Resources */,
 				9AA1A3B41B64D4EF007BBA25 /* JJTArticleListTableView.xib in Resources */,
 				9AA1A3DF1B652A4A007BBA25 /* JJTRateView.xib in Resources */,
@@ -475,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2852111B666C9100C827A5 /* JJTLoginViewController.m in Sources */,
 				9A29A04B1B65370A006FA11B /* JJTPlainTextParagraphTableCell.m in Sources */,
 				9AA1A3CA1B64E337007BBA25 /* JJTReader.m in Sources */,
 				9A834F4D1B5F6D4F005D6E2F /* AppDelegate.m in Sources */,
@@ -485,12 +542,15 @@
 				9AA1A3E21B652DD5007BBA25 /* JJTArticleTableView.m in Sources */,
 				9AA1A3CD1B64E337007BBA25 /* JJTAuthor.m in Sources */,
 				9A834F501B5F6D4F005D6E2F /* JJTree.xcdatamodeld in Sources */,
+				9A28521D1B666DDC00C827A5 /* JJTFormTableViewCell.m in Sources */,
 				9A29A0551B653B01006FA11B /* JJTPictureParagraphTableViewCell.m in Sources */,
 				9AA1A3BE1B64E2BD007BBA25 /* JJTParagraph.m in Sources */,
 				9AA1A3C41B64E320007BBA25 /* JJTRole.m in Sources */,
 				9AA1A3D01B64E337007BBA25 /* JJTEditor.m in Sources */,
+				9A2852161B666CAF00C827A5 /* JJTFormTableView.m in Sources */,
 				9AA1A3D81B65263F007BBA25 /* JJTAuthorHeaderView.m in Sources */,
 				9AA1A3B21B64D4DE007BBA25 /* JJTArticleListTableView.m in Sources */,
+				9A2852211B66771500C827A5 /* NSString+JJTString.m in Sources */,
 				9AA1A3D41B64E9C4007BBA25 /* NSDate+JJTDate.m in Sources */,
 				9AA1A3B71B64D9C0007BBA25 /* JJUser.xcdatamodeld in Sources */,
 				9A29A0501B653A22006FA11B /* JJTBlockParagraphTableViewCell.m in Sources */,

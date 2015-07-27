@@ -12,6 +12,7 @@
 #import "JJTArticle.h"
 #import "JJTParagraph.h"
 #import "JJTArticleViewController.h"
+#import "JJTLoginViewController.h"
 #import <MagicalRecord.h>
 
 @interface JJTArticleListViewController ()<JJTArticleListTableViewDelegate>
@@ -24,7 +25,6 @@
 @end
 
 @implementation JJTArticleListViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -87,6 +87,16 @@
                                                      error:NULL];
     
     return content;
+}
+
+#pragma mark - IBAction
+- (IBAction)leftButtonDidPress:(id)sender {
+    JJTLoginViewController *loginVC = [JJTLoginViewController new];
+    [self presentViewController:loginVC animated:YES completion:NULL];
+}
+
+- (IBAction)searchButtonDidPress:(id)sender {
+
 }
 
 #pragma mark - JJTArticleTableViewDelegate
