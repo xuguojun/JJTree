@@ -7,6 +7,7 @@
 //
 
 #import "JJTProfileViewController.h"
+#import "JJTPreferenceViewController.h"
 
 static NSString *LOGOUT = @"退出登录";
 
@@ -44,7 +45,8 @@ static NSString *LOGOUT = @"退出登录";
 }
 
 - (void)preference{
-    
+    JJTPreferenceViewController *prefrence = [JJTPreferenceViewController new];
+    [self.navigationController pushViewController:prefrence animated:YES];
 }
 
 #pragma mark - UITableViewDataSource

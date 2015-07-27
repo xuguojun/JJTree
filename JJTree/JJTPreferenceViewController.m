@@ -8,7 +8,7 @@
 
 #import "JJTPreferenceViewController.h"
 
-@interface JJTPreferenceViewController ()
+@interface JJTPreferenceViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *prefrenceTableView;
 
@@ -25,6 +25,11 @@
     [super viewDidLoad];
 
     self.title = @"偏好设置";
+
+    self.topTitles = @[@"按👍(亲测有用)高低", @"按💰(获得打赏金额)高低"];
+    self.recentTitles = @[@"按发布日期先后", @"按更新日期先后"];
+    self.sectionTitles = @[@"TOP机经排序原则", @"最新机经排序原则"];
+    self.blockTitles = @[@"代码块CSS样式"];
 }
 
 #pragma mark - UITableViewDataSource
@@ -66,46 +71,18 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 
-#pragma mark - UITableViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 48.f;
-}
-
-- (NSArray *)topTitles{
-    if (!_topTitles) {
-        _topTitles = @[@"按👍(亲测有用)高低", @"按💰(获得打赏金额)高低"];
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section > 1) {
+        return nil;
     }
     
-    return _topTitles;
-}
-
-- (NSArray *)recentTitles{
-    if (!_recentTitles) {
-        _recentTitles = @[@"按发布日期先后", @"按更新日期先后"];
-    }
-    
-    return _recentTitles;
-}
-
-- (NSArray *)sectionTitles{
-    if (!_sectionTitles) {
-        _sectionTitles = @[@"TOP机经排序原则", @"最新机经排序原则"];
-    }
-    
-    return _sectionTitles;
-}
-
-- (NSArray *)blockTitles{
-    if (!_blockTitles) {
-        _blockTitles = @[@"代码块CSS样式"];
-    }
-    
-    return _blockTitles;
+    return self.sectionTitles[section];
 }
 
 @end
