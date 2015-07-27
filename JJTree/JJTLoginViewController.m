@@ -7,9 +7,10 @@
 //
 
 #import "JJTLoginViewController.h"
+#import "JJTCreateAccountViewController.h"
 #import "JJTFormTableView.h"
 
-@interface JJTLoginViewController ()
+@interface JJTLoginViewController ()<JJTCreateAccountViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet JJTFormTableView *formView;
 @property (nonatomic, strong) UIBarButtonItem *closeButton;
@@ -37,6 +38,27 @@
 
 - (void)closeButtonDidPress:(id)sender{
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+- (IBAction)loginButtonDidPress:(id)sender {
+    
+}
+
+- (IBAction)forgetPasswordButtonDidPress:(id)sender {
+    
+}
+
+- (IBAction)createAccountButtonDidPress:(id)sender {
+    JJTCreateAccountViewController *createVC = [JJTCreateAccountViewController new];
+    createVC.delegate = self;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:createVC];
+    nav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [self presentViewController:nav animated:YES completion:NULL];
+}
+
+#pragma mark - JJTCreateAccountViewControllerDelegate
+- (void)createAccountViewControllerDidClose:(JJTCreateAccountViewController *)controller{
+    [self closeButtonDidPress:nil];
 }
 
 #pragma mark - Getters & Setters

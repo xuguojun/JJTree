@@ -38,6 +38,9 @@
                     <state key="normal" title="登录">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="loginButtonDidPress:" destination="-1" eventType="touchUpInside" id="csc-kG-0wh"/>
+                    </connections>
                 </button>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IgZ-Za-dsX">
                     <rect key="frame" x="0.0" y="492" width="600" height="44"/>
@@ -46,7 +49,11 @@
                     </constraints>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="9Dy-3g-utV"/>
-                        <barButtonItem title="创建新账号" id="Mhd-6I-hxZ"/>
+                        <barButtonItem title="创建新账号" id="Mhd-6I-hxZ">
+                            <connections>
+                                <action selector="createAccountButtonDidPress:" destination="-1" id="FVy-Av-DNi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="fyk-62-bW7"/>
                     </items>
                 </toolbar>
@@ -60,6 +67,9 @@
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="forgetPasswordButtonDidPress:" destination="-1" eventType="touchUpInside" id="N6a-nT-yUZ"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
