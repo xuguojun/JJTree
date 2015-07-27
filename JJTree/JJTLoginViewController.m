@@ -12,6 +12,11 @@
 @interface JJTLoginViewController ()
 
 @property (nonatomic, weak) IBOutlet JJTFormTableView *formView;
+@property (nonatomic, strong) UIBarButtonItem *closeButton;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *createAccountButton;
+
+@property (nonatomic, strong) IBOutlet UIButton *loginButton;
+@property (nonatomic, strong) IBOutlet UIButton *forgetPasswordButton;
 
 @end
 
@@ -19,22 +24,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    self.title = @"登录";
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationItem.leftBarButtonItem = self.closeButton;
+    
+    self.loginButton.layer.cornerRadius = 4.0f;
+    self.loginButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.loginButton.layer.borderWidth = 0.5f;
+    self.loginButton.layer.masksToBounds = YES;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)closeButtonDidPress:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Getters & Setters
+- (UIBarButtonItem *)closeButton{
+    if (!_closeButton) {
+        _closeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                     target:self
+                                                                     action:@selector(closeButtonDidPress:)];
+    }
+    
+    return _closeButton;
 }
-*/
 
 @end

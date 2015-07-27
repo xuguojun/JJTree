@@ -92,7 +92,8 @@
 #pragma mark - IBAction
 - (IBAction)leftButtonDidPress:(id)sender {
     JJTLoginViewController *loginVC = [JJTLoginViewController new];
-    [self presentViewController:loginVC animated:YES completion:NULL];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    [self presentViewController:nav animated:YES completion:NULL];
 }
 
 - (IBAction)searchButtonDidPress:(id)sender {
