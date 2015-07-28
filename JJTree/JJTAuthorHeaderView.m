@@ -19,6 +19,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *statisticLabel;
 @property (nonatomic, weak) IBOutlet JJTRateView *rateView;
 
+@property (nonatomic, strong) UIGestureRecognizer *gesture;
+
 @end
 
 @implementation JJTAuthorHeaderView
@@ -28,6 +30,7 @@
     if (self) {
         
         [self loadView];
+        [self addAction];
     }
     
     return self;
@@ -38,6 +41,7 @@
     if (self) {
         
         [self loadView];
+        [self addAction];
     }
     
     return self;
@@ -48,7 +52,7 @@
     
     self.avatarImageView.layer.cornerRadius = self.avatarImageView.bounds.size.width / 2.0f;
     self.avatarImageView.layer.masksToBounds = YES;
-    self.avatarImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.avatarImageView.layer.borderColor = [UIColor orangeColor].CGColor;
     self.avatarImageView.layer.borderWidth = 0.8f;
 }
 #pragma mark - Private Methods
@@ -60,6 +64,17 @@
     view.frame = self.bounds;
     
     [self addSubview:view];
+}
+
+- (void)addAction{
+    self.userInteractionEnabled = YES;
+    [self addGestureRecognizer:self.gesture];
+}
+
+- (void)headerViewDidTouch{
+    if ([self.delegate respondsToSelector:@selector(authorHeaderViewDidPress:)]) {
+        [self.delegate authorHeaderViewDidPress:self];
+    }
 }
 
 #pragma mark - Getters & Setters
@@ -83,4 +98,11 @@
     }
 }
 
+- (UIGestureRecognizer *)gesture{
+    if (!_gesture) {
+        _gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headerViewDidTouch)];
+    }
+    
+    return _gesture;
+}
 @end

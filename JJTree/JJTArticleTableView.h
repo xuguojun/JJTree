@@ -15,6 +15,7 @@
 
 @required
 - (void)articleTableView:(JJTArticleTableView *)tableView didSelectRowAtIndex:(NSInteger)index;
+- (void)articleTableViewDidSelectAuthorHeader:(JJTArticleTableView *)tableView;
 
 @end
 @interface JJTArticleTableView : UIView

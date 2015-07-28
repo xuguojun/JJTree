@@ -8,8 +8,9 @@
 
 #import "JJTArticleViewController.h"
 #import "JJTArticleTableView.h"
+#import "JJTAuthorViewController.h"
 
-@interface JJTArticleViewController ()<UIActionSheetDelegate>
+@interface JJTArticleViewController ()<UIActionSheetDelegate, JJTArticleTableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIWebView *blockWebView;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *usefulBarButtonItem;
@@ -31,6 +32,16 @@
     
     self.articleTableView.article = self.article;
     self.articleTableView.author = self.author;
+}
+
+#pragma mark - JJTArticleTableViewDelegate
+- (void)articleTableViewDidSelectAuthorHeader:(JJTArticleTableView *)tableView{
+    JJTAuthorViewController *authorVC = [JJTAuthorViewController new];
+    [self.navigationController pushViewController:authorVC animated:YES];
+}
+
+- (void)articleTableView:(JJTArticleTableView *)tableView didSelectRowAtIndex:(NSInteger)index{
+    
 }
 
 #pragma mark - UIActionSheetDelegate

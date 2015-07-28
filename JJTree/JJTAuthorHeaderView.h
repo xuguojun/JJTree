@@ -10,9 +10,19 @@
 #import "JJTArticle.h"
 #import "JJTAuthor.h"
 
+@class JJTAuthorHeaderView;
+
+@protocol JJTAuthorHeaderViewDelegate <NSObject>
+
+@required
+- (void)authorHeaderViewDidPress:(JJTAuthorHeaderView *)header;
+
+@end
 @interface JJTAuthorHeaderView : UIView
 
 @property (nonatomic, strong) JJTArticle *article;
 @property (nonatomic, strong) JJTAuthor *author;
+
+@property (nonatomic, weak) IBOutlet id<JJTAuthorHeaderViewDelegate> delegate;
 
 @end

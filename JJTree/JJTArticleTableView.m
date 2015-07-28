@@ -19,7 +19,7 @@ static NSString *PLAIN_TEXT = @"PLAINTEXT";
 static NSString *BLOCK = @"BLOCK";
 static NSString *PICTURE = @"PICTURE";
 
-@interface JJTArticleTableView()
+@interface JJTArticleTableView()<JJTAuthorHeaderViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *articleTableView;
 @property (nonatomic, strong) JJTAuthorHeaderView *authorHeaderView;
@@ -121,6 +121,13 @@ static NSString *PICTURE = @"PICTURE";
     
 }
 
+#pragma mark - JJTAuthorHeaderViewDelegate
+- (void)authorHeaderViewDidPress:(JJTAuthorHeaderView *)header{
+    if ([self.delegate respondsToSelector:@selector(articleTableViewDidSelectAuthorHeader:)]) {
+        [self.delegate articleTableViewDidSelectAuthorHeader:self];
+    }
+}
+
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -144,6 +151,8 @@ static NSString *PICTURE = @"PICTURE";
         
         _authorHeaderView.article = self.article;
         _authorHeaderView.author = self.author;
+        
+        _authorHeaderView.delegate = self;
     }
     
     return _authorHeaderView;
