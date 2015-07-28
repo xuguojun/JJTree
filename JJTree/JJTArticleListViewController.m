@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"JJTree";
+    self.title = @"元机经";
     
     NSMutableArray *articles = [NSMutableArray new];
     for (int i = 0; i < 10; i++) {

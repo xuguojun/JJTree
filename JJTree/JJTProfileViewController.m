@@ -36,7 +36,7 @@ static NSString *LOGOUT = @"退出登录";
     
     self.sectionTitles = @[@"作为读者",@"作为作者", @"作为编辑者"];
     self.readerSectionTitles = @[@"打赏过的机经", @"收藏过的机经", @"亲测有用的机经"];
-    self.authorSectionTitles = @[@"粉丝", @"获得打赏"];
+    self.authorSectionTitles = @[@"拥有粉丝", @"获得打赏"];
     self.editorSectionTitles = @[@"编辑过的机经"];
 }
 
