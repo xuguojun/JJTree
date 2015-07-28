@@ -37,6 +37,7 @@
 #pragma mark - JJTArticleTableViewDelegate
 - (void)articleTableViewDidSelectAuthorHeader:(JJTArticleTableView *)tableView{
     JJTAuthorViewController *authorVC = [JJTAuthorViewController new];
+    authorVC.author = self.author;
     [self.navigationController pushViewController:authorVC animated:YES];
 }
 

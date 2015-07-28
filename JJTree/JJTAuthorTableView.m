@@ -111,6 +111,14 @@
     }
 }
 
+- (void)setAuthor:(JJTAuthor *)author{
+    if (_author != author) {
+        _author = author;
+        
+        self.authorHeader.avatarURL = author.avatarURL;
+    }
+}
+
 - (NSArray *)titles{
     if (!_titles) {
         _titles = @[@"机经总量", @"获得打赏总金额"];

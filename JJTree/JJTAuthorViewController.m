@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = self.author.roleName;
+    self.authorTableView.author = self.author;
 }
 
 - (IBAction)rewardButtonDidPress:(id)sender {

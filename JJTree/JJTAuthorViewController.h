@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTAuthor.h"
 
 @interface JJTAuthorViewController : UIViewController
+
+@property (nonatomic, strong) JJTAuthor *author;
 
 @end
