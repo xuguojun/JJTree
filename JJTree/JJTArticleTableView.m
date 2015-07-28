@@ -19,7 +19,7 @@ static NSString *PLAIN_TEXT = @"PLAINTEXT";
 static NSString *BLOCK = @"BLOCK";
 static NSString *PICTURE = @"PICTURE";
 
-@interface JJTArticleTableView()<JJTAuthorHeaderViewDelegate>
+@interface JJTArticleTableView()<JJTAuthorHeaderViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *articleTableView;
 @property (nonatomic, strong) JJTAuthorHeaderView *authorHeaderView;
@@ -58,6 +58,8 @@ static NSString *PICTURE = @"PICTURE";
                                                                  options:nil] firstObject];
     
     view.frame = self.bounds;
+    view.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor clearColor];
     
     [self addSubview:view];
 }
@@ -116,21 +118,15 @@ static NSString *PICTURE = @"PICTURE";
     return nil;
 }
 
+
+#pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 
-#pragma mark - JJTAuthorHeaderViewDelegate
-- (void)authorHeaderViewDidPress:(JJTAuthorHeaderView *)header{
-    if ([self.delegate respondsToSelector:@selector(articleTableViewDidSelectAuthorHeader:)]) {
-        [self.delegate articleTableViewDidSelectAuthorHeader:self];
-    }
-}
-
-#pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     JJTParagraph *paragrah = self.paragraphs[indexPath.section];
     if ([paragrah.type isEqualToNumber:@(JJTParagraphPlainText)]) {// PLAIN TEXT
         return 120;
@@ -141,6 +137,20 @@ static NSString *PICTURE = @"PICTURE";
     }
     
     return 0.0f;;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0.01f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.01f;
+}
+#pragma mark - JJTAuthorHeaderViewDelegate
+- (void)authorHeaderViewDidPress:(JJTAuthorHeaderView *)header{
+    if ([self.delegate respondsToSelector:@selector(articleTableViewDidSelectAuthorHeader:)]) {
+        [self.delegate articleTableViewDidSelectAuthorHeader:self];
+    }
 }
 
 #pragma mark - Getters & Setters

@@ -27,7 +27,8 @@
 }
 
 - (void)awakeFromNib {
-    // Initialization code
+    self.plainTextLabel.backgroundColor = [UIColor clearColor];
+    self.contentView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

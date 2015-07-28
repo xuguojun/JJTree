@@ -54,6 +54,11 @@
     self.avatarImageView.layer.masksToBounds = YES;
     self.avatarImageView.layer.borderColor = [UIColor orangeColor].CGColor;
     self.avatarImageView.layer.borderWidth = 0.8f;
+    
+    self.layer.shadowOffset = CGSizeMake(.0f, 0.3f);
+    self.layer.shadowRadius = 0.3f;
+    self.layer.shadowOpacity = .6f;
+    self.layer.shadowColor = [UIColor grayColor].CGColor;
 }
 #pragma mark - Private Methods
 - (void)loadView{
