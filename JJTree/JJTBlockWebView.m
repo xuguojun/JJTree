@@ -9,7 +9,7 @@
 #import "JJTBlockWebView.h"
 #import "JJTBlockLineTableViewCell.h"
 
-static float CELL_HEIGHT = (26.5f);
+static float CELL_HEIGHT = (14.017073171f);
 
 @interface JJTBlockWebView()<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UIScrollViewDelegate>
 
@@ -81,16 +81,13 @@ static float CELL_HEIGHT = (26.5f);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    cell.line = indexPath.row + 1;
+    cell.line = (indexPath.row + 1) % 100;
     
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSLog(@"content size height = %f",     self.blockWebView.scrollView.contentSize.height);
-    
     return CELL_HEIGHT;
 }
 
