@@ -45,6 +45,10 @@
 		9A92710A1B67B2A200901A71 /* JJTAuthorHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9271091B67B2A200901A71 /* JJTAuthorHeader.xib */; };
 		9A92710D1B67BA3A00901A71 /* JJTAuthorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A92710C1B67BA3A00901A71 /* JJTAuthorTableView.m */; };
 		9A92710F1B67BA4700901A71 /* JJTAuthorTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A92710E1B67BA4700901A71 /* JJTAuthorTableView.xib */; };
+		9A9271121B67D49400901A71 /* JJTBlockWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9271111B67D49400901A71 /* JJTBlockWebView.m */; };
+		9A9271141B67D4A200901A71 /* JJTBlockWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9271131B67D4A200901A71 /* JJTBlockWebView.xib */; };
+		9A9271181B67D57D00901A71 /* JJTBlockLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9271161B67D57D00901A71 /* JJTBlockLineTableViewCell.m */; };
+		9A9271191B67D57D00901A71 /* JJTBlockLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9271171B67D57D00901A71 /* JJTBlockLineTableViewCell.xib */; };
 		9AA1A3A51B64D153007BBA25 /* JJTArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A3A31B64D153007BBA25 /* JJTArticleViewController.m */; };
 		9AA1A3A61B64D153007BBA25 /* JJTArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA1A3A41B64D153007BBA25 /* JJTArticleViewController.xib */; };
 		9AA1A3AD1B64D2A3007BBA25 /* JJTArticleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A3AB1B64D2A3007BBA25 /* JJTArticleTableCell.m */; };
@@ -138,6 +142,12 @@
 		9A92710B1B67BA3A00901A71 /* JJTAuthorTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTAuthorTableView.h; sourceTree = "<group>"; };
 		9A92710C1B67BA3A00901A71 /* JJTAuthorTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAuthorTableView.m; sourceTree = "<group>"; };
 		9A92710E1B67BA4700901A71 /* JJTAuthorTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAuthorTableView.xib; sourceTree = "<group>"; };
+		9A9271101B67D49400901A71 /* JJTBlockWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTBlockWebView.h; sourceTree = "<group>"; };
+		9A9271111B67D49400901A71 /* JJTBlockWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTBlockWebView.m; sourceTree = "<group>"; };
+		9A9271131B67D4A200901A71 /* JJTBlockWebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTBlockWebView.xib; sourceTree = "<group>"; };
+		9A9271151B67D57D00901A71 /* JJTBlockLineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTBlockLineTableViewCell.h; sourceTree = "<group>"; };
+		9A9271161B67D57D00901A71 /* JJTBlockLineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTBlockLineTableViewCell.m; sourceTree = "<group>"; };
+		9A9271171B67D57D00901A71 /* JJTBlockLineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTBlockLineTableViewCell.xib; sourceTree = "<group>"; };
 		9AA1A3A21B64D153007BBA25 /* JJTArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTArticleViewController.h; sourceTree = "<group>"; };
 		9AA1A3A31B64D153007BBA25 /* JJTArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTArticleViewController.m; sourceTree = "<group>"; };
 		9AA1A3A41B64D153007BBA25 /* JJTArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTArticleViewController.xib; sourceTree = "<group>"; };
@@ -484,6 +494,12 @@
 				9AA1A3DB1B6529CF007BBA25 /* JJTRateView.h */,
 				9AA1A3DC1B6529CF007BBA25 /* JJTRateView.m */,
 				9AA1A3DE1B652A4A007BBA25 /* JJTRateView.xib */,
+				9A9271101B67D49400901A71 /* JJTBlockWebView.h */,
+				9A9271111B67D49400901A71 /* JJTBlockWebView.m */,
+				9A9271131B67D4A200901A71 /* JJTBlockWebView.xib */,
+				9A9271151B67D57D00901A71 /* JJTBlockLineTableViewCell.h */,
+				9A9271161B67D57D00901A71 /* JJTBlockLineTableViewCell.m */,
+				9A9271171B67D57D00901A71 /* JJTBlockLineTableViewCell.xib */,
 				9A29A0471B652F2F006FA11B /* Cells */,
 			);
 			name = Views;
@@ -572,6 +588,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A9271141B67D4A200901A71 /* JJTBlockWebView.xib in Resources */,
 				9A28522D1B668CB000C827A5 /* JJTPreferenceViewController.xib in Resources */,
 				9A92710A1B67B2A200901A71 /* JJTAuthorHeader.xib in Resources */,
 				9AA1A3A61B64D153007BBA25 /* JJTArticleViewController.xib in Resources */,
@@ -595,6 +612,7 @@
 				9A29A04C1B65370A006FA11B /* JJTPlainTextParagraphTableCell.xib in Resources */,
 				9A29A0561B653B01006FA11B /* JJTPictureParagraphTableViewCell.xib in Resources */,
 				9AA1A3E41B652DE0007BBA25 /* JJTArticleTableView.xib in Resources */,
+				9A9271191B67D57D00901A71 /* JJTBlockLineTableViewCell.xib in Resources */,
 				9A7F1B911B67486900D16E6C /* JJTBlockStyleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,6 +680,7 @@
 				9A834F501B5F6D4F005D6E2F /* JJTree.xcdatamodeld in Sources */,
 				9A28521D1B666DDC00C827A5 /* JJTFormTableViewCell.m in Sources */,
 				9A29A0551B653B01006FA11B /* JJTPictureParagraphTableViewCell.m in Sources */,
+				9A9271181B67D57D00901A71 /* JJTBlockLineTableViewCell.m in Sources */,
 				9A9271081B67B29600901A71 /* JJTAuthorHeader.m in Sources */,
 				9AA1A3BE1B64E2BD007BBA25 /* JJTParagraph.m in Sources */,
 				9AA1A3C41B64E320007BBA25 /* JJTRole.m in Sources */,
@@ -670,6 +689,7 @@
 				9A2852321B66907300C827A5 /* JJTProfileViewController.m in Sources */,
 				9AA1A3D81B65263F007BBA25 /* JJTAuthorHeaderView.m in Sources */,
 				9AA1A3B21B64D4DE007BBA25 /* JJTArticleListTableView.m in Sources */,
+				9A9271121B67D49400901A71 /* JJTBlockWebView.m in Sources */,
 				9A2852211B66771500C827A5 /* NSString+JJTString.m in Sources */,
 				9AA1A3D41B64E9C4007BBA25 /* NSDate+JJTDate.m in Sources */,
 				9AA1A3B71B64D9C0007BBA25 /* JJUser.xcdatamodeld in Sources */,

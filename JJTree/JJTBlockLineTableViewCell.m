@@ -1,20 +1,19 @@
 //
-//  JJTBlockTableViewCell.m
+//  JJTBlockLineTableViewCell.m
 //  JJTree
 //
-//  Created by guojun on 7/26/15.
+//  Created by guojun on 7/28/15.
 //  Copyright (c) 2015 guojunxu. All rights reserved.
 //
 
-#import "JJTBlockParagraphTableViewCell.h"
-#import "JJTBlockWebView.h"
+#import "JJTBlockLineTableViewCell.h"
 
-@interface JJTBlockParagraphTableViewCell()
+@interface JJTBlockLineTableViewCell()
 
-@property (nonatomic, weak) IBOutlet JJTBlockWebView *blockWebView;
+@property (nonatomic, weak) IBOutlet UILabel *lineLabel;
 
 @end
-@implementation JJTBlockParagraphTableViewCell
+@implementation JJTBlockLineTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -38,11 +37,8 @@
 }
 
 #pragma mark - Getters & Setters
-- (void)setBlockURL:(NSString *)blockURL{
-    if (_blockURL != blockURL) {
-        _blockURL = blockURL;
-        
-        self.blockWebView.blockURL = blockURL;
-    }
+- (void)setLine:(NSInteger)line{
+    self.lineLabel.text = [NSString stringWithFormat:@"%ld", (long)line];
 }
+
 @end

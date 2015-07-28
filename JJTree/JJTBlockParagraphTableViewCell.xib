@@ -14,20 +14,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W47-42-4Jc">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hgq-f8-Wmx" customClass="JJTBlockWebView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </webView>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="W47-42-4Jc" secondAttribute="trailing" id="182-Xs-KE1"/>
-                    <constraint firstAttribute="bottom" secondItem="W47-42-4Jc" secondAttribute="bottom" id="Szj-7v-fsa"/>
-                    <constraint firstItem="W47-42-4Jc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Zna-J3-AMM"/>
-                    <constraint firstItem="W47-42-4Jc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qfI-6l-rgw"/>
+                    <constraint firstItem="Hgq-f8-Wmx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="323-5K-R5A"/>
+                    <constraint firstAttribute="bottom" secondItem="Hgq-f8-Wmx" secondAttribute="bottom" id="CSg-sZ-2az"/>
+                    <constraint firstAttribute="trailing" secondItem="Hgq-f8-Wmx" secondAttribute="trailing" id="Dpm-Ry-K5u"/>
+                    <constraint firstItem="Hgq-f8-Wmx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rsa-Eq-sQ5"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="blockWebView" destination="W47-42-4Jc" id="kro-oD-QJh"/>
+                <outlet property="blockWebView" destination="Hgq-f8-Wmx" id="YDc-aj-ZoY"/>
             </connections>
         </tableViewCell>
     </objects>
