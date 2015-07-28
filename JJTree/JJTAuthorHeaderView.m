@@ -82,7 +82,7 @@
     if (_article != article) {
         _article = article;
         
-        self.statisticLabel.text = [NSString stringWithFormat:@"👍%@,👇%@ | 👀%@", article.usefulValue, article.uselessValue, article.viewCount];
+        self.statisticLabel.text = [NSString stringWithFormat:@"👍%@👇%@👀%@", article.usefulValue, article.uselessValue, article.viewCount];
         self.rateView.rate = ([article.usefulValue floatValue] / ([article.usefulValue floatValue] + [article.uselessValue floatValue]));
         self.createdAtLabel.text = [article.createdAt toString];
     }
