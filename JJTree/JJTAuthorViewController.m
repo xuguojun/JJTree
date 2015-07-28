@@ -12,6 +12,7 @@
 @interface JJTAuthorViewController ()
 
 @property (nonatomic, weak) IBOutlet JJTAuthorTableView *authorTableView;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *rewardAuthorButton;
 
 @end
 
@@ -20,6 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+}
+
+- (IBAction)rewardButtonDidPress:(id)sender {
 }
 
 @end

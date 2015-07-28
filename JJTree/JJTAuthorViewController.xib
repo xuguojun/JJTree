@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJTAuthorViewController">
             <connections>
                 <outlet property="authorTableView" destination="Pu8-dC-0tJ" id="29d-wW-vCA"/>
+                <outlet property="rewardAuthorButton" destination="SEy-6j-tWr" id="fD3-QP-q3w"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,12 +24,16 @@
                     </constraints>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="0QE-1r-tjw"/>
-                        <barButtonItem title="💰打赏TA" id="SEy-6j-tWr"/>
+                        <barButtonItem title="💰打赏TA" id="SEy-6j-tWr">
+                            <connections>
+                                <action selector="rewardButtonDidPress:" destination="-1" id="8wa-QN-f0P"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="c72-ls-TMg"/>
                     </items>
                 </toolbar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pu8-dC-0tJ" customClass="JJTAuthorTableView">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
+                    <rect key="frame" x="0.0" y="64" width="600" height="428"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="Ajo-cA-cwU"/>
@@ -42,7 +47,7 @@
                 <constraint firstItem="NEK-a8-aKI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JBD-gj-Ucd"/>
                 <constraint firstAttribute="trailing" secondItem="Pu8-dC-0tJ" secondAttribute="trailing" id="QUw-wZ-DEE"/>
                 <constraint firstItem="NEK-a8-aKI" firstAttribute="top" secondItem="Pu8-dC-0tJ" secondAttribute="bottom" id="cPN-XP-Gfh"/>
-                <constraint firstItem="Pu8-dC-0tJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eSz-T2-bdO"/>
+                <constraint firstItem="Pu8-dC-0tJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="eSz-T2-bdO"/>
                 <constraint firstItem="Pu8-dC-0tJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="p8l-QU-dZx"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

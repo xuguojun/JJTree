@@ -57,9 +57,15 @@ static NSString *UNWATCH = @"取消关注";
 }
 
 - (void)configureView{
-    self.watchButton.layer.cornerRadius = 3.0f;
+    
+    self.avatarImageView.layer.cornerRadius = self.avatarImageView.bounds.size.width / 2.0f;
+    self.avatarImageView.layer.masksToBounds = YES;
+    self.avatarImageView.layer.borderColor = [UIColor orangeColor].CGColor;
+    self.avatarImageView.layer.borderWidth = 0.8f;
+    
+    self.watchButton.layer.cornerRadius = 4.0f;
     self.watchButton.layer.borderColor = [UIColor grayColor].CGColor;
-    self.watchButton.layer.borderWidth = 0.3f;
+    self.watchButton.layer.borderWidth = 0.4f;
     self.watchButton.layer.masksToBounds = YES;
 }
 - (IBAction)watchButtonDidPress:(id)sender {
