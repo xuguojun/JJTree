@@ -287,6 +287,9 @@
 		9A29A0471B652F2F006FA11B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9A9271151B67D57D00901A71 /* JJTBlockLineTableViewCell.h */,
+				9A9271161B67D57D00901A71 /* JJTBlockLineTableViewCell.m */,
+				9A9271171B67D57D00901A71 /* JJTBlockLineTableViewCell.xib */,
 				9A29A0481B65370A006FA11B /* JJTPlainTextParagraphTableCell.h */,
 				9A29A0491B65370A006FA11B /* JJTPlainTextParagraphTableCell.m */,
 				9A29A04A1B65370A006FA11B /* JJTPlainTextParagraphTableCell.xib */,
@@ -497,9 +500,6 @@
 				9A9271101B67D49400901A71 /* JJTBlockWebView.h */,
 				9A9271111B67D49400901A71 /* JJTBlockWebView.m */,
 				9A9271131B67D4A200901A71 /* JJTBlockWebView.xib */,
-				9A9271151B67D57D00901A71 /* JJTBlockLineTableViewCell.h */,
-				9A9271161B67D57D00901A71 /* JJTBlockLineTableViewCell.m */,
-				9A9271171B67D57D00901A71 /* JJTBlockLineTableViewCell.xib */,
 				9A29A0471B652F2F006FA11B /* Cells */,
 			);
 			name = Views;

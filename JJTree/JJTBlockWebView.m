@@ -9,6 +9,8 @@
 #import "JJTBlockWebView.h"
 #import "JJTBlockLineTableViewCell.h"
 
+static float CELL_HEIGHT = (26.5f);
+
 @interface JJTBlockWebView()<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *lineTableView;
@@ -65,7 +67,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return 999;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -79,14 +81,17 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    cell.line = indexPath.row;
+    cell.line = indexPath.row + 1;
     
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 22.f;
+    
+    NSLog(@"content size height = %f",     self.blockWebView.scrollView.contentSize.height);
+    
+    return CELL_HEIGHT;
 }
 
 #pragma mark - 
@@ -108,6 +113,7 @@
         _blockURL = blockURL;
         
         [self.blockWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:blockURL]]];
+        [self.lineTableView reloadData];
     }
 }
 
