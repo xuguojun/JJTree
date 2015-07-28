@@ -7,6 +7,7 @@
 //
 
 #import "JJTPreferenceViewController.h"
+#import "JJTBlockStyleViewController.h"
 
 @interface JJTPreferenceViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -75,6 +76,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (indexPath.section == 2) {
+        JJTBlockStyleViewController *styleVC = [JJTBlockStyleViewController new];
+        [self.navigationController pushViewController:styleVC animated:YES];
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

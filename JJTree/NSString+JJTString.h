@@ -15,5 +15,6 @@
 - (BOOL)matchMobieFormat;
 
 - (BOOL)looksLikeEmailFormat;
+- (NSArray *)splitByNewLine;
 
 @end

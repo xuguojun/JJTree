@@ -38,4 +38,8 @@
     return NO;
 }
 
+- (NSArray *)splitByNewLine{
+    return [self componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+}
+
 @end
