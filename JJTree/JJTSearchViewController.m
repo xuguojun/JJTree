@@ -17,6 +17,8 @@
 @interface JJTSearchViewController ()<JJTArticleListTableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet JJTArticleListTableView *articlesTableView;
+@property (nonatomic, strong) UISearchBar *articleSearchBar;
+
 @end
 
 @implementation JJTSearchViewController
@@ -71,6 +73,33 @@
     }
     
     self.articlesTableView.articles = articles;
+    [self.navigationController.navigationBar addSubview:self.articleSearchBar];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar addSubview:self.articleSearchBar];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.articleSearchBar removeFromSuperview];
+}
+
+- (CGRect)articleSearchBarFrame {
+    CGFloat height = 44.f;
+    CGFloat marginLeft = 32.f;
+    CGFloat marginRight = 8.f;
+    CGRect navigaitonBarBounds = self.navigationController.navigationBar.bounds;
+    CGRect barFrame = CGRectMake(marginLeft, navigaitonBarBounds.size.height - height, navigaitonBarBounds.size.width - marginLeft - marginRight, height);
+    
+    return barFrame;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    self.articleSearchBar.frame = [self articleSearchBarFrame];
 }
 
 - (NSString *)readFile{
@@ -96,6 +125,19 @@
     articleVC.author = author;
     [self.navigationController pushViewController:articleVC animated:YES];
     
+}
+
+#pragma mark - Getters & Setters
+- (UISearchBar *)articleSearchBar{
+    if (!_articleSearchBar) {
+        CGRect frame = [self articleSearchBarFrame];
+        _articleSearchBar = [[UISearchBar alloc] initWithFrame:frame];
+        _articleSearchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+        _articleSearchBar.showsCancelButton = YES;
+        _articleSearchBar.placeholder = @"在线搜索机经，请键入关键词";
+    }
+    
+    return _articleSearchBar;
 }
 
 @end
