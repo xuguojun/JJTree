@@ -14,8 +14,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *articleTitleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *publishDateLabel;
 @property (nonatomic, weak) IBOutlet UILabel *tagLabel;
-@property (nonatomic, weak) IBOutlet UILabel *usefulValueLabel;
-@property (nonatomic, weak) IBOutlet UILabel *amountValueLabel;
+@property (nonatomic, weak) IBOutlet UILabel *statisticLabel;
 
 @end
 
@@ -49,8 +48,7 @@
         
         self.articleTitleLabel.text = article.title;
         self.publishDateLabel.text = [article.createdAt toString];
-        self.usefulValueLabel.text = [NSString stringWithFormat:@"👍%@", article.usefulValue];
-        self.amountValueLabel.text = [NSString stringWithFormat:@"💰%@", article.rewardGotAmount];
+        self.statisticLabel.text = [NSString stringWithFormat:@"👍%@, 💰%@", article.usefulValue, article.rewardGotAmount];
     }
 }
 
