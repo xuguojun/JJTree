@@ -8,10 +8,12 @@
 
 #import "JJTArticleListTableView.h"
 #import "JJTArticleTableCell.h"
+#import <CCBottomRefreshControl/UIScrollView+BottomRefreshControl.h>
 
 @interface JJTArticleListTableView()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *articlesTableView;
+@property (nonatomic, strong) UIRefreshControl *loadMoreControl;
 
 @end
 
@@ -46,6 +48,12 @@
     view.frame = self.bounds;
     
     [self addSubview:view];
+}
+
+- (void)loadMore{
+    if ([self.delegate respondsToSelector:@selector(articleTableView:didTriggerLoadMoreControl:)]) {
+        [self.delegate articleTableView:self didTriggerLoadMoreControl:self.loadMoreControl];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -102,4 +110,26 @@
         [self.articlesTableView reloadData];
     }
 }
+
+- (UIRefreshControl *)loadMoreControl{
+    if (!_loadMoreControl) {
+        _loadMoreControl = [UIRefreshControl new];
+        _loadMoreControl.triggerVerticalOffset = 100.;
+        _loadMoreControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"上拉加载更多"];
+        [_loadMoreControl addTarget:self action:@selector(loadMore) forControlEvents:UIControlEventValueChanged];
+    }
+    
+    return _loadMoreControl;
+}
+
+#pragma mark - Getters & Setters
+- (void)setAllowLoadMore:(BOOL)allowLoadMore{
+    _allowLoadMore = allowLoadMore;
+    if (allowLoadMore) {
+        self.articlesTableView.bottomRefreshControl = self.loadMoreControl;
+    } else {
+        self.articlesTableView.bottomRefreshControl = nil;
+    }
+}
+
 @end

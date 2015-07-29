@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CCBottomRefreshControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MagicalRecord.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1EFB756A8391A0E0A3B4AD46</key>
+		<key>1E93A26A947E9A6D72771E29</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>70F5C846A3ECBAD3C43970EB</key>
+		<key>2D7CB6A0FB8724EDCCA07605</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A17E4F364285FD6B161C6A6</key>
+		<key>4F654078628EAAB227548126</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A540C20A73E251805A574FF1</key>
+		<key>70C93376B00ED2665AD0E9F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AEC2E3F42FF9A1E69116D9AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E685A9EB0EB8154F0D6DEB05</key>
 		<dict>
 			<key>primary</key>
 			<true/>

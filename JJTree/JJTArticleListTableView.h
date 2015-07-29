@@ -16,11 +16,16 @@
 - (void)articleTableView:(JJTArticleListTableView *)tableView
      didSelectRowAtIndex:(NSInteger)index
              withArticle:(JJTArticle *)article;
+- (void)articleTableView:(JJTArticleListTableView *)tableView
+didTriggerLoadMoreControl:(UIRefreshControl *)control;
 
 @end
+
+IB_DESIGNABLE
 @interface JJTArticleListTableView : UIView
 
 @property (nonatomic, strong) NSArray *articles;
+@property (nonatomic, assign) IBInspectable BOOL allowLoadMore;
 @property (nonatomic, weak) IBOutlet id<JJTArticleListTableViewDelegate> delegate;
 
 @end

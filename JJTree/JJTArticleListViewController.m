@@ -117,4 +117,9 @@
     [self.navigationController pushViewController:articleVC animated:YES];
 }
 
+- (void)articleTableView:(JJTArticleListTableView *)tableView didTriggerLoadMoreControl:(UIRefreshControl *)control{
+    NSLog(@"loading more...");
+    [control endRefreshing];
+}
+
 @end
