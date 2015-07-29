@@ -12,7 +12,7 @@
 @class JJTArticleListTableView;
 @protocol JJTArticleListTableViewDelegate <NSObject>
 
-@required
+@optional
 - (void)articleTableView:(JJTArticleListTableView *)tableView
      didSelectRowAtIndex:(NSInteger)index
              withArticle:(JJTArticle *)article;

@@ -1,37 +1,29 @@
 //
-//  ViewController.m
+//  JJTSearchViewController.m
 //  JJTree
 //
-//  Created by guojun on 7/22/15.
+//  Created by guojun on 7/29/15.
 //  Copyright (c) 2015 guojunxu. All rights reserved.
 //
 
-#import "JJTArticleListViewController.h"
+#import "JJTSearchViewController.h"
 #import "JJTArticleListTableView.h"
+#import "JJTArticleViewController.h"
 #import "JJTAuthor.h"
 #import "JJTArticle.h"
 #import "JJTParagraph.h"
-#import "JJTArticleViewController.h"
-#import "JJTLoginViewController.h"
-#import "JJTProfileViewController.h"
-#import "JJTSearchViewController.h"
-#import <MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord.h>
 
-@interface JJTArticleListViewController ()<JJTArticleListTableViewDelegate>
+@interface JJTSearchViewController ()<JJTArticleListTableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButtonItem;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *searchBarButtonItem;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *filterSegmentedControl;
-@property (weak, nonatomic) IBOutlet JJTArticleListTableView *articleTableView;
-
+@property (nonatomic, weak) IBOutlet JJTArticleListTableView *articlesTableView;
 @end
 
-@implementation JJTArticleListViewController
+@implementation JJTSearchViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"元机经";
-    
     NSMutableArray *articles = [NSMutableArray new];
     for (int i = 0; i < 10; i++) {
         JJTArticle *article = [JJTArticle MR_createEntity];
@@ -78,7 +70,7 @@
         [articles addObject:article];
     }
     
-    self.articleTableView.articles = articles;
+    self.articlesTableView.articles = articles;
 }
 
 - (NSString *)readFile{
@@ -91,24 +83,9 @@
     return content;
 }
 
-#pragma mark - IBAction
-- (IBAction)leftButtonDidPress:(id)sender {
-//    JJTLoginViewController *loginVC = [JJTLoginViewController new];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
-//    [self presentViewController:nav animated:YES completion:NULL];
-    
-    JJTProfileViewController *profileVC = [JJTProfileViewController new];
-    [self.navigationController pushViewController:profileVC animated:YES];
-}
-
-- (IBAction)searchButtonDidPress:(id)sender {
-    JJTSearchViewController *searchVC = [JJTSearchViewController new];
-//    [self presentViewController:searchVC animated:YES completion:NULL];
-    [self.navigationController pushViewController:searchVC animated:YES];
-}
-
-#pragma mark - JJTArticleTableViewDelegate
+#pragma mark - JJTArticleListTableViewDelegate
 - (void)articleTableView:(JJTArticleListTableView *)tableView didSelectRowAtIndex:(NSInteger)index withArticle:(JJTArticle *)article{
+    
     JJTArticleViewController *articleVC = [JJTArticleViewController new];
     articleVC.article = article;
     
@@ -118,11 +95,7 @@
     
     articleVC.author = author;
     [self.navigationController pushViewController:articleVC animated:YES];
-}
-
-- (void)articleTableView:(JJTArticleListTableView *)tableView didTriggerLoadMoreControl:(UIRefreshControl *)control{
-    NSLog(@"loading more...");
-    [control endRefreshing];
+    
 }
 
 @end
