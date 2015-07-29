@@ -73,7 +73,6 @@
     }
     
     self.articlesTableView.articles = articles;
-    [self.navigationController.navigationBar addSubview:self.articleSearchBar];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
