@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * userName;
 @property (nonatomic, retain) NSString * userEmail;
 @property (nonatomic, retain) NSString * userMobile;
+@property (nonatomic, retain) NSString * userPassword;
 @property (nonatomic, retain) NSNumber * hasLogined;
 @property (nonatomic, retain) NSManagedObject *roleAuthor;
 @property (nonatomic, retain) NSManagedObject *roleReader;

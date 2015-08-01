@@ -13,6 +13,7 @@
 @dynamic userID;
 @dynamic userName;
 @dynamic userEmail;
+@dynamic userPassword;
 @dynamic userMobile;
 @dynamic hasLogined;
 @dynamic roleAuthor;

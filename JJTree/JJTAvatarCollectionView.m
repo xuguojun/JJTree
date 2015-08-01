@@ -98,6 +98,10 @@ static NSString *cellID = @"cellID";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     JJTAvatarCollectionViewCell *cell = (JJTAvatarCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cell.isSelected = YES;
+    
+    if ([self.delegate respondsToSelector:@selector(avatarCollectionView:didSelectRowAtIndex:)]) {
+        [self.delegate avatarCollectionView:self didSelectRowAtIndex:indexPath.row];
+    }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{

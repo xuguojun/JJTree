@@ -141,4 +141,22 @@ static NSString *PASSWORD_ERROR = @"请输入至少6位字符";
     return _errorHintLabel;
 }
 
+- (void)setUser:(JJTUser *)user{
+    if (_user != user) {
+        _user = user;
+        
+        NSString *text = nil;
+        if (user.userEmail) {
+            text = user.userEmail;
+        }
+        
+        if (user.userMobile) {
+            text = user.userMobile;
+        }
+        
+        self.userCell.text = text;
+        self.passwordCell.text = user.userPassword;
+    }
+}
+
 @end

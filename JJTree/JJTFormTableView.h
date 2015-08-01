@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTUser.h"
 
 @class JJTFormTableView;
 @protocol JJFormViewDelegate <NSObject>
@@ -17,6 +18,7 @@
 @end
 @interface JJTFormTableView : UIView
 
+@property (nonatomic, strong) JJTUser *user;
 @property (nonatomic, weak) IBOutlet id<JJFormViewDelegate> delegate;
 
 @end

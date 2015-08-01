@@ -18,6 +18,7 @@
 @interface JJTFormTableViewCell : UITableViewCell
 
 @property (nonatomic, assign) BOOL isSecure;
+@property (nonatomic, copy) NSString *text;
 @property (nonatomic, weak) IBOutlet id<JJTFormTableViewCellDelegate> delegate;
 
 @end

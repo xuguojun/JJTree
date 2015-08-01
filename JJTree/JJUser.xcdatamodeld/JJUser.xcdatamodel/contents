@@ -31,6 +31,7 @@
         <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="userMobile" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPassword" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="roleAuthor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTAuthor" inverseName="whichUser" inverseEntity="JJTAuthor" syncable="YES"/>
         <relationship name="roleEditor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTEditor" inverseName="whichUser" inverseEntity="JJTEditor" syncable="YES"/>
         <relationship name="roleReader" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTReader" inverseName="whichUser" inverseEntity="JJTReader" syncable="YES"/>
@@ -40,6 +41,6 @@
         <element name="JJTEditor" positionX="-11774" positionY="4811" width="128" height="103"/>
         <element name="JJTReader" positionX="-11727" positionY="4574" width="128" height="133"/>
         <element name="JJTRole" positionX="-11495" positionY="4581" width="128" height="103"/>
-        <element name="JJTUser" positionX="-12033" positionY="4572" width="128" height="163"/>
+        <element name="JJTUser" positionX="-12033" positionY="4572" width="128" height="178"/>
     </elements>
 </model>

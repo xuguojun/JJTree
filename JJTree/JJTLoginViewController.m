@@ -10,8 +10,10 @@
 #import "JJTCreateAccountViewController.h"
 #import "JJTFormTableView.h"
 #import "JJTAvatarCollectionView.h"
+#import <MagicalRecord/MagicalRecord.h>
+#import "JJTUser.h"
 
-@interface JJTLoginViewController ()<JJTCreateAccountViewControllerDelegate>
+@interface JJTLoginViewController ()<JJTCreateAccountViewControllerDelegate, JJTAvatarCollectionViewDelegate>
 
 @property (nonatomic, weak) IBOutlet JJTAvatarCollectionView *avatarCollectionView;
 
@@ -59,6 +61,16 @@
     nav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
     [self presentViewController:nav animated:YES completion:NULL];
+}
+
+#pragma mark - JJTAvatarCollectionViewDelegate
+- (void)avatarCollectionView:(JJTAvatarCollectionView *)collectionView didSelectRowAtIndex:(NSInteger)index{
+    JJTUser *user = [JJTUser MR_createEntity];
+    
+    user.userEmail = [NSString stringWithFormat:@"example%ld@test.com", (long)index];
+    user.userPassword = [NSString stringWithFormat:@"password"];
+    
+    self.formView.user = user;
 }
 
 #pragma mark - JJTCreateAccountViewControllerDelegate

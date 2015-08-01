@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class JJTAvatarCollectionView;
+@protocol JJTAvatarCollectionViewDelegate <NSObject>
+
+@required
+- (void)avatarCollectionView:(JJTAvatarCollectionView *)collectionView
+         didSelectRowAtIndex:(NSInteger)index;
+
+@end
 @interface JJTAvatarCollectionView : UIView
 
 @property (nonatomic, strong) NSArray *imagesURLs;
+
+@property (nonatomic, weak) IBOutlet id<JJTAvatarCollectionViewDelegate> delegate;
 
 @end

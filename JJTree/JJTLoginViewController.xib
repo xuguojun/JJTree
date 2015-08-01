@@ -26,6 +26,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="nvF-cZ-XKZ"/>
                     </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="2oU-LK-bm7"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0t7-Vd-7kN" customClass="JJTFormTableView">
                     <rect key="frame" x="0.0" y="152" width="600" height="109"/>
