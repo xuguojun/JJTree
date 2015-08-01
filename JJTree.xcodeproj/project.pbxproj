@@ -33,6 +33,7 @@
 		9A6614CA1B6D14B60059DCC2 /* roleAuthor.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A6614C71B6D14B60059DCC2 /* roleAuthor.txt */; };
 		9A6614CB1B6D14B60059DCC2 /* roleEditor.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A6614C81B6D14B60059DCC2 /* roleEditor.txt */; };
 		9A6614CC1B6D14B60059DCC2 /* roleRead.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A6614C91B6D14B60059DCC2 /* roleRead.txt */; };
+		9A6614CF1B6D20840059DCC2 /* JJTBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6614CE1B6D20840059DCC2 /* JJTBaseViewController.m */; };
 		9A7F1B901B67486900D16E6C /* JJTBlockStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F1B8E1B67486900D16E6C /* JJTBlockStyleViewController.m */; };
 		9A7F1B911B67486900D16E6C /* JJTBlockStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7F1B8F1B67486900D16E6C /* JJTBlockStyleViewController.xib */; };
 		9A7F1B931B674B8300D16E6C /* blockCSS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A7F1B921B674B8300D16E6C /* blockCSS.txt */; };
@@ -136,6 +137,8 @@
 		9A6614C71B6D14B60059DCC2 /* roleAuthor.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = roleAuthor.txt; sourceTree = "<group>"; };
 		9A6614C81B6D14B60059DCC2 /* roleEditor.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = roleEditor.txt; sourceTree = "<group>"; };
 		9A6614C91B6D14B60059DCC2 /* roleRead.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = roleRead.txt; sourceTree = "<group>"; };
+		9A6614CD1B6D20840059DCC2 /* JJTBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTBaseViewController.h; sourceTree = "<group>"; };
+		9A6614CE1B6D20840059DCC2 /* JJTBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTBaseViewController.m; sourceTree = "<group>"; };
 		9A7F1B8D1B67486900D16E6C /* JJTBlockStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTBlockStyleViewController.h; sourceTree = "<group>"; };
 		9A7F1B8E1B67486900D16E6C /* JJTBlockStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTBlockStyleViewController.m; sourceTree = "<group>"; };
 		9A7F1B8F1B67486900D16E6C /* JJTBlockStyleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTBlockStyleViewController.xib; sourceTree = "<group>"; };
@@ -393,6 +396,8 @@
 				9A834F4C1B5F6D4F005D6E2F /* AppDelegate.m */,
 				9A28521F1B66771500C827A5 /* NSString+JJTString.h */,
 				9A2852201B66771500C827A5 /* NSString+JJTString.m */,
+				9A6614CD1B6D20840059DCC2 /* JJTBaseViewController.h */,
+				9A6614CE1B6D20840059DCC2 /* JJTBaseViewController.m */,
 				9A28520D1B666C6000C827A5 /* JJTLogin */,
 				9A2852221B6685D000C827A5 /* JJTRegister */,
 				9AA1A3A71B64D189007BBA25 /* JJTArticleList */,
@@ -767,6 +772,7 @@
 				9AA1A3E21B652DD5007BBA25 /* JJTArticleTableView.m in Sources */,
 				9AA1A3CD1B64E337007BBA25 /* JJTAuthor.m in Sources */,
 				9A834F501B5F6D4F005D6E2F /* JJTree.xcdatamodeld in Sources */,
+				9A6614CF1B6D20840059DCC2 /* JJTBaseViewController.m in Sources */,
 				9A28521D1B666DDC00C827A5 /* JJTFormTableViewCell.m in Sources */,
 				9A29A0551B653B01006FA11B /* JJTPictureParagraphTableViewCell.m in Sources */,
 				9A9271181B67D57D00901A71 /* JJTBlockLineTableViewCell.m in Sources */,

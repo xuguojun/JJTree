@@ -14,6 +14,8 @@
 @property (nonatomic, weak) IBOutlet UITableView *stylesTableView;
 @property (nonatomic, strong) NSArray *styles;
 
+@property (nonatomic, assign) NSInteger lastIndexSelected;
+
 @end
 
 @implementation JJTBlockStyleViewController
@@ -25,6 +27,8 @@
 
     NSString *content = [self readFile];
     self.styles = [content splitByNewLine];
+    
+    self.lastIndexSelected = [self blockStyleIndex];
 }
 
 - (NSString *)readFile{
@@ -35,6 +39,10 @@
                                                      error:NULL];
     
     return content;
+}
+
+- (NSInteger)blockStyleIndex{
+    return [self.prefs integerForKey:BLOCK_STYLE_INDEX];
 }
 
 #pragma mark - UITableViewDataSource
@@ -54,7 +62,12 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:cellIdentifier];
+    }
+    
+    if (indexPath.row == self.lastIndexSelected) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
     cell.textLabel.text = self.styles[indexPath.row];
@@ -66,6 +79,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    self.lastIndexSelected = indexPath.row;
+    [self.prefs setInteger:indexPath.row forKey:BLOCK_STYLE_INDEX];
+    [tableView reloadData];
 }
 
 @end

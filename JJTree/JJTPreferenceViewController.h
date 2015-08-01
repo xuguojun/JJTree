@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTBaseViewController.h"
 
-@interface JJTPreferenceViewController : UIViewController
+@interface JJTPreferenceViewController : JJTBaseViewController
 
 @end

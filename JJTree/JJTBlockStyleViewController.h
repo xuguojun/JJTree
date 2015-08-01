@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTBaseViewController.h"
 
-@interface JJTBlockStyleViewController : UIViewController
+@interface JJTBlockStyleViewController : JJTBaseViewController
 
 @end

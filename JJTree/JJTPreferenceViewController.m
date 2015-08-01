@@ -18,6 +18,10 @@
 @property (nonatomic, strong) NSArray *recentTitles;
 @property (nonatomic, strong) NSArray *blockTitles;
 
+
+@property (nonatomic, assign) BOOL arrangeByUseful;
+@property (nonatomic, assign) BOOL arrangeByPublishDate;
+
 @end
 
 @implementation JJTPreferenceViewController
@@ -31,6 +35,17 @@
     self.recentTitles = @[@"按发布日期先后", @"按更新日期先后"];
     self.sectionTitles = @[@"TOP机经排序原则", @"最新机经排序原则"];
     self.blockTitles = @[@"代码块CSS样式"];
+    
+    self.arrangeByUseful = ![self arrangeByUseless];
+    self.arrangeByPublishDate = ![self arrangeByUpdateDate];
+}
+
+- (BOOL)arrangeByUseless{
+    return [self.prefs boolForKey:ARRANGE_BY_USELESS_VALUE];
+}
+
+- (BOOL)arrangeByUpdateDate{
+    return [self.prefs boolForKey:ARRANGE_BY_UPDATE_DATE];
 }
 
 #pragma mark - UITableViewDataSource
@@ -60,10 +75,36 @@
     
     if (indexPath.section == 0) {
         cell.textLabel.text = self.topTitles[indexPath.row];
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+        if (indexPath.row == 0) {
+            if (self.arrangeByUseful) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        } else if (indexPath.row == 1){
+            if (self.arrangeByUseful) {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        }
     } else if (indexPath.section == 1){
         cell.textLabel.text = self.recentTitles[indexPath.row];
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+        if (indexPath.row == 0) {
+            if (self.arrangeByPublishDate) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        } else if (indexPath.row == 1){
+            if (self.arrangeByPublishDate) {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        }
     } else {
         cell.textLabel.text = self.blockTitles[indexPath.row];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -75,6 +116,30 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            self.arrangeByUseful = YES;
+            [self.prefs setBool:NO forKey:ARRANGE_BY_USELESS_VALUE];
+        } else {
+            self.arrangeByUseful = NO;
+            [self.prefs setBool:YES forKey:ARRANGE_BY_USELESS_VALUE];
+        }
+        
+        [tableView reloadData];
+    }
+    
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            self.arrangeByPublishDate = YES;
+            [self.prefs setBool:NO forKey:ARRANGE_BY_UPDATE_DATE];
+        } else {
+            self.arrangeByPublishDate = NO;
+            [self.prefs setBool:YES forKey:ARRANGE_BY_UPDATE_DATE];
+        }
+        
+        [tableView reloadData];
+    }
     
     if (indexPath.section == 2) {
         JJTBlockStyleViewController *styleVC = [JJTBlockStyleViewController new];
@@ -89,5 +154,7 @@
     
     return self.sectionTitles[section];
 }
+
+#pragma mark - Getters & Setters
 
 @end
