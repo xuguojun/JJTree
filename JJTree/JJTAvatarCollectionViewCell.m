@@ -29,18 +29,18 @@
 }
 
 - (void)awakeFromNib {
-    [self unhighlightView:self.avatarImageView];
+//    [self unhighlightView:self.avatarImageView];
 }
 
 - (void)highlightView:(UIView *)view{
-    view.layer.cornerRadius = view.bounds.size.width / 2;
+    view.layer.cornerRadius = view.bounds.size.width / 2.0f;
     view.layer.borderColor = [UIColor orangeColor].CGColor;
     view.layer.borderWidth = 3.f;
     view.layer.masksToBounds = YES;
 }
 
 - (void)unhighlightView:(UIView *)view{
-    view.layer.cornerRadius = view.bounds.size.width / 2;
+    view.layer.cornerRadius = view.bounds.size.width / 2.0f;
     view.layer.borderColor = [UIColor whiteColor].CGColor;
     view.layer.borderWidth = 1.f;
     view.layer.masksToBounds = YES;
@@ -61,6 +61,7 @@
     if (_avatarURL != avatarURL) {
         _avatarURL = avatarURL;
         
+        [self unhighlightView:self.avatarImageView];
         [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarURL] placeholderImage:nil];
     }
 }

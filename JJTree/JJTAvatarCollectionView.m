@@ -99,7 +99,7 @@ static NSString *cellID = @"cellID";
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(55.f, 55.f);
+    return CGSizeMake(60.f, 60.f);
 }
 
 #pragma mark - Getters & Setters

@@ -20,11 +20,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moO-mE-4eV" customClass="JJTAvatarCollectionView">
-                    <rect key="frame" x="0.0" y="72" width="600" height="148"/>
+                    <rect key="frame" x="0.0" y="64" width="600" height="80"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="nvF-cZ-XKZ"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0t7-Vd-7kN" customClass="JJTFormTableView">
-                    <rect key="frame" x="0.0" y="228" width="600" height="109"/>
+                    <rect key="frame" x="0.0" y="152" width="600" height="109"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="109" id="EDP-LR-orY"/>
@@ -34,7 +37,7 @@
                     </connections>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6f-18-lrl">
-                    <rect key="frame" x="180" y="345" width="240" height="30"/>
+                    <rect key="frame" x="180" y="269" width="240" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="CPj-II-M67"/>
                         <constraint firstAttribute="width" constant="240" id="rLe-P4-Xo9"/>
@@ -62,7 +65,7 @@
                     </items>
                 </toolbar>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARB-MN-hIB">
-                    <rect key="frame" x="180" y="383" width="240" height="30"/>
+                    <rect key="frame" x="180" y="307" width="240" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Mq5-OW-68R"/>
                     </constraints>
@@ -78,13 +81,15 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="0t7-Vd-7kN" firstAttribute="leading" secondItem="moO-mE-4eV" secondAttribute="trailing" constant="-600" id="BO0-f9-eWh"/>
                 <constraint firstAttribute="centerX" secondItem="R6f-18-lrl" secondAttribute="centerX" id="BSd-PN-V91"/>
                 <constraint firstAttribute="trailing" secondItem="0t7-Vd-7kN" secondAttribute="trailing" id="Bue-P4-Emp"/>
                 <constraint firstItem="R6f-18-lrl" firstAttribute="trailing" secondItem="ARB-MN-hIB" secondAttribute="trailing" id="Ddz-cP-LSF"/>
                 <constraint firstAttribute="trailing" secondItem="moO-mE-4eV" secondAttribute="trailing" id="ElU-kv-Ok3"/>
+                <constraint firstItem="0t7-Vd-7kN" firstAttribute="top" secondItem="moO-mE-4eV" secondAttribute="bottom" constant="8" id="It6-5D-AeF"/>
                 <constraint firstAttribute="bottom" secondItem="IgZ-Za-dsX" secondAttribute="bottom" id="KRt-8n-cVd"/>
                 <constraint firstAttribute="trailing" secondItem="IgZ-Za-dsX" secondAttribute="trailing" id="TVs-4H-29x"/>
-                <constraint firstItem="moO-mE-4eV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="72" id="VSp-ZM-pOi"/>
+                <constraint firstItem="moO-mE-4eV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="VSp-ZM-pOi"/>
                 <constraint firstItem="0t7-Vd-7kN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dj6-RV-IyX"/>
                 <constraint firstItem="0t7-Vd-7kN" firstAttribute="top" secondItem="moO-mE-4eV" secondAttribute="bottom" constant="8" id="ew1-Nj-VcN"/>
                 <constraint firstItem="moO-mE-4eV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="f6b-Z9-tSY"/>
@@ -98,6 +103,9 @@
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="BO0-f9-eWh"/>
+                    <exclude reference="ew1-Nj-VcN"/>
+                    <exclude reference="jVt-wL-FsU"/>
                     <exclude reference="nTH-Si-USr"/>
                 </mask>
             </variation>
