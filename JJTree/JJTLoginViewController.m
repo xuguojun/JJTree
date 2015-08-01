@@ -10,20 +10,25 @@
 #import "JJTCreateAccountViewController.h"
 #import "JJTFormTableView.h"
 #import "JJTAvatarCollectionView.h"
+#import <MWPhotoBrowser/MWPhoto.h>
+#import <MWPhotoBrowser/MWPhotoBrowser.h>
 #import <MagicalRecord/MagicalRecord.h>
 #import "JJTUser.h"
 
-@interface JJTLoginViewController ()<JJTCreateAccountViewControllerDelegate, JJTAvatarCollectionViewDelegate>
+@interface JJTLoginViewController ()<JJTCreateAccountViewControllerDelegate, JJTAvatarCollectionViewDelegate, MWPhotoBrowserDelegate>
 
 @property (nonatomic, weak) IBOutlet JJTAvatarCollectionView *avatarCollectionView;
 @property (nonatomic, weak) IBOutlet UIGestureRecognizer *bgGesture;
 
 @property (nonatomic, weak) IBOutlet JJTFormTableView *formTableView;
 @property (nonatomic, strong) UIBarButtonItem *closeButton;
+@property (nonatomic, strong) UIBarButtonItem *videoButton;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *createAccountButton;
 
 @property (nonatomic, strong) IBOutlet UIButton *loginButton;
 @property (nonatomic, strong) IBOutlet UIButton *forgetPasswordButton;
+
+@property (nonatomic, strong) NSArray *videos;
 
 @end
 
@@ -35,6 +40,7 @@
     self.title = @"登录";
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationItem.leftBarButtonItem = self.closeButton;
+    self.navigationItem.rightBarButtonItem = self.videoButton;
     
     self.avatarCollectionView.imagesURLs = @[@"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg", @"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg", @"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg", @"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg"];
     
@@ -42,11 +48,42 @@
     self.loginButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.loginButton.layer.borderWidth = 0.5f;
     self.loginButton.layer.masksToBounds = YES;
+    
+
+    MWPhoto *video = [MWPhoto photoWithImage:[UIImage imageNamed:@"demo.png"]];
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:@"iPadDemo" ofType:@"m4v"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    video.videoURL = url;
+    
+    self.videos = @[video];
 }
 
 - (void)closeButtonDidPress:(id)sender{
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
+- (void)videoButtonDidPress:(id)sender{
+    
+    
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:self.videos];
+    browser.delegate = self;
+    
+    // Set options
+    browser.displayActionButton = NO; // Show action button to allow sharing, copying, etc (defaults to YES)
+    browser.displayNavArrows = YES; // Whether to display left and right nav arrows on toolbar (defaults to NO)
+    browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
+    browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
+    browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
+    browser.enableGrid = YES; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
+    browser.startOnGrid = NO; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
+    browser.autoPlayOnAppear = NO; // Auto-play first video
+    
+    // Present
+    [self.navigationController pushViewController:browser animated:YES];
+}
+
 - (IBAction)loginButtonDidPress:(id)sender {
     
 }
@@ -66,6 +103,15 @@
 
 - (IBAction)viewDidPress:(id)sender{
     self.formTableView.displayKeyboard = NO;
+}
+
+#pragma mark - MWPhotoBrowserDelegate
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser{
+    return 1;
+}
+
+- (id<MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index{
+    return self.videos[index];
 }
 
 #pragma mark - JJTAvatarCollectionViewDelegate
@@ -92,6 +138,16 @@
     }
     
     return _closeButton;
+}
+
+- (UIBarButtonItem *)videoButton{
+    if (!_videoButton) {
+        _videoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemBookmarks)
+                                                                     target:self
+                                                                     action:@selector(videoButtonDidPress:)];
+    }
+    
+    return _videoButton;
 }
 
 @end

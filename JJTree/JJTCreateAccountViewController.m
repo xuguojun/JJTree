@@ -8,6 +8,7 @@
 
 #import "JJTCreateAccountViewController.h"
 #import "JJTFormTableView.h"
+#import <MWPhotoBrowser.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface JJTCreateAccountViewController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -62,6 +63,25 @@
         [self.delegate createAccountViewControllerDidClose:self];
     }
 }
+
+- (void)videoButtonDidPress:(id)sender{
+    
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] init];
+    
+    // Set options
+    browser.displayActionButton = NO; // Show action button to allow sharing, copying, etc (defaults to YES)
+    browser.displayNavArrows = YES; // Whether to display left and right nav arrows on toolbar (defaults to NO)
+    browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
+    browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
+    browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
+    browser.enableGrid = YES; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
+    browser.startOnGrid = NO; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
+    browser.autoPlayOnAppear = NO; // Auto-play first video
+    
+    // Present
+    [self.navigationController pushViewController:browser animated:YES];
+}
+
 - (IBAction)createAccountButtonDidPress:(id)sender {
 
 }

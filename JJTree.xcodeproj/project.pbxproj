@@ -45,6 +45,8 @@
 		9A90502F1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A90502D1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib */; };
 		9A9050331B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9050311B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m */; };
 		9A9050341B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9050321B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib */; };
+		9A9050371B6CDF3E004DED27 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A9050361B6CDF3D004DED27 /* demo.png */; };
+		9A90503A1B6CF8E6004DED27 /* iPadDemo.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 9A9050391B6CE567004DED27 /* iPadDemo.m4v */; };
 		9A9271031B67B20600901A71 /* JJTAuthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9271011B67B20600901A71 /* JJTAuthorViewController.m */; };
 		9A9271041B67B20600901A71 /* JJTAuthorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9271021B67B20600901A71 /* JJTAuthorViewController.xib */; };
 		9A9271081B67B29600901A71 /* JJTAuthorHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9271071B67B29600901A71 /* JJTAuthorHeader.m */; };
@@ -148,6 +150,8 @@
 		9A9050301B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTAvatarCollectionViewCell.h; sourceTree = "<group>"; };
 		9A9050311B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAvatarCollectionViewCell.m; sourceTree = "<group>"; };
 		9A9050321B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAvatarCollectionViewCell.xib; sourceTree = "<group>"; };
+		9A9050361B6CDF3D004DED27 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
+		9A9050391B6CE567004DED27 /* iPadDemo.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = iPadDemo.m4v; sourceTree = "<group>"; };
 		9A9271001B67B20600901A71 /* JJTAuthorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTAuthorViewController.h; sourceTree = "<group>"; };
 		9A9271011B67B20600901A71 /* JJTAuthorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAuthorViewController.m; sourceTree = "<group>"; };
 		9A9271021B67B20600901A71 /* JJTAuthorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAuthorViewController.xib; sourceTree = "<group>"; };
@@ -384,6 +388,8 @@
 				9A313AD91B69226E0091DA8B /* JJTSearch */,
 				9A834F571B5F6D4F005D6E2F /* Images.xcassets */,
 				9A834F591B5F6D4F005D6E2F /* LaunchScreen.xib */,
+				9A9050391B6CE567004DED27 /* iPadDemo.m4v */,
+				9A9050361B6CDF3D004DED27 /* demo.png */,
 				9A834F4E1B5F6D4F005D6E2F /* JJTree.xcdatamodeld */,
 				9AA1A3B51B64D9C0007BBA25 /* JJUser.xcdatamodeld */,
 				9A834F471B5F6D4F005D6E2F /* Supporting Files */,
@@ -620,6 +626,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A90503A1B6CF8E6004DED27 /* iPadDemo.m4v in Resources */,
 				9A9271141B67D4A200901A71 /* JJTBlockWebView.xib in Resources */,
 				9A28522D1B668CB000C827A5 /* JJTPreferenceViewController.xib in Resources */,
 				9A92710A1B67B2A200901A71 /* JJTAuthorHeader.xib in Resources */,
@@ -647,6 +654,7 @@
 				9AA1A3E41B652DE0007BBA25 /* JJTArticleTableView.xib in Resources */,
 				9A9271191B67D57D00901A71 /* JJTBlockLineTableViewCell.xib in Resources */,
 				9A313ADE1B6922890091DA8B /* JJTSearchViewController.xib in Resources */,
+				9A9050371B6CDF3E004DED27 /* demo.png in Resources */,
 				9A90502F1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib in Resources */,
 				9A7F1B911B67486900D16E6C /* JJTBlockStyleViewController.xib in Resources */,
 			);
