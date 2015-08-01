@@ -29,6 +29,18 @@
     return self;
 }
 
++ (UINib *)cellNib {
+    static UINib *cellNib;
+    
+    if (cellNib) {
+        return cellNib;
+    }
+    
+    cellNib = [UINib nibWithNibName:NSStringFromClass([self class]) bundle:nil];
+    
+    return cellNib;
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

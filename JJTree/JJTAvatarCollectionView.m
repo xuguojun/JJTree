@@ -9,6 +9,8 @@
 #import "JJTAvatarCollectionView.h"
 #import "JJTAvatarCollectionViewCell.h"
 
+static NSString *cellID = @"cellID";
+
 @interface JJTAvatarCollectionView()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UICollectionView *avatarCollectionView;
@@ -21,6 +23,7 @@
     if (self) {
         
         [self loadView];
+        [self configureView];
     }
     
     return self;
@@ -31,6 +34,7 @@
     if (self) {
         
         [self loadView];
+        [self configureView];
     }
     
     return self;
@@ -47,6 +51,14 @@
     [self addSubview:view];
 }
 
+- (void)configureView{
+//    [self.avatarCollectionView registerNib:[JJTAvatarCollectionViewCell cellNib]
+//                forCellWithReuseIdentifier:cellID];
+//        [self.avatarCollectionView registerNib:[UINib nibWithNibName:@"UICollectionViewCell" bundle:nil]
+//                    forCellWithReuseIdentifier:cellID];
+    [self.avatarCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cellID];
+    
+}
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -57,11 +69,18 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellID = @"cellID";
     
-    JJTAvatarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID
+    
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID
                                                                                   forIndexPath:indexPath];
+//    if (!cell) {
+//        cell = [[UICollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+//    }
     
+//    cell.avatarURL = @"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg";
+    
+    cell.backgroundColor = [UIColor redColor];
     
     return cell;
 }

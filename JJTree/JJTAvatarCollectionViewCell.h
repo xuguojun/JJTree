@@ -13,4 +13,6 @@
 @property (nonatomic, copy) NSString *avatarURL;
 @property (nonatomic, assign) BOOL isSelected;
 
++ (UINib *)cellNib;
+
 @end
