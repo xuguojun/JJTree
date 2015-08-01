@@ -11,7 +11,7 @@
 #import <MWPhotoBrowser.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface JJTCreateAccountViewController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface JJTCreateAccountViewController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MWPhotoBrowserDelegate>
 
 @property (nonatomic, weak) IBOutlet JJTFormTableView *formTableView;
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
@@ -20,12 +20,14 @@
 
 @property (nonatomic, weak) IBOutlet UIView *avatarContainer;
 @property (nonatomic, strong) UIBarButtonItem *closeButton;
+@property (nonatomic, strong) UIBarButtonItem *videoButton;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *loginButton;
 @property (nonatomic, strong) IBOutlet UIButton *createAccountButton;
 
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
-
 @property (nonatomic, strong) UIActionSheet *actionSheet;
+
+@property (nonatomic, strong) NSArray *videos;
 
 @end
 
@@ -38,6 +40,7 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationItem.leftBarButtonItem = self.closeButton;
+    self.navigationItem.rightBarButtonItem = self.videoButton;
     
     self.createAccountButton.layer.cornerRadius = 4.0f;
     self.createAccountButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -55,6 +58,15 @@
     self.avatarContainer.layer.shadowColor = [UIColor grayColor].CGColor;
     
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:@"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg"] placeholderImage:nil];
+    
+    MWPhoto *video = [MWPhoto photoWithImage:[UIImage imageNamed:@"demo.png"]];
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:@"iPadDemo" ofType:@"m4v"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    video.videoURL = url;
+    
+    self.videos = @[video];
 }
 
 - (void)closeButtonDidPress:(id)sender{
@@ -67,6 +79,7 @@
 - (void)videoButtonDidPress:(id)sender{
     
     MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] init];
+    browser.delegate = self;
     
     // Set options
     browser.displayActionButton = NO; // Show action button to allow sharing, copying, etc (defaults to YES)
@@ -96,6 +109,15 @@
 
 - (IBAction)viewDidPress:(id)sender{
     self.formTableView.displayKeyboard = NO;
+}
+
+#pragma mark - MWPhotoBrowserDelegate
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser{
+    return 1;
+}
+
+- (id<MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index{
+    return self.videos[index];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -176,4 +198,15 @@
     
     return _imagePickerController;
 }
+
+- (UIBarButtonItem *)videoButton{
+    if (!_videoButton) {
+        _videoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemBookmarks)
+                                                                     target:self
+                                                                     action:@selector(videoButtonDidPress:)];
+    }
+    
+    return _videoButton;
+}
+
 @end

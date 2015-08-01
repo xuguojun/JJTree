@@ -66,7 +66,6 @@
 
 - (void)videoButtonDidPress:(id)sender{
     
-    
     MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:self.videos];
     browser.delegate = self;
     
