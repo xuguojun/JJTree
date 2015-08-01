@@ -16,19 +16,6 @@
 @end
 @implementation JJTAvatarCollectionViewCell
 
-- (instancetype)init{
-    
-    self = [super init];
-    
-    if (self) {
-        self = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
-                                              owner:self
-                                            options:nil] lastObject];
-    }
-    
-    return self;
-}
-
 + (UINib *)cellNib {
     static UINib *cellNib;
     
@@ -42,7 +29,7 @@
 }
 
 - (void)awakeFromNib {
-    // Initialization code
+    [self unhighlightView:self.avatarImageView];
 }
 
 - (void)highlightView:(UIView *)view{

@@ -25,6 +25,9 @@
                 <constraint firstItem="miY-0Q-cr1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qxd-Dh-c0b"/>
                 <constraint firstItem="miY-0Q-cr1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uPq-xP-3lq"/>
             </constraints>
+            <connections>
+                <outlet property="avatarImageView" destination="miY-0Q-cr1" id="UAv-ah-laH"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>
