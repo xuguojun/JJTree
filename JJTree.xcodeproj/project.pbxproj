@@ -41,6 +41,10 @@
 		9A834F581B5F6D4F005D6E2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A834F571B5F6D4F005D6E2F /* Images.xcassets */; };
 		9A834F5B1B5F6D4F005D6E2F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A834F591B5F6D4F005D6E2F /* LaunchScreen.xib */; };
 		9A834F671B5F6D4F005D6E2F /* JJTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F661B5F6D4F005D6E2F /* JJTreeTests.m */; };
+		9A90502E1B6C7F9D004DED27 /* JJTAvatarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A90502C1B6C7F9D004DED27 /* JJTAvatarCollectionView.m */; };
+		9A90502F1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A90502D1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib */; };
+		9A9050331B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9050311B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m */; };
+		9A9050341B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9050321B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib */; };
 		9A9271031B67B20600901A71 /* JJTAuthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9271011B67B20600901A71 /* JJTAuthorViewController.m */; };
 		9A9271041B67B20600901A71 /* JJTAuthorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9271021B67B20600901A71 /* JJTAuthorViewController.xib */; };
 		9A9271081B67B29600901A71 /* JJTAuthorHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9271071B67B29600901A71 /* JJTAuthorHeader.m */; };
@@ -138,6 +142,12 @@
 		9A834F601B5F6D4F005D6E2F /* JJTreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JJTreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A834F651B5F6D4F005D6E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A834F661B5F6D4F005D6E2F /* JJTreeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTreeTests.m; sourceTree = "<group>"; };
+		9A90502B1B6C7F9D004DED27 /* JJTAvatarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTAvatarCollectionView.h; sourceTree = "<group>"; };
+		9A90502C1B6C7F9D004DED27 /* JJTAvatarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAvatarCollectionView.m; sourceTree = "<group>"; };
+		9A90502D1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAvatarCollectionView.xib; sourceTree = "<group>"; };
+		9A9050301B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTAvatarCollectionViewCell.h; sourceTree = "<group>"; };
+		9A9050311B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAvatarCollectionViewCell.m; sourceTree = "<group>"; };
+		9A9050321B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAvatarCollectionViewCell.xib; sourceTree = "<group>"; };
 		9A9271001B67B20600901A71 /* JJTAuthorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTAuthorViewController.h; sourceTree = "<group>"; };
 		9A9271011B67B20600901A71 /* JJTAuthorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAuthorViewController.m; sourceTree = "<group>"; };
 		9A9271021B67B20600901A71 /* JJTAuthorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAuthorViewController.xib; sourceTree = "<group>"; };
@@ -244,6 +254,9 @@
 				9A2852141B666CAF00C827A5 /* JJTFormTableView.h */,
 				9A2852151B666CAF00C827A5 /* JJTFormTableView.m */,
 				9A2852171B666CBE00C827A5 /* JJTFormTableView.xib */,
+				9A90502B1B6C7F9D004DED27 /* JJTAvatarCollectionView.h */,
+				9A90502C1B6C7F9D004DED27 /* JJTAvatarCollectionView.m */,
+				9A90502D1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib */,
 				9A2852191B666DC000C827A5 /* Cells */,
 			);
 			name = Views;
@@ -252,6 +265,9 @@
 		9A2852191B666DC000C827A5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9A9050301B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.h */,
+				9A9050311B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m */,
+				9A9050321B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib */,
 				9A28521A1B666DDC00C827A5 /* JJTFormTableViewCell.h */,
 				9A28521B1B666DDC00C827A5 /* JJTFormTableViewCell.m */,
 				9A28521C1B666DDC00C827A5 /* JJTFormTableViewCell.xib */,
@@ -614,6 +630,7 @@
 				9A2852271B66860400C827A5 /* JJTCreateAccountViewController.xib in Resources */,
 				9A834F561B5F6D4F005D6E2F /* Main.storyboard in Resources */,
 				9AA1A3DA1B65267A007BBA25 /* JJTAuthorHeaderView.xib in Resources */,
+				9A9050341B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib in Resources */,
 				9A834F5B1B5F6D4F005D6E2F /* LaunchScreen.xib in Resources */,
 				9A9271041B67B20600901A71 /* JJTAuthorViewController.xib in Resources */,
 				9A834F581B5F6D4F005D6E2F /* Images.xcassets in Resources */,
@@ -630,6 +647,7 @@
 				9AA1A3E41B652DE0007BBA25 /* JJTArticleTableView.xib in Resources */,
 				9A9271191B67D57D00901A71 /* JJTBlockLineTableViewCell.xib in Resources */,
 				9A313ADE1B6922890091DA8B /* JJTSearchViewController.xib in Resources */,
+				9A90502F1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib in Resources */,
 				9A7F1B911B67486900D16E6C /* JJTBlockStyleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,6 +726,7 @@
 				9AA1A3D81B65263F007BBA25 /* JJTAuthorHeaderView.m in Sources */,
 				9AA1A3B21B64D4DE007BBA25 /* JJTArticleListTableView.m in Sources */,
 				9A9271121B67D49400901A71 /* JJTBlockWebView.m in Sources */,
+				9A90502E1B6C7F9D004DED27 /* JJTAvatarCollectionView.m in Sources */,
 				9A2852211B66771500C827A5 /* NSString+JJTString.m in Sources */,
 				9AA1A3D41B64E9C4007BBA25 /* NSDate+JJTDate.m in Sources */,
 				9AA1A3B71B64D9C0007BBA25 /* JJUser.xcdatamodeld in Sources */,
@@ -716,6 +735,7 @@
 				9A7F1B901B67486900D16E6C /* JJTBlockStyleViewController.m in Sources */,
 				9A92710D1B67BA3A00901A71 /* JJTAuthorTableView.m in Sources */,
 				9AA1A3A51B64D153007BBA25 /* JJTArticleViewController.m in Sources */,
+				9A9050331B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m in Sources */,
 				9AA1A3C71B64E337007BBA25 /* JJTUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

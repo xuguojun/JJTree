@@ -19,6 +19,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moO-mE-4eV">
+                    <rect key="frame" x="0.0" y="8" width="600" height="148"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0t7-Vd-7kN" customClass="JJTFormTableView">
                     <rect key="frame" x="0.0" y="164" width="600" height="109"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,16 +81,26 @@
                 <constraint firstAttribute="centerX" secondItem="R6f-18-lrl" secondAttribute="centerX" id="BSd-PN-V91"/>
                 <constraint firstAttribute="trailing" secondItem="0t7-Vd-7kN" secondAttribute="trailing" id="Bue-P4-Emp"/>
                 <constraint firstItem="R6f-18-lrl" firstAttribute="trailing" secondItem="ARB-MN-hIB" secondAttribute="trailing" id="Ddz-cP-LSF"/>
+                <constraint firstAttribute="trailing" secondItem="moO-mE-4eV" secondAttribute="trailing" id="ElU-kv-Ok3"/>
                 <constraint firstAttribute="bottom" secondItem="IgZ-Za-dsX" secondAttribute="bottom" id="KRt-8n-cVd"/>
                 <constraint firstAttribute="trailing" secondItem="IgZ-Za-dsX" secondAttribute="trailing" id="TVs-4H-29x"/>
+                <constraint firstItem="moO-mE-4eV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="VSp-ZM-pOi"/>
                 <constraint firstItem="0t7-Vd-7kN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dj6-RV-IyX"/>
+                <constraint firstItem="0t7-Vd-7kN" firstAttribute="top" secondItem="moO-mE-4eV" secondAttribute="bottom" constant="8" id="ew1-Nj-VcN"/>
+                <constraint firstItem="moO-mE-4eV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="f6b-Z9-tSY"/>
                 <constraint firstItem="0t7-Vd-7kN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="164" id="jVt-wL-FsU"/>
                 <constraint firstItem="R6f-18-lrl" firstAttribute="top" secondItem="0t7-Vd-7kN" secondAttribute="bottom" constant="8" id="mrv-vh-b3k"/>
+                <constraint firstItem="R6f-18-lrl" firstAttribute="top" secondItem="moO-mE-4eV" secondAttribute="bottom" constant="8" id="nTH-Si-USr"/>
                 <constraint firstItem="IgZ-Za-dsX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nk6-xW-1Dh"/>
                 <constraint firstItem="ARB-MN-hIB" firstAttribute="top" secondItem="R6f-18-lrl" secondAttribute="bottom" constant="8" id="uxC-4l-B5s"/>
                 <constraint firstItem="R6f-18-lrl" firstAttribute="leading" secondItem="ARB-MN-hIB" secondAttribute="leading" id="zHK-gZ-uGx"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="nTH-Si-USr"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
