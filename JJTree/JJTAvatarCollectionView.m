@@ -10,6 +10,7 @@
 #import "JJTAvatarCollectionViewCell.h"
 
 static NSString *cellID = @"cellID";
+#define CELL_LENGTH 60.0f
 
 @interface JJTAvatarCollectionView()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -66,13 +67,21 @@ static NSString *cellID = @"cellID";
                 forCellWithReuseIdentifier:cellID];
     
 }
+
+- (CGFloat)marginOfCell{
+    NSInteger cellCount = MIN(4, self.imagesURLs.count);
+    CGFloat width = (self.bounds.size.width - cellCount * CELL_LENGTH) / (2 * cellCount);
+    
+    return width;
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 3;
+    return self.imagesURLs.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -80,7 +89,7 @@ static NSString *cellID = @"cellID";
     JJTAvatarCollectionViewCell *cell = (JJTAvatarCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellID
                                                                                   forIndexPath:indexPath];
     
-    cell.avatarURL = @"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg";
+    cell.avatarURL = self.imagesURLs[indexPath.row];
     
     return cell;
 }
@@ -96,10 +105,17 @@ static NSString *cellID = @"cellID";
     cell.isSelected = NO;
 }
 
+#pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(60.f, 60.f);
+    return CGSizeMake(CELL_LENGTH, CELL_LENGTH);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    
+    CGFloat margin = [self marginOfCell];
+    return UIEdgeInsetsMake(10, margin, 10, margin); // top, left, bottom, right
 }
 
 #pragma mark - Getters & Setters

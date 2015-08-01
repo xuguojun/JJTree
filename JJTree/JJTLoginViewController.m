@@ -9,8 +9,11 @@
 #import "JJTLoginViewController.h"
 #import "JJTCreateAccountViewController.h"
 #import "JJTFormTableView.h"
+#import "JJTAvatarCollectionView.h"
 
 @interface JJTLoginViewController ()<JJTCreateAccountViewControllerDelegate>
+
+@property (nonatomic, weak) IBOutlet JJTAvatarCollectionView *avatarCollectionView;
 
 @property (nonatomic, weak) IBOutlet JJTFormTableView *formView;
 @property (nonatomic, strong) UIBarButtonItem *closeButton;
@@ -29,6 +32,8 @@
     self.title = @"登录";
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationItem.leftBarButtonItem = self.closeButton;
+    
+    self.avatarCollectionView.imagesURLs = @[@"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg", @"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg", @"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg", @"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg", @"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg"];
     
     self.loginButton.layer.cornerRadius = 4.0f;
     self.loginButton.layer.borderColor = [UIColor lightGrayColor].CGColor;

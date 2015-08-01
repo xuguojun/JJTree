@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJTLoginViewController">
             <connections>
+                <outlet property="avatarCollectionView" destination="moO-mE-4eV" id="bQ2-gH-qBS"/>
                 <outlet property="createAccountButton" destination="Mhd-6I-hxZ" id="lFi-5E-zqn"/>
                 <outlet property="forgetPasswordButton" destination="ARB-MN-hIB" id="Byl-wf-06s"/>
                 <outlet property="formView" destination="0t7-Vd-7kN" id="HiU-ZA-EcP"/>
