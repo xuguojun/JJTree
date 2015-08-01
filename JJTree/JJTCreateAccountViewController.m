@@ -10,14 +10,21 @@
 #import "JJTFormTableView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface JJTCreateAccountViewController ()
+@interface JJTCreateAccountViewController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet JJTFormTableView *formTableView;
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
+@property (nonatomic, weak) IBOutlet UIGestureRecognizer *avatarGesture;
+@property (nonatomic, weak) IBOutlet UIGestureRecognizer *bgGesture;
+
 @property (nonatomic, weak) IBOutlet UIView *avatarContainer;
 @property (nonatomic, strong) UIBarButtonItem *closeButton;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *loginButton;
 @property (nonatomic, strong) IBOutlet UIButton *createAccountButton;
+
+@property (nonatomic, strong) UIImagePickerController *imagePickerController;
+
+@property (nonatomic, strong) UIActionSheet *actionSheet;
 
 @end
 
@@ -58,10 +65,48 @@
 - (IBAction)createAccountButtonDidPress:(id)sender {
 
 }
+
 - (IBAction)loginButtonDidPress:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (IBAction)avatarDidPress:(id)sender{
+    [self.actionSheet showInView:self.view];
+}
+
+- (IBAction)viewDidPress:(id)sender{
+    self.formTableView.displayKeyboard = NO;
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    self.avatarImageView.image = image;
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        // camera
+        self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:self.imagePickerController animated:YES completion:NULL];
+    } else if (buttonIndex == 1){
+        // album
+        self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        [self presentViewController:self.imagePickerController animated:YES completion:NULL];
+    } else if (buttonIndex == 2){
+        // library
+        self.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:self.imagePickerController animated:YES completion:NULL];
+    }
+}
 #pragma mark - Getters & Setters
 - (UIBarButtonItem *)closeButton{
     if (!_closeButton) {
@@ -73,4 +118,42 @@
     return _closeButton;
 }
 
+- (UIActionSheet *)actionSheet{
+    if (!_actionSheet) {
+        
+//        BOOL supportCamera = NO;
+//        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+//            supportCamera = YES;
+//        }
+//        
+//        BOOL supportAlbum = NO;
+//        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]){
+//            supportAlbum = YES;
+//        }
+//        
+//        BOOL supportLib = NO;
+//        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+//            supportLib = YES;
+//        }
+        
+        _actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择操作"
+                                                   delegate:self
+                                          cancelButtonTitle:@"取消"
+                                     destructiveButtonTitle:nil
+                                          otherButtonTitles:@"拍照", @"从相册中选择", @"从图库中选择", nil];
+    }
+    
+    return _actionSheet;
+}
+
+- (UIImagePickerController *)imagePickerController{
+    if (!_imagePickerController) {
+        _imagePickerController = [[UIImagePickerController alloc] init];
+        _imagePickerController.view.backgroundColor = [UIColor orangeColor];
+        _imagePickerController.delegate = self;
+        _imagePickerController.allowsEditing = YES;
+    }
+    
+    return _imagePickerController;
+}
 @end

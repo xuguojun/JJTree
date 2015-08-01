@@ -8,9 +8,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJTLoginViewController">
             <connections>
                 <outlet property="avatarCollectionView" destination="moO-mE-4eV" id="bQ2-gH-qBS"/>
+                <outlet property="bgGesture" destination="3De-4r-iNk" id="WNv-dh-TMx"/>
                 <outlet property="createAccountButton" destination="Mhd-6I-hxZ" id="lFi-5E-zqn"/>
                 <outlet property="forgetPasswordButton" destination="ARB-MN-hIB" id="Byl-wf-06s"/>
-                <outlet property="formView" destination="0t7-Vd-7kN" id="HiU-ZA-EcP"/>
+                <outlet property="formTableView" destination="0t7-Vd-7kN" id="Flu-ZO-Ryt"/>
                 <outlet property="loginButton" destination="R6f-18-lrl" id="gOk-ws-SP2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -84,6 +85,7 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="0t7-Vd-7kN" firstAttribute="leading" secondItem="moO-mE-4eV" secondAttribute="trailing" constant="-600" id="BO0-f9-eWh"/>
                 <constraint firstAttribute="centerX" secondItem="R6f-18-lrl" secondAttribute="centerX" id="BSd-PN-V91"/>
@@ -114,5 +116,10 @@
                 </mask>
             </variation>
         </view>
+        <tapGestureRecognizer id="3De-4r-iNk">
+            <connections>
+                <action selector="viewDidPress:" destination="-1" id="Ja4-Sy-egk"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

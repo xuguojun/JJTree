@@ -16,8 +16,9 @@
 @interface JJTLoginViewController ()<JJTCreateAccountViewControllerDelegate, JJTAvatarCollectionViewDelegate>
 
 @property (nonatomic, weak) IBOutlet JJTAvatarCollectionView *avatarCollectionView;
+@property (nonatomic, weak) IBOutlet UIGestureRecognizer *bgGesture;
 
-@property (nonatomic, weak) IBOutlet JJTFormTableView *formView;
+@property (nonatomic, weak) IBOutlet JJTFormTableView *formTableView;
 @property (nonatomic, strong) UIBarButtonItem *closeButton;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *createAccountButton;
 
@@ -63,6 +64,10 @@
     [self presentViewController:nav animated:YES completion:NULL];
 }
 
+- (IBAction)viewDidPress:(id)sender{
+    self.formTableView.displayKeyboard = NO;
+}
+
 #pragma mark - JJTAvatarCollectionViewDelegate
 - (void)avatarCollectionView:(JJTAvatarCollectionView *)collectionView didSelectRowAtIndex:(NSInteger)index{
     JJTUser *user = [JJTUser MR_createEntity];
@@ -70,7 +75,7 @@
     user.userEmail = [NSString stringWithFormat:@"example%ld@test.com", (long)index];
     user.userPassword = [NSString stringWithFormat:@"password"];
     
-    self.formView.user = user;
+    self.formTableView.user = user;
 }
 
 #pragma mark - JJTCreateAccountViewControllerDelegate

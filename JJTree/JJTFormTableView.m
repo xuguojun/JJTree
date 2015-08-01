@@ -159,4 +159,11 @@ static NSString *PASSWORD_ERROR = @"请输入至少6位字符";
     }
 }
 
+- (void)setDisplayKeyboard:(BOOL)displayKeyboard{
+    _displayKeyboard = displayKeyboard;
+    
+    self.userCell.displayKeyboard = displayKeyboard;
+    self.passwordCell.displayKeyboard = displayKeyboard;
+}
+
 @end

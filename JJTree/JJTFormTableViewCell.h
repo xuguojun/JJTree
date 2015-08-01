@@ -19,6 +19,7 @@
 
 @property (nonatomic, assign) BOOL isSecure;
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic, assign) BOOL displayKeyboard;
 @property (nonatomic, weak) IBOutlet id<JJTFormTableViewCellDelegate> delegate;
 
 @end

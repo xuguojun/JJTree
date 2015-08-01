@@ -19,7 +19,6 @@
 @interface JJTAvatarCollectionView : UIView
 
 @property (nonatomic, strong) NSArray *imagesURLs;
-
 @property (nonatomic, weak) IBOutlet id<JJTAvatarCollectionViewDelegate> delegate;
 
 @end

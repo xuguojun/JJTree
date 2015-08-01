@@ -79,4 +79,13 @@ static NSString *PASSWORD_PLACEHOLDER = @"密码";
     }
 }
 
+- (void)setDisplayKeyboard:(BOOL)displayKeyboard{
+    _displayKeyboard = displayKeyboard;
+    if (displayKeyboard) {
+        [self.formTextField becomeFirstResponder];
+    } else {
+        [self.formTextField resignFirstResponder];
+    }
+}
+
 @end
