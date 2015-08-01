@@ -93,12 +93,12 @@
 
 #pragma mark - IBAction
 - (IBAction)leftButtonDidPress:(id)sender {
-//    JJTLoginViewController *loginVC = [JJTLoginViewController new];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
-//    [self presentViewController:nav animated:YES completion:NULL];
+    JJTLoginViewController *loginVC = [JJTLoginViewController new];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    [self presentViewController:nav animated:YES completion:NULL];
     
-    JJTProfileViewController *profileVC = [JJTProfileViewController new];
-    [self.navigationController pushViewController:profileVC animated:YES];
+//    JJTProfileViewController *profileVC = [JJTProfileViewController new];
+//    [self.navigationController pushViewController:profileVC animated:YES];
 }
 
 - (IBAction)searchButtonDidPress:(id)sender {
