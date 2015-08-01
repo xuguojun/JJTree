@@ -30,6 +30,9 @@
 		9A29A0581B65416C006FA11B /* testText.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A29A0571B65416C006FA11B /* testText.txt */; };
 		9A313ADD1B6922890091DA8B /* JJTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A313ADB1B6922890091DA8B /* JJTSearchViewController.m */; };
 		9A313ADE1B6922890091DA8B /* JJTSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A313ADC1B6922890091DA8B /* JJTSearchViewController.xib */; };
+		9A6614CA1B6D14B60059DCC2 /* roleAuthor.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A6614C71B6D14B60059DCC2 /* roleAuthor.txt */; };
+		9A6614CB1B6D14B60059DCC2 /* roleEditor.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A6614C81B6D14B60059DCC2 /* roleEditor.txt */; };
+		9A6614CC1B6D14B60059DCC2 /* roleRead.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A6614C91B6D14B60059DCC2 /* roleRead.txt */; };
 		9A7F1B901B67486900D16E6C /* JJTBlockStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F1B8E1B67486900D16E6C /* JJTBlockStyleViewController.m */; };
 		9A7F1B911B67486900D16E6C /* JJTBlockStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7F1B8F1B67486900D16E6C /* JJTBlockStyleViewController.xib */; };
 		9A7F1B931B674B8300D16E6C /* blockCSS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A7F1B921B674B8300D16E6C /* blockCSS.txt */; };
@@ -47,6 +50,10 @@
 		9A9050341B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9050321B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib */; };
 		9A9050371B6CDF3E004DED27 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A9050361B6CDF3D004DED27 /* demo.png */; };
 		9A90503A1B6CF8E6004DED27 /* iPadDemo.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 9A9050391B6CE567004DED27 /* iPadDemo.m4v */; };
+		9A9050441B6D04F8004DED27 /* JJTAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9050421B6D04F8004DED27 /* JJTAboutViewController.m */; };
+		9A9050451B6D04F8004DED27 /* JJTAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9050431B6D04F8004DED27 /* JJTAboutViewController.xib */; };
+		9A90504A1B6D0542004DED27 /* JJTRoleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9050481B6D0542004DED27 /* JJTRoleTableViewCell.m */; };
+		9A90504B1B6D0542004DED27 /* JJTRoleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9050491B6D0542004DED27 /* JJTRoleTableViewCell.xib */; };
 		9A9271031B67B20600901A71 /* JJTAuthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9271011B67B20600901A71 /* JJTAuthorViewController.m */; };
 		9A9271041B67B20600901A71 /* JJTAuthorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9271021B67B20600901A71 /* JJTAuthorViewController.xib */; };
 		9A9271081B67B29600901A71 /* JJTAuthorHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9271071B67B29600901A71 /* JJTAuthorHeader.m */; };
@@ -126,6 +133,9 @@
 		9A313ADA1B6922890091DA8B /* JJTSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTSearchViewController.h; sourceTree = "<group>"; };
 		9A313ADB1B6922890091DA8B /* JJTSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTSearchViewController.m; sourceTree = "<group>"; };
 		9A313ADC1B6922890091DA8B /* JJTSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTSearchViewController.xib; sourceTree = "<group>"; };
+		9A6614C71B6D14B60059DCC2 /* roleAuthor.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = roleAuthor.txt; sourceTree = "<group>"; };
+		9A6614C81B6D14B60059DCC2 /* roleEditor.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = roleEditor.txt; sourceTree = "<group>"; };
+		9A6614C91B6D14B60059DCC2 /* roleRead.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = roleRead.txt; sourceTree = "<group>"; };
 		9A7F1B8D1B67486900D16E6C /* JJTBlockStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTBlockStyleViewController.h; sourceTree = "<group>"; };
 		9A7F1B8E1B67486900D16E6C /* JJTBlockStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTBlockStyleViewController.m; sourceTree = "<group>"; };
 		9A7F1B8F1B67486900D16E6C /* JJTBlockStyleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTBlockStyleViewController.xib; sourceTree = "<group>"; };
@@ -152,6 +162,12 @@
 		9A9050321B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAvatarCollectionViewCell.xib; sourceTree = "<group>"; };
 		9A9050361B6CDF3D004DED27 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
 		9A9050391B6CE567004DED27 /* iPadDemo.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = iPadDemo.m4v; sourceTree = "<group>"; };
+		9A9050411B6D04F8004DED27 /* JJTAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTAboutViewController.h; sourceTree = "<group>"; };
+		9A9050421B6D04F8004DED27 /* JJTAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAboutViewController.m; sourceTree = "<group>"; };
+		9A9050431B6D04F8004DED27 /* JJTAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAboutViewController.xib; sourceTree = "<group>"; };
+		9A9050471B6D0542004DED27 /* JJTRoleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTRoleTableViewCell.h; sourceTree = "<group>"; };
+		9A9050481B6D0542004DED27 /* JJTRoleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTRoleTableViewCell.m; sourceTree = "<group>"; };
+		9A9050491B6D0542004DED27 /* JJTRoleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTRoleTableViewCell.xib; sourceTree = "<group>"; };
 		9A9271001B67B20600901A71 /* JJTAuthorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTAuthorViewController.h; sourceTree = "<group>"; };
 		9A9271011B67B20600901A71 /* JJTAuthorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAuthorViewController.m; sourceTree = "<group>"; };
 		9A9271021B67B20600901A71 /* JJTAuthorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAuthorViewController.xib; sourceTree = "<group>"; };
@@ -386,6 +402,7 @@
 				9A7F1B8C1B67484700D16E6C /* JJTBlockStyle */,
 				9A9270FF1B67B1E800901A71 /* JJTAuthor */,
 				9A313AD91B69226E0091DA8B /* JJTSearch */,
+				9A90503B1B6D0492004DED27 /* JJTAboutApp */,
 				9A834F571B5F6D4F005D6E2F /* Images.xcassets */,
 				9A834F591B5F6D4F005D6E2F /* LaunchScreen.xib */,
 				9A9050391B6CE567004DED27 /* iPadDemo.m4v */,
@@ -429,6 +446,30 @@
 			);
 			name = Vendor;
 			path = ../Vendor;
+			sourceTree = "<group>";
+		};
+		9A90503B1B6D0492004DED27 /* JJTAboutApp */ = {
+			isa = PBXGroup;
+			children = (
+				9A9050411B6D04F8004DED27 /* JJTAboutViewController.h */,
+				9A9050421B6D04F8004DED27 /* JJTAboutViewController.m */,
+				9A9050431B6D04F8004DED27 /* JJTAboutViewController.xib */,
+				9A9050461B6D0522004DED27 /* Cells */,
+			);
+			name = JJTAboutApp;
+			sourceTree = "<group>";
+		};
+		9A9050461B6D0522004DED27 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9A9050471B6D0542004DED27 /* JJTRoleTableViewCell.h */,
+				9A9050481B6D0542004DED27 /* JJTRoleTableViewCell.m */,
+				9A9050491B6D0542004DED27 /* JJTRoleTableViewCell.xib */,
+				9A6614C71B6D14B60059DCC2 /* roleAuthor.txt */,
+				9A6614C81B6D14B60059DCC2 /* roleEditor.txt */,
+				9A6614C91B6D14B60059DCC2 /* roleRead.txt */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		9A9270FF1B67B1E800901A71 /* JJTAuthor */ = {
@@ -631,6 +672,7 @@
 				9A28522D1B668CB000C827A5 /* JJTPreferenceViewController.xib in Resources */,
 				9A92710A1B67B2A200901A71 /* JJTAuthorHeader.xib in Resources */,
 				9AA1A3A61B64D153007BBA25 /* JJTArticleViewController.xib in Resources */,
+				9A6614CA1B6D14B60059DCC2 /* roleAuthor.txt in Resources */,
 				9A2852331B66907300C827A5 /* JJTProfileViewController.xib in Resources */,
 				9A29A0511B653A22006FA11B /* JJTBlockParagraphTableViewCell.xib in Resources */,
 				9A92710F1B67BA4700901A71 /* JJTAuthorTableView.xib in Resources */,
@@ -639,11 +681,14 @@
 				9AA1A3DA1B65267A007BBA25 /* JJTAuthorHeaderView.xib in Resources */,
 				9A9050341B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.xib in Resources */,
 				9A834F5B1B5F6D4F005D6E2F /* LaunchScreen.xib in Resources */,
+				9A9050451B6D04F8004DED27 /* JJTAboutViewController.xib in Resources */,
 				9A9271041B67B20600901A71 /* JJTAuthorViewController.xib in Resources */,
 				9A834F581B5F6D4F005D6E2F /* Images.xcassets in Resources */,
 				9A29A0581B65416C006FA11B /* testText.txt in Resources */,
 				9A2852121B666C9100C827A5 /* JJTLoginViewController.xib in Resources */,
+				9A90504B1B6D0542004DED27 /* JJTRoleTableViewCell.xib in Resources */,
 				9A28521E1B666DDC00C827A5 /* JJTFormTableViewCell.xib in Resources */,
+				9A6614CB1B6D14B60059DCC2 /* roleEditor.txt in Resources */,
 				9A2852181B666CBE00C827A5 /* JJTFormTableView.xib in Resources */,
 				9AA1A3AE1B64D2A3007BBA25 /* JJTArticleTableCell.xib in Resources */,
 				9AA1A3B41B64D4EF007BBA25 /* JJTArticleListTableView.xib in Resources */,
@@ -654,6 +699,7 @@
 				9AA1A3E41B652DE0007BBA25 /* JJTArticleTableView.xib in Resources */,
 				9A9271191B67D57D00901A71 /* JJTBlockLineTableViewCell.xib in Resources */,
 				9A313ADE1B6922890091DA8B /* JJTSearchViewController.xib in Resources */,
+				9A6614CC1B6D14B60059DCC2 /* roleRead.txt in Resources */,
 				9A9050371B6CDF3E004DED27 /* demo.png in Resources */,
 				9A90502F1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib in Resources */,
 				9A7F1B911B67486900D16E6C /* JJTBlockStyleViewController.xib in Resources */,
@@ -729,9 +775,11 @@
 				9AA1A3C41B64E320007BBA25 /* JJTRole.m in Sources */,
 				9AA1A3D01B64E337007BBA25 /* JJTEditor.m in Sources */,
 				9A313ADD1B6922890091DA8B /* JJTSearchViewController.m in Sources */,
+				9A90504A1B6D0542004DED27 /* JJTRoleTableViewCell.m in Sources */,
 				9A2852161B666CAF00C827A5 /* JJTFormTableView.m in Sources */,
 				9A2852321B66907300C827A5 /* JJTProfileViewController.m in Sources */,
 				9AA1A3D81B65263F007BBA25 /* JJTAuthorHeaderView.m in Sources */,
+				9A9050441B6D04F8004DED27 /* JJTAboutViewController.m in Sources */,
 				9AA1A3B21B64D4DE007BBA25 /* JJTArticleListTableView.m in Sources */,
 				9A9271121B67D49400901A71 /* JJTBlockWebView.m in Sources */,
 				9A90502E1B6C7F9D004DED27 /* JJTAvatarCollectionView.m in Sources */,

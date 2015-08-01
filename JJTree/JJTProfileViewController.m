@@ -8,6 +8,7 @@
 
 #import "JJTProfileViewController.h"
 #import "JJTPreferenceViewController.h"
+#import "JJTAboutViewController.h"
 
 static NSString *LOGOUT = @"退出登录";
 
@@ -20,7 +21,7 @@ static NSString *LOGOUT = @"退出登录";
 @property (nonatomic, copy) NSString *logoutTitle;
 
 @property (nonatomic, weak) IBOutlet UITableView *profileTableView;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *preferenceButton;
+@property (nonatomic, strong) UIBarButtonItem *preferenceButton;
 @property (nonatomic, strong) UIButton *logoutButton;
 
 @end
@@ -49,9 +50,14 @@ static NSString *LOGOUT = @"退出登录";
     [self.navigationController pushViewController:prefrence animated:YES];
 }
 
+- (void)about{
+    JJTAboutViewController *aboutVC = [JJTAboutViewController new];
+    [self.navigationController pushViewController:aboutVC animated:YES];
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.sectionTitles.count;
+    return self.sectionTitles.count + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -84,6 +90,8 @@ static NSString *LOGOUT = @"退出登录";
         cell.textLabel.text = self.authorSectionTitles[indexPath.row];
     } else if (indexPath.section == 2){
         cell.textLabel.text = self.editorSectionTitles[indexPath.row];
+    } else if (indexPath.section == 3){
+        cell.textLabel.text = @"关于元机经";
     }
     
     return cell;
@@ -92,10 +100,17 @@ static NSString *LOGOUT = @"退出登录";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (indexPath.section == 3) {
+        [self about];
+    }
 }
 
 #pragma mark - UITableViewDelegate
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section == 3) {
+        return nil;
+    }
+    
     return self.sectionTitles[section];
 }
 
