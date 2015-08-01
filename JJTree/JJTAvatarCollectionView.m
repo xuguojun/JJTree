@@ -44,9 +44,9 @@ static NSString *cellID = @"cellID";
 - (void)layoutSubviews{
     [super layoutSubviews];;
     
-    self.layer.shadowOffset = CGSizeMake(0.3f, 0.6f);
-    self.layer.shadowRadius = 0.3f;
-    self.layer.shadowOpacity = .6f;
+    self.layer.shadowOffset = CGSizeMake(.0f, 0.25f);
+    self.layer.shadowRadius = 0.25f;
+    self.layer.shadowOpacity = .55f;
     self.layer.shadowColor = [UIColor grayColor].CGColor;
 }
 
