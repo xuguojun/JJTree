@@ -124,15 +124,11 @@
 
 #pragma mark - Getters & Setters
 - (void)setArticle:(JJTArticle *)article{
-    if (_article != article) {
-        _article = article;
-        
-        
-        
-        self.statisticLabel.attributedText = [self statisticValue:article];
-        self.rateView.rate = ([article.usefulValue floatValue] / ([article.usefulValue floatValue] + [article.uselessValue floatValue]));
-        self.createdAtLabel.text = [article.createdAt toString];
-    }
+    _article = article;
+    
+    self.statisticLabel.attributedText = [self statisticValue:article];
+    self.rateView.rate = ([article.usefulValue floatValue] / ([article.usefulValue floatValue] + [article.uselessValue floatValue]));
+    self.createdAtLabel.text = [article.createdAt toString];
 }
 
 - (void)setAuthor:(JJTAuthor *)author{

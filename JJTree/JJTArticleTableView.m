@@ -169,14 +169,12 @@ static NSString *PICTURE = @"PICTURE";
 }
 
 - (void)setArticle:(JJTArticle *)article{
-    if (_article != article) {
-        _article = article;
-        
-        self.authorHeaderView.article = article;
-        self.paragraphs = [article.paragraphs array];
-        
-        [self.articleTableView reloadData];
-    }
+    _article = article;
+    
+    self.authorHeaderView.article = article;
+    self.paragraphs = [article.paragraphs array];
+    
+    [self.articleTableView reloadData];
 }
 
 - (void)setAuthor:(JJTAuthor *)author{

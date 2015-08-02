@@ -138,6 +138,14 @@
         self.plusView.frame = toFrame;
     } completion:^(BOOL finished) {
         self.plusView.hidden = YES;
+        
+        if (useful) {
+            self.article.usefulValue = @([self.article.usefulValue floatValue] + 1);
+        } else {
+            self.article.uselessValue = @([self.article.uselessValue floatValue] + 1);
+        }
+        
+        self.articleTableView.article = self.article;
     }];
 }
 
