@@ -400,12 +400,7 @@
 				9A866C981B5FE6B400258146 /* Vendor */,
 				9A834F4B1B5F6D4F005D6E2F /* AppDelegate.h */,
 				9A834F4C1B5F6D4F005D6E2F /* AppDelegate.m */,
-				9A28521F1B66771500C827A5 /* NSString+JJTString.h */,
-				9A2852201B66771500C827A5 /* NSString+JJTString.m */,
-				9A6614CD1B6D20840059DCC2 /* JJTBaseViewController.h */,
-				9A6614CE1B6D20840059DCC2 /* JJTBaseViewController.m */,
-				9AD292AA1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.h */,
-				9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */,
+				9AD292AD1B6DDC1F00508A85 /* Common */,
 				9A28520D1B666C6000C827A5 /* JJTLogin */,
 				9A2852221B6685D000C827A5 /* JJTRegister */,
 				9AA1A3A71B64D189007BBA25 /* JJTArticleList */,
@@ -597,6 +592,19 @@
 				9A29A0471B652F2F006FA11B /* Cells */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		9AD292AD1B6DDC1F00508A85 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9A28521F1B66771500C827A5 /* NSString+JJTString.h */,
+				9A2852201B66771500C827A5 /* NSString+JJTString.m */,
+				9A6614CD1B6D20840059DCC2 /* JJTBaseViewController.h */,
+				9A6614CE1B6D20840059DCC2 /* JJTBaseViewController.m */,
+				9AD292AA1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.h */,
+				9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
