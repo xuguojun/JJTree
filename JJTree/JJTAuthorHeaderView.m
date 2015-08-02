@@ -84,8 +84,6 @@
 }
 
 - (NSAttributedString *)statisticValue:(JJTArticle *)article{
-//    ↑%@↓%@W%@
-//
     NSString *value = [NSString stringWithFormat:@"👍%@👎%@ | 👀%@", article.usefulValue, article.uselessValue, article.viewCount];
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:value];
 

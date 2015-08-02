@@ -26,13 +26,13 @@
                     </constraints>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="vqV-wq-MQT"/>
-                        <barButtonItem title="亲测有用(+1)" id="0rN-Sy-Fwk">
+                        <barButtonItem title="亲测有用" id="0rN-Sy-Fwk">
                             <connections>
                                 <action selector="markAsUsefull:" destination="-1" id="kNe-kZ-i3k"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="4IS-SU-a8x"/>
-                        <barButtonItem title="亲测无用(+1)" id="suA-Nh-jkY">
+                        <barButtonItem title="亲测无用" id="suA-Nh-jkY">
                             <connections>
                                 <action selector="markAsUseless:" destination="-1" id="md0-CO-68y"/>
                             </connections>

@@ -134,7 +134,7 @@
     
     CGRect toFrame = CGRectMake(self.view.bounds.size.width * 3 / 4, 64 + 22, 44, 44);
     
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:0.8 animations:^{
         self.plusView.frame = toFrame;
     } completion:^(BOOL finished) {
         self.plusView.hidden = YES;
