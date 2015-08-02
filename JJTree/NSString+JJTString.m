@@ -38,6 +38,21 @@
     return NO;
 }
 
+- (BOOL)isEmail{
+    if ([self rangeOfString:@"@"].location != NSNotFound) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+- (BOOL)isPhoneNumber{
+    if (self.length == 11 && [self integerValue] > 0) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 - (NSArray *)splitByNewLine{
     return [self componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
 }

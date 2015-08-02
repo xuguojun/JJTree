@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTUser.h"
 
+@class JJTLoginViewController;
+@protocol JJTLoginViewControllerDelegate <NSObject>
+
+@required
+- (void)loginViewController:(JJTLoginViewController *)controller didLoginSuccessWithAccount:(JJTUser *)user;
+
+@end
 @interface JJTLoginViewController : UIViewController
+
+@property (nonatomic, weak) IBOutlet id<JJTLoginViewControllerDelegate> delegate;
 
 @end

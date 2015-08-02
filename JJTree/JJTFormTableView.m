@@ -20,6 +20,9 @@ static NSString *PASSWORD_ERROR = @"请输入至少6位字符";
 @property (nonatomic, strong) JJTFormTableViewCell *userCell;
 @property (nonatomic, strong) JJTFormTableViewCell *passwordCell;
 
+@property (nonatomic, copy) NSString *account;
+@property (nonatomic, copy) NSString *password;
+
 @end
 
 @implementation JJTFormTableView
@@ -166,4 +169,11 @@ static NSString *PASSWORD_ERROR = @"请输入至少6位字符";
     self.passwordCell.displayKeyboard = displayKeyboard;
 }
 
+- (NSString *)account{
+    return self.userCell.text;
+}
+
+- (NSString *)password{
+    return self.passwordCell.text;
+}
 @end

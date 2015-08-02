@@ -15,11 +15,13 @@
 #import "JJTLoginViewController.h"
 #import "JJTProfileViewController.h"
 #import "JJTSearchViewController.h"
+#import "JJTUser+JJTAddition.h"
 #import <MagicalRecord.h>
 
-@interface JJTArticleListViewController ()<JJTArticleListTableViewDelegate>
+@interface JJTArticleListViewController ()<JJTArticleListTableViewDelegate, JJTLoginViewControllerDelegate, JJTProfileViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButtonItem;
+@property (strong, nonatomic) UIBarButtonItem *loginButton;
+@property (strong, nonatomic) UIBarButtonItem *profileButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *searchBarButtonItem;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *filterSegmentedControl;
 @property (weak, nonatomic) IBOutlet JJTArticleListTableView *articleTableView;
@@ -79,6 +81,12 @@
     }
     
     self.articleTableView.articles = articles;
+    
+    if (self.currentUser && [self.currentUser.hasLogined boolValue]) {
+        self.navigationItem.leftBarButtonItem = self.profileButton;
+    } else {
+        self.navigationItem.leftBarButtonItem = self.loginButton;
+    }
 }
 
 - (NSString *)readFile{
@@ -92,19 +100,34 @@
 }
 
 #pragma mark - IBAction
-- (IBAction)leftButtonDidPress:(id)sender {
-//    JJTLoginViewController *loginVC = [JJTLoginViewController new];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
-//    [self presentViewController:nav animated:YES completion:NULL];
+- (void)login {
+    JJTLoginViewController *loginVC = [JJTLoginViewController new];
+    loginVC.delegate = self;
     
-    JJTProfileViewController *profileVC = [JJTProfileViewController new];
-    [self.navigationController pushViewController:profileVC animated:YES];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    
+    [self presentViewController:nav animated:YES completion:NULL];
 }
 
 - (IBAction)searchButtonDidPress:(id)sender {
     JJTSearchViewController *searchVC = [JJTSearchViewController new];
-//    [self presentViewController:searchVC animated:YES completion:NULL];
     [self.navigationController pushViewController:searchVC animated:YES];
+}
+
+- (void)profile{
+    JJTProfileViewController *profileVC = [JJTProfileViewController new];
+    profileVC.delegate = self;
+    [self.navigationController pushViewController:profileVC animated:YES];
+}
+
+#pragma mark - JJTLoginViewControllerDelegate
+- (void)loginViewController:(JJTLoginViewController *)controller didLoginSuccessWithAccount:(JJTUser *)user{
+    self.navigationItem.leftBarButtonItem = self.profileButton;
+}
+
+#pragma mark - JJTProfileViewController.h
+- (void)profileViewController:(JJTProfileViewController *)controller didLogoutWithAccount:(JJTUser *)account{
+    self.navigationItem.leftBarButtonItem = self.loginButton;
 }
 
 #pragma mark - JJTArticleTableViewDelegate
@@ -123,6 +146,29 @@
 - (void)articleTableView:(JJTArticleListTableView *)tableView didTriggerLoadMoreControl:(UIRefreshControl *)control{
     NSLog(@"loading more...");
     [control endRefreshing];
+}
+
+#pragma mark - Getters & Setters
+- (UIBarButtonItem *)profileButton{
+    if (!_profileButton) {
+        _profileButton = [[UIBarButtonItem alloc] initWithTitle:@"设置"
+                                                          style:(UIBarButtonItemStylePlain)
+                                                         target:self
+                                                         action:@selector(profile)];
+    }
+    
+    return _profileButton;
+}
+
+- (UIBarButtonItem *)loginButton{
+    if (!_loginButton) {
+        _loginButton = [[UIBarButtonItem alloc] initWithTitle:@"登录"
+                                                        style:(UIBarButtonItemStylePlain)
+                                                       target:self
+                                                       action:@selector(login)];
+    }
+    
+    return _loginButton;
 }
 
 @end

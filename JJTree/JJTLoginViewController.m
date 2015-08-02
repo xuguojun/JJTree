@@ -14,6 +14,8 @@
 #import <MWPhotoBrowser/MWPhotoBrowser.h>
 #import <MagicalRecord/MagicalRecord.h>
 #import "JJTUser.h"
+#import "NSManagedObject+JJTManagedObject.h"
+#import "NSString+JJTString.h"
 
 @interface JJTLoginViewController ()<JJTCreateAccountViewControllerDelegate, JJTAvatarCollectionViewDelegate, MWPhotoBrowserDelegate>
 
@@ -83,8 +85,62 @@
     [self.navigationController pushViewController:browser animated:YES];
 }
 
+#pragma mark - Core Data Operation
+- (NSPredicate *)predicate:(NSNumber *)userID {
+    return [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"userID == %@", userID]];
+}
+
+- (BOOL)isExisted:(NSNumber *)userID{
+    
+    JJTUser *userFound = [JJTUser MR_findFirstWithPredicate:[self predicate:userID]];
+    BOOL existed = (userFound != nil);
+    
+    return existed;
+}
+
+#pragma mark - Helper
+- (void)logoutOtherUsersExcept:(NSNumber *)userID{
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userID != %@ AND hasLogined == 1", userID];
+    NSArray *otherUsers = [JJTUser MR_findAllWithPredicate:predicate];
+    if (otherUsers) {
+        for (JJTUser *user in otherUsers) {
+            user.hasLogined = @NO;
+            [user saveAndWait];
+        }
+    }
+}
+
 - (IBAction)loginButtonDidPress:(id)sender {
     
+    NSNumber *userID = @(12345);
+    NSString *account = self.formTableView.account;
+    NSString *password = self.formTableView.password;
+    
+    BOOL isExisted = [self isExisted:userID];
+    JJTUser *userLogined;
+    
+    if (!isExisted) {
+        userLogined = [JJTUser MR_createEntity];
+        
+        userLogined.userID = userID;
+        userLogined.userEmail = [account isEmail] ? account : nil;
+        userLogined.userMobile = [account isPhoneNumber] ? account : nil;
+        userLogined.userPassword = password;
+        userLogined.hasLogined = @YES;
+    } else {
+        userLogined = [JJTUser MR_findFirstWithPredicate:[self predicate:userID]];
+    }
+    
+    [userLogined saveAndWait];
+    
+    [self logoutOtherUsersExcept:userID];
+    
+    if ([self.delegate respondsToSelector:@selector(loginViewController:didLoginSuccessWithAccount:)]) {
+        [self.delegate loginViewController:self didLoginSuccessWithAccount:userLogined];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)forgetPasswordButtonDidPress:(id)sender {

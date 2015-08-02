@@ -12,7 +12,7 @@
 
 static NSString *LOGOUT = @"退出登录";
 
-@interface JJTProfileViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface JJTProfileViewController ()<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) NSArray *sectionTitles;
 @property (nonatomic, strong) NSArray *readerSectionTitles;
@@ -23,6 +23,7 @@ static NSString *LOGOUT = @"退出登录";
 @property (nonatomic, weak) IBOutlet UITableView *profileTableView;
 @property (nonatomic, strong) UIBarButtonItem *preferenceButton;
 @property (nonatomic, strong) UIButton *logoutButton;
+@property (nonatomic, strong) UIAlertView *logoutAlertView;
 
 @end
 
@@ -36,13 +37,13 @@ static NSString *LOGOUT = @"退出登录";
     self.profileTableView.tableFooterView = self.logoutButton;
     
     self.sectionTitles = @[@"作为读者",@"作为作者", @"作为编辑者"];
-    self.readerSectionTitles = @[@"打赏过的机经", @"收藏过的机经", @"亲测有用的机经"];
+    self.readerSectionTitles = @[@"打赏过的机经", @"收藏的机经", @"亲测有用的机经"];
     self.authorSectionTitles = @[@"拥有粉丝", @"获得打赏"];
     self.editorSectionTitles = @[@"编辑过的机经"];
 }
 
-- (void)logout{
-    
+- (void)showAlertView{
+    [self.logoutAlertView show];
 }
 
 - (void)preference{
@@ -53,6 +54,16 @@ static NSString *LOGOUT = @"退出登录";
 - (void)about{
     JJTAboutViewController *aboutVC = [JJTAboutViewController new];
     [self.navigationController pushViewController:aboutVC animated:YES];
+}
+
+- (void)logout{
+    self.currentUser.hasLogined = @NO;
+    
+    if ([self.delegate respondsToSelector:@selector(profileViewController:didLogoutWithAccount:)]) {
+        [self.delegate profileViewController:self didLogoutWithAccount:self.currentUser];
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -114,6 +125,15 @@ static NSString *LOGOUT = @"退出登录";
     return self.sectionTitles[section];
 }
 
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        
+    } else if (buttonIndex == 1){
+        [self logout];
+    }
+}
+
 #pragma mark - Getters & Setters
 - (UIButton *)logoutButton{
     if (!_logoutButton) {
@@ -121,7 +141,7 @@ static NSString *LOGOUT = @"退出登录";
         [_logoutButton setTitle:LOGOUT forState:(UIControlStateNormal)];
         [_logoutButton setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
         [_logoutButton setTitleColor:[UIColor grayColor] forState:(UIControlStateHighlighted | UIControlStateSelected)];
-        [_logoutButton addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+        [_logoutButton addTarget:self action:@selector(showAlertView) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return _logoutButton;
@@ -138,4 +158,15 @@ static NSString *LOGOUT = @"退出登录";
     return _preferenceButton;
 }
 
+- (UIAlertView *)logoutAlertView{
+    if (!_logoutAlertView) {
+        _logoutAlertView = [[UIAlertView alloc] initWithTitle:@"退出"
+                                                      message:@"确定要退出么？"
+                                                     delegate:self
+                                            cancelButtonTitle:@"取消"
+                                            otherButtonTitles:@"确定", nil];
+    }
+    
+    return _logoutAlertView;
+}
 @end

@@ -14,6 +14,9 @@
 - (BOOL)matchEmailFormat;
 - (BOOL)matchMobieFormat;
 
+- (BOOL)isPhoneNumber;
+- (BOOL)isEmail;
+
 - (BOOL)looksLikeEmailFormat;
 - (NSArray *)splitByNewLine;
 

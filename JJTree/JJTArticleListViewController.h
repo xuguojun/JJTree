@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTBaseViewController.h"
 
-@interface JJTArticleListViewController : UIViewController
+@interface JJTArticleListViewController : JJTBaseViewController
 
 
 @end

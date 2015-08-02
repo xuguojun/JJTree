@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTBaseViewController.h"
 
-@interface JJTProfileViewController : UIViewController
+@class JJTProfileViewController;
+@protocol JJTProfileViewControllerDelegate <NSObject>
+
+@required
+- (void)profileViewController:(JJTProfileViewController *)controller didLogoutWithAccount:(JJTUser *)account;
+
+@end
+@interface JJTProfileViewController : JJTBaseViewController
+
+@property (nonatomic, weak) IBOutlet id<JJTProfileViewControllerDelegate> delegate;
 
 @end

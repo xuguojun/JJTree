@@ -11,6 +11,7 @@
 @interface JJTBaseViewController ()
 
 @property (nonatomic, strong) NSUserDefaults *prefs;
+@property (nonatomic, strong) JJTUser *currentUser;
 
 @end
 
@@ -28,6 +29,11 @@
     }
     
     return _prefs;
+}
+
+- (JJTUser *)currentUser{
+    _currentUser = [JJTUser currentUser];
+    return _currentUser;
 }
 
 @end

@@ -19,6 +19,8 @@
 @interface JJTFormTableView : UIView
 
 @property (nonatomic, strong) JJTUser *user;
+@property (nonatomic, copy, readonly) NSString *account;
+@property (nonatomic, copy, readonly) NSString *password;
 @property (nonatomic, assign) BOOL displayKeyboard;
 
 @property (nonatomic, weak) IBOutlet id<JJFormViewDelegate> delegate;

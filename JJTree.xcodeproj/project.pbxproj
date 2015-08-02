@@ -86,6 +86,8 @@
 		9AA1A3DF1B652A4A007BBA25 /* JJTRateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA1A3DE1B652A4A007BBA25 /* JJTRateView.xib */; };
 		9AA1A3E21B652DD5007BBA25 /* JJTArticleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A3E11B652DD5007BBA25 /* JJTArticleTableView.m */; };
 		9AA1A3E41B652DE0007BBA25 /* JJTArticleTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA1A3E31B652DE0007BBA25 /* JJTArticleTableView.xib */; };
+		9AD292A91B6DBA6400508A85 /* JJTUser+JJTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292A81B6DBA6400508A85 /* JJTUser+JJTAddition.m */; };
+		9AD292AC1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,6 +223,10 @@
 		9AA1A3E01B652DD5007BBA25 /* JJTArticleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTArticleTableView.h; sourceTree = "<group>"; };
 		9AA1A3E11B652DD5007BBA25 /* JJTArticleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTArticleTableView.m; sourceTree = "<group>"; };
 		9AA1A3E31B652DE0007BBA25 /* JJTArticleTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTArticleTableView.xib; sourceTree = "<group>"; };
+		9AD292A71B6DBA6400508A85 /* JJTUser+JJTAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JJTUser+JJTAddition.h"; sourceTree = "<group>"; };
+		9AD292A81B6DBA6400508A85 /* JJTUser+JJTAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JJTUser+JJTAddition.m"; sourceTree = "<group>"; };
+		9AD292AA1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+JJTManagedObject.h"; sourceTree = "<group>"; };
+		9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+JJTManagedObject.m"; sourceTree = "<group>"; };
 		B4DAFD98FB8B5FA0354A2A2E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -398,6 +404,8 @@
 				9A2852201B66771500C827A5 /* NSString+JJTString.m */,
 				9A6614CD1B6D20840059DCC2 /* JJTBaseViewController.h */,
 				9A6614CE1B6D20840059DCC2 /* JJTBaseViewController.m */,
+				9AD292AA1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.h */,
+				9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */,
 				9A28520D1B666C6000C827A5 /* JJTLogin */,
 				9A2852221B6685D000C827A5 /* JJTRegister */,
 				9AA1A3A71B64D189007BBA25 /* JJTArticleList */,
@@ -556,6 +564,8 @@
 				9AA1A3C91B64E337007BBA25 /* JJTReader.m */,
 				9AA1A3C51B64E337007BBA25 /* JJTUser.h */,
 				9AA1A3C61B64E337007BBA25 /* JJTUser.m */,
+				9AD292A71B6DBA6400508A85 /* JJTUser+JJTAddition.h */,
+				9AD292A81B6DBA6400508A85 /* JJTUser+JJTAddition.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -760,9 +770,11 @@
 			files = (
 				9A2852111B666C9100C827A5 /* JJTLoginViewController.m in Sources */,
 				9A29A04B1B65370A006FA11B /* JJTPlainTextParagraphTableCell.m in Sources */,
+				9AD292A91B6DBA6400508A85 /* JJTUser+JJTAddition.m in Sources */,
 				9AA1A3CA1B64E337007BBA25 /* JJTReader.m in Sources */,
 				9A834F4D1B5F6D4F005D6E2F /* AppDelegate.m in Sources */,
 				9A834F4A1B5F6D4F005D6E2F /* main.m in Sources */,
+				9AD292AC1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m in Sources */,
 				9AA1A3AD1B64D2A3007BBA25 /* JJTArticleTableCell.m in Sources */,
 				9A28522C1B668CB000C827A5 /* JJTPreferenceViewController.m in Sources */,
 				9A2852261B66860400C827A5 /* JJTCreateAccountViewController.m in Sources */,
