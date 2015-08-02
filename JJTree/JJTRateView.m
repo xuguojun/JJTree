@@ -7,6 +7,7 @@
 //
 
 #import "JJTRateView.h"
+#import "UIColor+JJTColor.h"
 
 @interface JJTRateView()
 
@@ -35,6 +36,12 @@
     }
     
     return self;
+}
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    
+    self.usefulValueView.backgroundColor = UIColorFromRGB(0x308B16);
 }
 
 #pragma mark - Private Methods
