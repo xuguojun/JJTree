@@ -20,6 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"关于元机经";
+}
+
+- (NSString *)version{
+    
+    NSDictionary *infoDictionary = [[NSBundle mainBundle]infoDictionary];
+    NSString *version = infoDictionary[@"CFBundleShortVersionString"];
+    version = [NSString stringWithFormat:@"元机经 Version %@", version];
+    
+    return version;
 }
 
 #pragma mark - UITableViewDataSource
@@ -46,14 +56,22 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 
-#pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 88.f * 3.2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+    if (section == 0) {
+        return [self version];
+    } else {
+        return nil;
+    }
 }
 
 @end
