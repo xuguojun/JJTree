@@ -90,6 +90,7 @@
 		9AD292AC1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */; };
 		9AD292B01B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AE1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld */; };
 		9AD292B41B6DE02B00508A85 /* JJTReadBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292B31B6DE02B00508A85 /* JJTReadBehavior.m */; };
+		9AD292B71B6DEF8F00508A85 /* UIColor+JJTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292B61B6DEF8F00508A85 /* UIColor+JJTColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +233,8 @@
 		9AD292AF1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JJTUserBehavior.xcdatamodel; sourceTree = "<group>"; };
 		9AD292B21B6DE02B00508A85 /* JJTReadBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTReadBehavior.h; sourceTree = "<group>"; };
 		9AD292B31B6DE02B00508A85 /* JJTReadBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTReadBehavior.m; sourceTree = "<group>"; };
+		9AD292B51B6DEF8F00508A85 /* UIColor+JJTColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JJTColor.h"; sourceTree = "<group>"; };
+		9AD292B61B6DEF8F00508A85 /* UIColor+JJTColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JJTColor.m"; sourceTree = "<group>"; };
 		B4DAFD98FB8B5FA0354A2A2E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -606,6 +609,8 @@
 			children = (
 				9A28521F1B66771500C827A5 /* NSString+JJTString.h */,
 				9A2852201B66771500C827A5 /* NSString+JJTString.m */,
+				9AD292B51B6DEF8F00508A85 /* UIColor+JJTColor.h */,
+				9AD292B61B6DEF8F00508A85 /* UIColor+JJTColor.m */,
 				9A6614CD1B6D20840059DCC2 /* JJTBaseViewController.h */,
 				9A6614CE1B6D20840059DCC2 /* JJTBaseViewController.m */,
 				9AD292AA1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.h */,
@@ -818,6 +823,7 @@
 				9AA1A3C41B64E320007BBA25 /* JJTRole.m in Sources */,
 				9AA1A3D01B64E337007BBA25 /* JJTEditor.m in Sources */,
 				9A313ADD1B6922890091DA8B /* JJTSearchViewController.m in Sources */,
+				9AD292B71B6DEF8F00508A85 /* UIColor+JJTColor.m in Sources */,
 				9A90504A1B6D0542004DED27 /* JJTRoleTableViewCell.m in Sources */,
 				9A2852161B666CAF00C827A5 /* JJTFormTableView.m in Sources */,
 				9A2852321B66907300C827A5 /* JJTProfileViewController.m in Sources */,

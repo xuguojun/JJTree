@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bva-BE-t0O">
-                        <rect key="frame" x="8" y="31.5" width="240" height="15"/>
+                        <rect key="frame" x="8" y="31" width="240" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="3kd-45-F33"/>
                             <constraint firstAttribute="width" constant="240" id="GWy-0t-PKM"/>
@@ -41,12 +41,12 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fi4-Oo-NXh">
-                        <rect key="frame" x="294" y="34.5" width="26" height="12"/>
+                        <rect key="frame" x="294" y="34" width="26" height="12"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="26" id="D3B-V0-0bQ"/>
                             <constraint firstAttribute="height" constant="12" id="UaH-U2-U2R"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>

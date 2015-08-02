@@ -8,6 +8,7 @@
 
 #import "JJTArticleTableCell.h"
 #import "NSDate+JJTDate.h"
+#import "UIColor+JJTColor.h"
 
 static NSString *USEFUL = @"有用";
 static NSString *USELESS = @"无用";
@@ -37,6 +38,11 @@ static NSString *READ = @"已阅";
 
 - (void)awakeFromNib {
     self.tagLabel.textColor = [UIColor whiteColor];
+    
+    self.tagLabel.layer.cornerRadius = 1.8f;
+    self.tagLabel.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.tagLabel.layer.borderWidth = 0.4f;
+    self.tagLabel.layer.masksToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -71,7 +77,7 @@ static NSString *READ = @"已阅";
         BOOL useful = [readBehavior.markAsUseful boolValue];
         if (useful) {
             self.tagLabel.text = USEFUL;
-            self.tagLabel.backgroundColor = [UIColor greenColor];
+            self.tagLabel.backgroundColor = UIColorFromRGB(0x308B16);
         }
         
         BOOL useless = [readBehavior.markAsUseless boolValue];
@@ -83,7 +89,7 @@ static NSString *READ = @"已阅";
         BOOL read = [readBehavior.hasRead boolValue];
         if ((!useful && !useless) && read) {
             self.tagLabel.text = READ;
-            self.tagLabel.backgroundColor = [UIColor blueColor];
+            self.tagLabel.backgroundColor = UIColorFromRGB(0x055A9F);
         }
     }
 }
