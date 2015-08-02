@@ -10,9 +10,12 @@
 #import "JJTArticleTableView.h"
 #import "JJTAuthorViewController.h"
 #import "JJTReadBehavior.h"
+#import "JJTPlusView.h"
+#import "UIColor+JJTColor.h"
 
 @interface JJTArticleViewController ()<UIActionSheetDelegate, JJTArticleTableViewDelegate>
 
+@property (nonatomic, weak) IBOutlet UIToolbar *toolBar;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *usefulBarButtonItem;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *uselessBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *moreButton;
@@ -21,6 +24,8 @@
 @property (nonatomic, weak) IBOutlet JJTArticleTableView *articleTableView;
 
 @property (nonatomic, strong) JJTReadBehavior *readBehavior;
+
+@property (nonatomic, strong) JJTPlusView *plusView;
 
 @end
 
@@ -101,6 +106,8 @@
     
     [self.readBehavior saveAndWait];
     [self didViewArticle];
+    
+    [self fly:YES];
 }
 
 - (IBAction)markAsUseless:(id)sender{
@@ -109,6 +116,29 @@
    
     [self.readBehavior saveAndWait];
     [self didViewArticle];
+    
+    [self fly:NO];
+}
+
+- (void)fly:(BOOL)useful{
+    
+    if (useful) {
+        self.plusView.circleColor = UIColorFromRGB(0x308B16);
+    } else {
+        self.plusView.circleColor = [UIColor grayColor];
+    }
+    
+    self.plusView.hidden = NO;
+    CGRect frame = self.toolBar.frame;
+    self.plusView.frame = CGRectMake(self.view.bounds.size.width * (useful ? 1 : 3) / 4, frame.origin.y, 44, 44);
+    
+    CGRect toFrame = CGRectMake(self.view.bounds.size.width * 3 / 4, 64 + 22, 44, 44);
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        self.plusView.frame = toFrame;
+    } completion:^(BOOL finished) {
+        self.plusView.hidden = YES;
+    }];
 }
 
 - (void)didViewArticle{
@@ -138,6 +168,23 @@
     }
     
     return _moreActionSheet;
+}
+
+- (JJTPlusView *)plusView{
+    if (!_plusView) {
+        
+        CGRect frame = self.toolBar.frame;
+        frame = CGRectMake(self.view.bounds.size.width / 4, frame.origin.y, 44, 44);
+        
+        _plusView = [[JJTPlusView alloc] initWithFrame:frame];
+        
+        _plusView.frame = CGRectZero;
+        _plusView.hidden = YES;
+        
+        [self.view addSubview:_plusView];
+    }
+    
+    return _plusView;
 }
 
 @end

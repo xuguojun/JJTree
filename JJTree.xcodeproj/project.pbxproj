@@ -91,6 +91,7 @@
 		9AD292B01B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AE1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld */; };
 		9AD292B41B6DE02B00508A85 /* JJTReadBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292B31B6DE02B00508A85 /* JJTReadBehavior.m */; };
 		9AD292B71B6DEF8F00508A85 /* UIColor+JJTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292B61B6DEF8F00508A85 /* UIColor+JJTColor.m */; };
+		9AD292BF1B6E098800508A85 /* JJTPlusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292BE1B6E098800508A85 /* JJTPlusView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,6 +236,8 @@
 		9AD292B31B6DE02B00508A85 /* JJTReadBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTReadBehavior.m; sourceTree = "<group>"; };
 		9AD292B51B6DEF8F00508A85 /* UIColor+JJTColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JJTColor.h"; sourceTree = "<group>"; };
 		9AD292B61B6DEF8F00508A85 /* UIColor+JJTColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JJTColor.m"; sourceTree = "<group>"; };
+		9AD292BD1B6E098800508A85 /* JJTPlusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTPlusView.h; sourceTree = "<group>"; };
+		9AD292BE1B6E098800508A85 /* JJTPlusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTPlusView.m; sourceTree = "<group>"; };
 		B4DAFD98FB8B5FA0354A2A2E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -599,6 +602,8 @@
 				9A9271101B67D49400901A71 /* JJTBlockWebView.h */,
 				9A9271111B67D49400901A71 /* JJTBlockWebView.m */,
 				9A9271131B67D4A200901A71 /* JJTBlockWebView.xib */,
+				9AD292BD1B6E098800508A85 /* JJTPlusView.h */,
+				9AD292BE1B6E098800508A85 /* JJTPlusView.m */,
 				9A29A0471B652F2F006FA11B /* Cells */,
 			);
 			name = Views;
@@ -819,6 +824,7 @@
 				9A29A0551B653B01006FA11B /* JJTPictureParagraphTableViewCell.m in Sources */,
 				9A9271181B67D57D00901A71 /* JJTBlockLineTableViewCell.m in Sources */,
 				9A9271081B67B29600901A71 /* JJTAuthorHeader.m in Sources */,
+				9AD292BF1B6E098800508A85 /* JJTPlusView.m in Sources */,
 				9AA1A3BE1B64E2BD007BBA25 /* JJTParagraph.m in Sources */,
 				9AA1A3C41B64E320007BBA25 /* JJTRole.m in Sources */,
 				9AA1A3D01B64E337007BBA25 /* JJTEditor.m in Sources */,
