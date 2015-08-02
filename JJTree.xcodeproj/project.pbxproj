@@ -88,6 +88,7 @@
 		9AA1A3E41B652DE0007BBA25 /* JJTArticleTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA1A3E31B652DE0007BBA25 /* JJTArticleTableView.xib */; };
 		9AD292A91B6DBA6400508A85 /* JJTUser+JJTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292A81B6DBA6400508A85 /* JJTUser+JJTAddition.m */; };
 		9AD292AC1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */; };
+		9AD292B01B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AE1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +228,7 @@
 		9AD292A81B6DBA6400508A85 /* JJTUser+JJTAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JJTUser+JJTAddition.m"; sourceTree = "<group>"; };
 		9AD292AA1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+JJTManagedObject.h"; sourceTree = "<group>"; };
 		9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+JJTManagedObject.m"; sourceTree = "<group>"; };
+		9AD292AF1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JJTUserBehavior.xcdatamodel; sourceTree = "<group>"; };
 		B4DAFD98FB8B5FA0354A2A2E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -417,6 +419,7 @@
 				9A9050361B6CDF3D004DED27 /* demo.png */,
 				9A834F4E1B5F6D4F005D6E2F /* JJTree.xcdatamodeld */,
 				9AA1A3B51B64D9C0007BBA25 /* JJUser.xcdatamodeld */,
+				9AD292AE1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld */,
 				9A834F471B5F6D4F005D6E2F /* Supporting Files */,
 			);
 			path = JJTree;
@@ -819,6 +822,7 @@
 				9AA1A3A51B64D153007BBA25 /* JJTArticleViewController.m in Sources */,
 				9A9050331B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m in Sources */,
 				9AA1A3C71B64E337007BBA25 /* JJTUser.m in Sources */,
+				9AD292B01B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1058,6 +1062,16 @@
 			);
 			currentVersion = 9AA1A3B61B64D9C0007BBA25 /* JJUser.xcdatamodel */;
 			path = JJUser.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		9AD292AE1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9AD292AF1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodel */,
+			);
+			currentVersion = 9AD292AF1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodel */;
+			path = JJTUserBehavior.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
