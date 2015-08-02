@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+    <entity name="JJTReadBehavior" representedClassName="JJTReadBehavior" syncable="YES">
+        <attribute name="articleID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="hasRead" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="markAsUseful" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="markAsUseless" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="JJTReadBehavior" positionX="-63" positionY="-18" width="128" height="120"/>
+    </elements>
 </model>

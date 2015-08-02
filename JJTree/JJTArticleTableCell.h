@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "JJTArticle.h"
+#import "JJTReadBehavior.h"
 
 @interface JJTArticleTableCell : UITableViewCell
 
 @property (nonatomic, strong) JJTArticle *article;
+@property (nonatomic, strong) JJTReadBehavior *readBehavior;
 
 @end

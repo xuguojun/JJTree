@@ -8,6 +8,9 @@
 
 #import "JJTArticleListTableView.h"
 #import "JJTArticleTableCell.h"
+#import <MagicalRecord/MagicalRecord.h>
+#import "JJTUser.h"
+#import "JJTUser+JJTAddition.h"
 #import <CCBottomRefreshControl/UIScrollView+BottomRefreshControl.h>
 
 @interface JJTArticleListTableView()<UITableViewDataSource, UITableViewDelegate>
@@ -39,6 +42,10 @@
     return self;
 }
 
+- (void)reloadData{
+    [self.articlesTableView reloadData];
+}
+
 #pragma mark - Private Methods
 - (void)loadView{
     UIView *view = [[[NSBundle bundleForClass:[self class]] loadNibNamed:NSStringFromClass([self class])
@@ -54,6 +61,18 @@
     if ([self.delegate respondsToSelector:@selector(articleTableView:didTriggerLoadMoreControl:)]) {
         [self.delegate articleTableView:self didTriggerLoadMoreControl:self.loadMoreControl];
     }
+}
+
+- (NSPredicate *)predicate:(NSNumber *)articleID{
+    NSPredicate *preficate = [NSPredicate predicateWithFormat:@"userID = %@ AND articleID = %@", [JJTUser currentUser].userID, articleID];
+    
+    return preficate;
+}
+
+- (JJTReadBehavior *)readBehavior:(NSNumber *)articleID{
+    JJTReadBehavior *readBehavior = [JJTReadBehavior MR_findFirstWithPredicate:[self predicate:articleID]];
+    
+    return readBehavior;
 }
 
 #pragma mark - UITableViewDataSource
@@ -76,7 +95,9 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    cell.article = self.articles[indexPath.row];
+    JJTArticle *article = self.articles[indexPath.row];
+    cell.article = article;
+    cell.readBehavior = [self readBehavior:article.articleID];
     
     return cell;
 }

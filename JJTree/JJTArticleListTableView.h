@@ -28,4 +28,6 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable BOOL allowLoadMore;
 @property (nonatomic, weak) IBOutlet id<JJTArticleListTableViewDelegate> delegate;
 
+- (void)reloadData;
+
 @end

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MagicalRecord.h>
+#import "NSManagedObject+JJTManagedObject.h"
 #import "JJTUser.h"
 #import "JJTUser+JJTAddition.h"
 

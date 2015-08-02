@@ -9,10 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "JJTArticle.h"
 #import "JJTAuthor.h"
+#import "JJTBaseViewController.h"
 
-@interface JJTArticleViewController : UIViewController
+@class JJTArticleViewController;
+@protocol JJTArticleViewControllerDelegate <NSObject>
+
+@required
+- (void)articleViewController:(JJTArticleViewController *)controller didViewArticle:(JJTArticle *)article;
+
+@end
+@interface JJTArticleViewController : JJTBaseViewController
 
 @property (nonatomic, strong) JJTArticle *article;
 @property (nonatomic, strong) JJTAuthor *author;
+
+@property (nonatomic, weak) IBOutlet id<JJTArticleViewControllerDelegate> delegate;
 
 @end

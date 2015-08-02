@@ -9,16 +9,18 @@
 #import "JJTArticleViewController.h"
 #import "JJTArticleTableView.h"
 #import "JJTAuthorViewController.h"
+#import "JJTReadBehavior.h"
 
 @interface JJTArticleViewController ()<UIActionSheetDelegate, JJTArticleTableViewDelegate>
 
-@property (nonatomic, weak) IBOutlet UIWebView *blockWebView;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *usefulBarButtonItem;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *uselessBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *moreButton;
 @property (nonatomic, strong) UIActionSheet *moreActionSheet;
 
 @property (nonatomic, weak) IBOutlet JJTArticleTableView *articleTableView;
+
+@property (nonatomic, strong) JJTReadBehavior *readBehavior;
 
 @end
 
@@ -32,6 +34,9 @@
     
     self.articleTableView.article = self.article;
     self.articleTableView.author = self.author;
+    
+    [self insertReadBehaviorIfNeeded];
+    [self didViewArticle];
 }
 
 #pragma mark - JJTArticleTableViewDelegate
@@ -62,6 +67,54 @@
 #pragma mark - Private Methods
 - (void)moreButtonDidPress:(id)sender{
     [self.moreActionSheet showFromBarButtonItem:self.moreButton animated:YES];
+}
+
+- (void)insertReadBehaviorIfNeeded{
+    if (![self isExisted:self.article.articleID]) {
+        self.readBehavior = [JJTReadBehavior MR_createEntity];
+        
+        self.readBehavior.userID = self.currentUser.userID;
+        self.readBehavior.articleID = self.article.articleID;
+        self.readBehavior.hasRead = @YES;
+        
+        [self.readBehavior saveAndWait];
+    } else {
+        self.readBehavior = [JJTReadBehavior MR_findFirstWithPredicate:[self predicate:self.article.articleID]];
+    }
+}
+
+- (BOOL)isExisted:(NSNumber *)articleID{
+    JJTReadBehavior *readBehavior = [JJTReadBehavior MR_findFirstWithPredicate:[self predicate:articleID]];
+    BOOL existed = (readBehavior != nil);
+    
+    return existed;
+}
+
+- (NSPredicate *)predicate:(NSNumber *)articleID{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userID = %@ AND articleID = %@", self.currentUser.userID, articleID];
+    return predicate;
+}
+
+- (IBAction)markAsUsefull:(id)sender{
+    self.readBehavior.markAsUseful = @YES;
+    self.readBehavior.markAsUseless = @NO;
+    
+    [self.readBehavior saveAndWait];
+    [self didViewArticle];
+}
+
+- (IBAction)markAsUseless:(id)sender{
+    self.readBehavior.markAsUseless = @YES;
+    self.readBehavior.markAsUseful = @NO;
+   
+    [self.readBehavior saveAndWait];
+    [self didViewArticle];
+}
+
+- (void)didViewArticle{
+    if ([self.delegate respondsToSelector:@selector(articleViewController:didViewArticle:)]) {
+        [self.delegate articleViewController:self didViewArticle:self.article];
+    }
 }
 
 #pragma mark - Getters & Setters

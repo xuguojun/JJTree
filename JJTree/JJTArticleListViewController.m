@@ -18,7 +18,7 @@
 #import "JJTUser+JJTAddition.h"
 #import <MagicalRecord.h>
 
-@interface JJTArticleListViewController ()<JJTArticleListTableViewDelegate, JJTLoginViewControllerDelegate, JJTProfileViewControllerDelegate>
+@interface JJTArticleListViewController ()<JJTArticleListTableViewDelegate, JJTLoginViewControllerDelegate, JJTProfileViewControllerDelegate, JJTArticleViewControllerDelegate>
 
 @property (strong, nonatomic) UIBarButtonItem *loginButton;
 @property (strong, nonatomic) UIBarButtonItem *profileButton;
@@ -133,6 +133,7 @@
 #pragma mark - JJTArticleTableViewDelegate
 - (void)articleTableView:(JJTArticleListTableView *)tableView didSelectRowAtIndex:(NSInteger)index withArticle:(JJTArticle *)article{
     JJTArticleViewController *articleVC = [JJTArticleViewController new];
+    articleVC.delegate = self;
     articleVC.article = article;
     
     JJTAuthor *author = [JJTAuthor MR_createEntity];
@@ -146,6 +147,11 @@
 - (void)articleTableView:(JJTArticleListTableView *)tableView didTriggerLoadMoreControl:(UIRefreshControl *)control{
     NSLog(@"loading more...");
     [control endRefreshing];
+}
+
+#pragma mark - JJTArticleViewControllerDelegate
+- (void)articleViewController:(JJTArticleViewController *)controller didViewArticle:(JJTArticle *)article{
+    [self.articleTableView reloadData];
 }
 
 #pragma mark - Getters & Setters

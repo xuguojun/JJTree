@@ -9,6 +9,10 @@
 #import "JJTArticleTableCell.h"
 #import "NSDate+JJTDate.h"
 
+static NSString *USEFUL = @"有用";
+static NSString *USELESS = @"无用";
+static NSString *READ = @"已阅";
+
 @interface JJTArticleTableCell()
 
 @property (nonatomic, weak) IBOutlet UILabel *articleTitleLabel;
@@ -32,7 +36,7 @@
 }
 
 - (void)awakeFromNib {
-    // Initialization code
+    self.tagLabel.textColor = [UIColor whiteColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -48,7 +52,39 @@
         
         self.articleTitleLabel.text = article.title;
         self.publishDateLabel.text = [article.createdAt toString];
+    
         self.statisticLabel.text = [NSString stringWithFormat:@"👍%@, 💰%@", article.usefulValue, article.rewardGotAmount];
+    }
+}
+
+- (void)setReadBehavior:(JJTReadBehavior *)readBehavior{
+    if (_readBehavior != readBehavior) {
+        _readBehavior = readBehavior;
+        
+        if (!readBehavior) {
+            self.tagLabel.hidden = YES;
+            return;
+        } else {
+            self.tagLabel.hidden = NO;
+        }
+        
+        BOOL useful = [readBehavior.markAsUseful boolValue];
+        if (useful) {
+            self.tagLabel.text = USEFUL;
+            self.tagLabel.backgroundColor = [UIColor greenColor];
+        }
+        
+        BOOL useless = [readBehavior.markAsUseless boolValue];
+        if (useless) {
+            self.tagLabel.text = USELESS;
+            self.tagLabel.backgroundColor = [UIColor lightGrayColor];
+        }
+        
+        BOOL read = [readBehavior.hasRead boolValue];
+        if ((!useful && !useless) && read) {
+            self.tagLabel.text = READ;
+            self.tagLabel.backgroundColor = [UIColor blueColor];
+        }
     }
 }
 
