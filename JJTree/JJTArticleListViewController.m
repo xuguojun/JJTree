@@ -123,11 +123,13 @@
 #pragma mark - JJTLoginViewControllerDelegate
 - (void)loginViewController:(JJTLoginViewController *)controller didLoginSuccessWithAccount:(JJTUser *)user{
     self.navigationItem.leftBarButtonItem = self.profileButton;
+    [self.articleTableView reloadData];
 }
 
 #pragma mark - JJTProfileViewController.h
 - (void)profileViewController:(JJTProfileViewController *)controller didLogoutWithAccount:(JJTUser *)account{
     self.navigationItem.leftBarButtonItem = self.loginButton;
+    [self.articleTableView reloadData];
 }
 
 #pragma mark - JJTArticleTableViewDelegate
