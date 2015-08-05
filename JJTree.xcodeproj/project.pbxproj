@@ -90,6 +90,7 @@
 		9AA1A3DF1B652A4A007BBA25 /* JJTRateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA1A3DE1B652A4A007BBA25 /* JJTRateView.xib */; };
 		9AA1A3E21B652DD5007BBA25 /* JJTArticleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A3E11B652DD5007BBA25 /* JJTArticleTableView.m */; };
 		9AA1A3E41B652DE0007BBA25 /* JJTArticleTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA1A3E31B652DE0007BBA25 /* JJTArticleTableView.xib */; };
+		9AB4AE1B1B7253C100E6AE3A /* css.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4AE1A1B7253C100E6AE3A /* css.txt */; };
 		9AD292A91B6DBA6400508A85 /* JJTUser+JJTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292A81B6DBA6400508A85 /* JJTUser+JJTAddition.m */; };
 		9AD292AC1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */; };
 		9AD292B01B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AE1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld */; };
@@ -237,6 +238,7 @@
 		9AA1A3E01B652DD5007BBA25 /* JJTArticleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTArticleTableView.h; sourceTree = "<group>"; };
 		9AA1A3E11B652DD5007BBA25 /* JJTArticleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTArticleTableView.m; sourceTree = "<group>"; };
 		9AA1A3E31B652DE0007BBA25 /* JJTArticleTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTArticleTableView.xib; sourceTree = "<group>"; };
+		9AB4AE1A1B7253C100E6AE3A /* css.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = css.txt; sourceTree = "<group>"; };
 		9AD292A71B6DBA6400508A85 /* JJTUser+JJTAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JJTUser+JJTAddition.h"; sourceTree = "<group>"; };
 		9AD292A81B6DBA6400508A85 /* JJTUser+JJTAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JJTUser+JJTAddition.m"; sourceTree = "<group>"; };
 		9AD292AA1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+JJTManagedObject.h"; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 				9A7F1B8E1B67486900D16E6C /* JJTBlockStyleViewController.m */,
 				9A7F1B8F1B67486900D16E6C /* JJTBlockStyleViewController.xib */,
 				9A7F1B921B674B8300D16E6C /* blockCSS.txt */,
+				9AB4AE1A1B7253C100E6AE3A /* css.txt */,
 			);
 			name = JJTBlockStyle;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				9A90503A1B6CF8E6004DED27 /* iPadDemo.m4v in Resources */,
 				9A9271141B67D4A200901A71 /* JJTBlockWebView.xib in Resources */,
 				9A28522D1B668CB000C827A5 /* JJTPreferenceViewController.xib in Resources */,
+				9AB4AE1B1B7253C100E6AE3A /* css.txt in Resources */,
 				9A92710A1B67B2A200901A71 /* JJTAuthorHeader.xib in Resources */,
 				9AA1A3A61B64D153007BBA25 /* JJTArticleViewController.xib in Resources */,
 				9A6614CA1B6D14B60059DCC2 /* roleAuthor.txt in Resources */,

@@ -16,6 +16,7 @@
 #import "JJTProfileViewController.h"
 #import "JJTSearchViewController.h"
 #import "JJTUser+JJTAddition.h"
+#import "NSString+JJTString.h"
 #import <MagicalRecord.h>
 
 @interface JJTArticleListViewController ()<JJTArticleListTableViewDelegate, JJTLoginViewControllerDelegate, JJTProfileViewControllerDelegate, JJTArticleViewControllerDelegate>
@@ -33,6 +34,18 @@
     [super viewDidLoad];
 
     self.title = @"元机经";
+    
+    if (self.currentUser && [self.currentUser.hasLogined boolValue]) {
+        self.navigationItem.leftBarButtonItem = self.profileButton;
+    } else {
+        self.navigationItem.leftBarButtonItem = self.loginButton;
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    NSInteger index = [self.prefs integerForKey:BLOCK_STYLE_INDEX];
     
     NSMutableArray *articles = [NSMutableArray new];
     for (int i = 0; i < 10; i++) {
@@ -52,7 +65,7 @@
         
         JJTParagraph *p2 = [JJTParagraph MR_createEntity];
         p2.type = @(JJTParagraphBlock);
-        p2.content = @"http://localhost:8080/JJTree/index.html";
+        p2.content = [NSString stringWithFormat:@"http://localhost:8080/JJTree/Block.jsp?style=%@", [self css][index]];
         p2.position = @1;
         
         JJTParagraph *p3 = [JJTParagraph MR_createEntity];
@@ -67,7 +80,7 @@
         
         JJTParagraph *p5 = [JJTParagraph MR_createEntity];
         p5.type = @(JJTParagraphBlock);
-        p5.content = @"http://localhost:8080/JJTree/index.html";
+        p5.content = [NSString stringWithFormat:@"http://localhost:8080/JJTree/Block.jsp?style=%@", [self css][index]];
         p5.position = @1;
         
         JJTParagraph *p6 = [JJTParagraph MR_createEntity];
@@ -81,14 +94,8 @@
     }
     
     self.articleTableView.articles = articles;
-    
-    if (self.currentUser && [self.currentUser.hasLogined boolValue]) {
-        self.navigationItem.leftBarButtonItem = self.profileButton;
-    } else {
-        self.navigationItem.leftBarButtonItem = self.loginButton;
-    }
 }
-
+#pragma mark - Private Methods
 - (NSString *)readFile{
     NSString *path = [[NSBundle mainBundle] pathForResource:@"testText"
                                                      ofType:@"txt"];
@@ -97,6 +104,20 @@
                                                      error:NULL];
     
     return content;
+}
+
+- (NSString *)readCSSFile{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"css"
+                                                     ofType:@"txt"];
+    NSString *content = [NSString stringWithContentsOfFile:path
+                                                  encoding:NSUTF8StringEncoding
+                                                     error:NULL];
+    
+    return content;
+}
+
+- (NSArray *)css{
+    return [[self readCSSFile] splitByNewLine];
 }
 
 #pragma mark - IBAction

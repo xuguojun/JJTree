@@ -81,6 +81,11 @@
     
     self.lastIndexSelected = indexPath.row;
     [self.prefs setInteger:indexPath.row forKey:BLOCK_STYLE_INDEX];
+    
+    if ([self.delegate respondsToSelector:@selector(blockStyleViewController:didSelectRowAtIndex:)]) {
+        [self.delegate blockStyleViewController:self didSelectRowAtIndex:indexPath.row];
+    }
+    
     [tableView reloadData];
 }
 

@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "JJTBaseViewController.h"
 
+@class JJTBlockStyleViewController;
+@protocol JJTBlockStyleViewControllerDelegate <NSObject>
+
+@required
+- (void)blockStyleViewController:(JJTBlockStyleViewController *)controller didSelectRowAtIndex:(NSInteger)index;
+
+@end
 @interface JJTBlockStyleViewController : JJTBaseViewController
+
+@property (nonatomic, weak) IBOutlet id<JJTBlockStyleViewControllerDelegate> delegate;
 
 @end

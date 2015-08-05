@@ -8,8 +8,9 @@
 
 #import "JJTPreferenceViewController.h"
 #import "JJTBlockStyleViewController.h"
+#import "NSString+JJTString.h"
 
-@interface JJTPreferenceViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface JJTPreferenceViewController ()<UITableViewDataSource, UITableViewDelegate, JJTBlockStyleViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *prefrenceTableView;
 
@@ -17,7 +18,6 @@
 @property (nonatomic, strong) NSArray *topTitles;
 @property (nonatomic, strong) NSArray *recentTitles;
 @property (nonatomic, strong) NSArray *blockTitles;
-
 
 @property (nonatomic, assign) BOOL arrangeByUseful;
 @property (nonatomic, assign) BOOL arrangeByPublishDate;
@@ -40,12 +40,27 @@
     self.arrangeByPublishDate = ![self arrangeByUpdateDate];
 }
 
+#pragma mark - Private Methods
 - (BOOL)arrangeByUseless{
     return [self.prefs boolForKey:ARRANGE_BY_USELESS_VALUE];
 }
 
 - (BOOL)arrangeByUpdateDate{
     return [self.prefs boolForKey:ARRANGE_BY_UPDATE_DATE];
+}
+
+- (NSString *)readFile{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"blockCSS"
+                                                     ofType:@"txt"];
+    NSString *content = [NSString stringWithContentsOfFile:path
+                                                  encoding:NSUTF8StringEncoding
+                                                     error:NULL];
+    
+    return content;
+}
+
+- (NSArray *)css{
+    return [[self readFile] splitByNewLine];
 }
 
 #pragma mark - UITableViewDataSource
@@ -107,6 +122,9 @@
         }
     } else {
         cell.textLabel.text = self.blockTitles[indexPath.row];
+        
+        NSInteger index = [self.prefs integerForKey:BLOCK_STYLE_INDEX];
+        cell.detailTextLabel.text = [self css][index];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
@@ -143,6 +161,7 @@
     
     if (indexPath.section == 2) {
         JJTBlockStyleViewController *styleVC = [JJTBlockStyleViewController new];
+        styleVC.delegate = self;
         [self.navigationController pushViewController:styleVC animated:YES];
     }
 }
@@ -153,6 +172,13 @@
     }
     
     return self.sectionTitles[section];
+}
+
+#pragma mark - JJTBlockStyleViewControllerDelegate
+- (void)blockStyleViewController:(JJTBlockStyleViewController *)controller didSelectRowAtIndex:(NSInteger)index{
+    
+    NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndex:2];
+    [self.prefrenceTableView reloadSections:indexSet withRowAnimation:(UITableViewRowAnimationAutomatic)];
 }
 
 #pragma mark - Getters & Setters
