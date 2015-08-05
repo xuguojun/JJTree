@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJTBlockStyleViewController">
             <connections>
+                <outlet property="blockWebView" destination="sWq-TT-9TY" id="GiH-gl-9vJ"/>
                 <outlet property="stylesTableView" destination="cL2-QU-PgJ" id="GMQ-90-bus"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,9 +17,19 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="cL2-QU-PgJ">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWq-TT-9TY">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="u2k-cN-unz"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="tBE-mL-tey"/>
+                    </connections>
+                </webView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cL2-QU-PgJ">
+                    <rect key="frame" x="0.0" y="160" width="600" height="376"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="xXL-dN-2to"/>
                         <outlet property="delegate" destination="-1" id="wQy-Mw-MiP"/>
@@ -27,12 +38,21 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="sWq-TT-9TY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4JF-vY-GB5"/>
+                <constraint firstAttribute="trailing" secondItem="sWq-TT-9TY" secondAttribute="trailing" id="7qa-2N-UcY"/>
+                <constraint firstItem="sWq-TT-9TY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9vz-CG-nBz"/>
                 <constraint firstAttribute="trailing" secondItem="cL2-QU-PgJ" secondAttribute="trailing" id="CB7-ev-uo9"/>
+                <constraint firstItem="cL2-QU-PgJ" firstAttribute="top" secondItem="sWq-TT-9TY" secondAttribute="bottom" id="cYI-nh-qGA"/>
                 <constraint firstItem="cL2-QU-PgJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gjx-eA-40l"/>
                 <constraint firstItem="cL2-QU-PgJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="maL-Br-zra"/>
                 <constraint firstAttribute="bottom" secondItem="cL2-QU-PgJ" secondAttribute="bottom" id="u4r-1K-IfQ"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="maL-Br-zra"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

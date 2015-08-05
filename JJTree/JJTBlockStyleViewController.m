@@ -9,8 +9,9 @@
 #import "JJTBlockStyleViewController.h"
 #import "NSString+JJTString.h"
 
-@interface JJTBlockStyleViewController ()
+@interface JJTBlockStyleViewController ()<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate>
 
+@property (nonatomic, weak) IBOutlet UIWebView *blockWebView;
 @property (nonatomic, weak) IBOutlet UITableView *stylesTableView;
 @property (nonatomic, strong) NSArray *styles;
 
@@ -29,6 +30,9 @@
     self.styles = [content splitByNewLine];
     
     self.lastIndexSelected = [self blockStyleIndex];
+    
+    NSString *style = [self css][self.lastIndexSelected];
+    [self loadPageWithStyle:style];
 }
 
 - (NSString *)readFile{
@@ -41,8 +45,27 @@
     return content;
 }
 
+- (NSString *)readCSSFile{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"css"
+                                                     ofType:@"txt"];
+    NSString *content = [NSString stringWithContentsOfFile:path
+                                                  encoding:NSUTF8StringEncoding
+                                                     error:NULL];
+    
+    return content;
+}
+
+- (NSArray *)css{
+    return [[self readCSSFile] splitByNewLine];
+}
+
 - (NSInteger)blockStyleIndex{
     return [self.prefs integerForKey:BLOCK_STYLE_INDEX];
+}
+
+- (void)loadPageWithStyle:(NSString *)style{
+    NSString *page = [NSString stringWithFormat:@"http://localhost:8080/JJTree/demo.jsp?style=%@", style];
+    [self.blockWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:page]]];
 }
 
 #pragma mark - UITableViewDataSource
@@ -81,6 +104,8 @@
     
     self.lastIndexSelected = indexPath.row;
     [self.prefs setInteger:indexPath.row forKey:BLOCK_STYLE_INDEX];
+    
+    [self loadPageWithStyle:[self css][indexPath.row]];
     
     if ([self.delegate respondsToSelector:@selector(blockStyleViewController:didSelectRowAtIndex:)]) {
         [self.delegate blockStyleViewController:self didSelectRowAtIndex:indexPath.row];
