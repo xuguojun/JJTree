@@ -9,6 +9,7 @@
 #import "JJTArticleViewController.h"
 #import "JJTArticleTableView.h"
 #import "JJTAuthorViewController.h"
+#import "JJTSingleViewController.h"
 #import "JJTReadBehavior.h"
 #import "JJTPlusView.h"
 #import "UIColor+JJTColor.h"
@@ -37,6 +38,7 @@
     self.title = self.article.title;
     self.navigationItem.rightBarButtonItem = self.moreButton;
     
+    self.article.viewCount = @([self.article.viewCount integerValue] + 1);
     self.articleTableView.article = self.article;
     self.articleTableView.author = self.author;
     
@@ -52,7 +54,16 @@
 }
 
 - (void)articleTableView:(JJTArticleTableView *)tableView didSelectRowAtIndex:(NSInteger)index{
+    JJTSingleViewController *singleVC = [JJTSingleViewController new];
     
+    UILabel *plainText = [UILabel new];
+    plainText.text = @"test";
+    plainText.textAlignment = NSTextAlignmentCenter;
+    plainText.backgroundColor = [UIColor redColor];
+    
+    singleVC.zoomableView = plainText;
+    
+    [self.navigationController pushViewController:singleVC animated:YES];
 }
 
 #pragma mark - UIActionSheetDelegate

@@ -159,7 +159,7 @@
 #pragma mark - Getters & Setters
 - (UIBarButtonItem *)profileButton{
     if (!_profileButton) {
-        _profileButton = [[UIBarButtonItem alloc] initWithTitle:@"设置"
+        _profileButton = [[UIBarButtonItem alloc] initWithTitle:@"我"
                                                           style:(UIBarButtonItemStylePlain)
                                                          target:self
                                                          action:@selector(profile)];

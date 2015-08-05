@@ -123,6 +123,9 @@ static NSString *PICTURE = @"PICTURE";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if ([self.delegate respondsToSelector:@selector(articleTableView:didSelectRowAtIndex:)]) {
+        [self.delegate articleTableView:self didSelectRowAtIndex:indexPath.row];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

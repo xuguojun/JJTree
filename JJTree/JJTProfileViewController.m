@@ -149,7 +149,7 @@ static NSString *LOGOUT = @"退出登录";
 
 - (UIBarButtonItem *)preferenceButton{
     if (!_preferenceButton) {
-        _preferenceButton = [[UIBarButtonItem alloc] initWithTitle:@"偏好设置"
+        _preferenceButton = [[UIBarButtonItem alloc] initWithTitle:@"偏好"
                                                              style:(UIBarButtonItemStylePlain)
                                                             target:self
                                                             action:@selector(preference)];
