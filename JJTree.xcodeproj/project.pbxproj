@@ -91,6 +91,7 @@
 		9AA1A3E21B652DD5007BBA25 /* JJTArticleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A3E11B652DD5007BBA25 /* JJTArticleTableView.m */; };
 		9AA1A3E41B652DE0007BBA25 /* JJTArticleTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA1A3E31B652DE0007BBA25 /* JJTArticleTableView.xib */; };
 		9AB4AE1B1B7253C100E6AE3A /* css.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4AE1A1B7253C100E6AE3A /* css.txt */; };
+		9AB4AE1E1B726B0F00E6AE3A /* UILabel+JJTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4AE1D1B726B0F00E6AE3A /* UILabel+JJTLabel.m */; };
 		9AD292A91B6DBA6400508A85 /* JJTUser+JJTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292A81B6DBA6400508A85 /* JJTUser+JJTAddition.m */; };
 		9AD292AC1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */; };
 		9AD292B01B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AE1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld */; };
@@ -239,6 +240,8 @@
 		9AA1A3E11B652DD5007BBA25 /* JJTArticleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTArticleTableView.m; sourceTree = "<group>"; };
 		9AA1A3E31B652DE0007BBA25 /* JJTArticleTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTArticleTableView.xib; sourceTree = "<group>"; };
 		9AB4AE1A1B7253C100E6AE3A /* css.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = css.txt; sourceTree = "<group>"; };
+		9AB4AE1C1B726B0F00E6AE3A /* UILabel+JJTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+JJTLabel.h"; sourceTree = "<group>"; };
+		9AB4AE1D1B726B0F00E6AE3A /* UILabel+JJTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+JJTLabel.m"; sourceTree = "<group>"; };
 		9AD292A71B6DBA6400508A85 /* JJTUser+JJTAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JJTUser+JJTAddition.h"; sourceTree = "<group>"; };
 		9AD292A81B6DBA6400508A85 /* JJTUser+JJTAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JJTUser+JJTAddition.m"; sourceTree = "<group>"; };
 		9AD292AA1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+JJTManagedObject.h"; sourceTree = "<group>"; };
@@ -647,6 +650,8 @@
 				9A6614CE1B6D20840059DCC2 /* JJTBaseViewController.m */,
 				9AD292AA1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.h */,
 				9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */,
+				9AB4AE1C1B726B0F00E6AE3A /* UILabel+JJTLabel.h */,
+				9AB4AE1D1B726B0F00E6AE3A /* UILabel+JJTLabel.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -850,6 +855,7 @@
 				9AA1A3CD1B64E337007BBA25 /* JJTAuthor.m in Sources */,
 				9A834F501B5F6D4F005D6E2F /* JJTree.xcdatamodeld in Sources */,
 				9A6614CF1B6D20840059DCC2 /* JJTBaseViewController.m in Sources */,
+				9AB4AE1E1B726B0F00E6AE3A /* UILabel+JJTLabel.m in Sources */,
 				9A28521D1B666DDC00C827A5 /* JJTFormTableViewCell.m in Sources */,
 				9A29A0551B653B01006FA11B /* JJTPictureParagraphTableViewCell.m in Sources */,
 				9A9271181B67D57D00901A71 /* JJTBlockLineTableViewCell.m in Sources */,

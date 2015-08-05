@@ -16,5 +16,6 @@ typedef enum : NSUInteger {
 @interface JJTRoleTableViewCell : UITableViewCell
 
 @property (nonatomic, assign) JJTRole role;
+@property (nonatomic, assign, readonly) CGSize roleLabelSize;
 
 @end

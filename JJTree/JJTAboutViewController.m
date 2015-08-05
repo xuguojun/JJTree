@@ -13,6 +13,10 @@
 
 @property (nonatomic, weak) IBOutlet UITableView *aboutTableView;
 
+@property (nonatomic, strong) JJTRoleTableViewCell *cell1;
+@property (nonatomic, strong) JJTRoleTableViewCell *cell2;
+@property (nonatomic, strong) JJTRoleTableViewCell *cell3;
+
 @end
 
 @implementation JJTAboutViewController
@@ -53,6 +57,18 @@
     
     cell.role = indexPath.row;
     
+    if (indexPath.row == 0) {
+        self.cell1 = cell;
+    }
+    
+    if (indexPath.row == 1) {
+        self.cell2 = cell;
+    }
+    
+    if (indexPath.row == 2) {
+        self.cell3 = cell;
+    }
+    
     return cell;
 }
 
@@ -63,6 +79,19 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.row == 0) {
+        return 74 + self.cell1.roleLabelSize.height;
+    }
+    
+    if (indexPath.row == 1) {
+        return 74 + self.cell2.roleLabelSize.height;
+    }
+    
+    if (indexPath.row == 2) {
+        return 74 + self.cell3.roleLabelSize.height;
+    }
+    
     return 88.f * 3.2;
 }
 

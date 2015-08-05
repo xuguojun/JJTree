@@ -7,12 +7,15 @@
 //
 
 #import "JJTRoleTableViewCell.h"
+#import "UILabel+JJTLabel.h"
 
 @interface JJTRoleTableViewCell()
 
 @property (nonatomic, weak) IBOutlet UIImageView *roleImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *roleTagImageView;
 @property (nonatomic, weak) IBOutlet UILabel *roleDescLabel;
+
+@property (nonatomic, assign) CGSize roleLabelSize;
 
 @end
 
@@ -87,6 +90,10 @@
         self.roleTagImageView.image = [UIImage imageNamed:@"editor_tag"];
         self.roleDescLabel.text = [self roleEditor];
     }
+}
+
+- (CGSize)roleLabelSize{
+    return [self.roleDescLabel sizeOfMultiLineLabel];
 }
 
 @end
