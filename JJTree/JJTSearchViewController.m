@@ -133,7 +133,7 @@
         _articleSearchBar = [[UISearchBar alloc] initWithFrame:frame];
         _articleSearchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         _articleSearchBar.showsCancelButton = YES;
-        _articleSearchBar.placeholder = @"在线搜索机经，请键入关键词";
+        _articleSearchBar.placeholder = @"在线搜索机经，请输入关键词";
     }
     
     return _articleSearchBar;
