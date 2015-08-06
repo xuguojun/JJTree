@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIColor+JJTColor.h"
 #import <MagicalRecord/MagicalRecord.h>
 
 @interface AppDelegate ()
@@ -18,6 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    [[UIButton appearance] setTintColor:UIColorFromRGB(0xE8A433)];
+    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0xE8A433)];
+    [[UITextField appearance] setTintColor:UIColorFromRGB(0xE8A433)];
+    [[UISegmentedControl appearance] setTintColor:UIColorFromRGB(0xE8A433)];
+    
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"JJTree.sqlite"];
     
     return YES;
