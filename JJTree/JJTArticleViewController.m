@@ -9,7 +9,7 @@
 #import "JJTArticleViewController.h"
 #import "JJTArticleTableView.h"
 #import "JJTAuthorViewController.h"
-#import "JJTSingleViewController.h"
+#import "JJTFullReadViewController.h"
 #import "JJTReadBehavior.h"
 #import "JJTPlusView.h"
 #import "UIColor+JJTColor.h"
@@ -54,16 +54,8 @@
 }
 
 - (void)articleTableView:(JJTArticleTableView *)tableView didSelectRowAtIndex:(NSInteger)index{
-    JJTSingleViewController *singleVC = [JJTSingleViewController new];
-    
-    UILabel *plainText = [UILabel new];
-    plainText.text = @"test";
-    plainText.textAlignment = NSTextAlignmentCenter;
-    plainText.backgroundColor = [UIColor redColor];
-    
-    singleVC.zoomableView = plainText;
-    
-    [self.navigationController pushViewController:singleVC animated:YES];
+    JJTFullReadViewController *vc = [JJTFullReadViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UIActionSheetDelegate
