@@ -24,6 +24,11 @@
     [[UITextField appearance] setTintColor:UIColorFromRGB(0xE8A433)];
     [[UISegmentedControl appearance] setTintColor:UIColorFromRGB(0xE8A433)];
     
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = UIColorFromRGB(0xE8A433);
+    pageControl.backgroundColor = [UIColor clearColor];
+    
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"JJTree.sqlite"];
     
     return YES;

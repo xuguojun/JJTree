@@ -38,6 +38,13 @@
     [self addChildViewController:self.pageController];
     [self.view addSubview:self.pageController.view];
     [self.pageController didMoveToParentViewController:self];
+    
+//    self.title = self.article.title;
+}
+
+#pragma mark - Private Methods
+- (void)setTitleWithPageIndex:(NSInteger)index{
+    self.title= [NSString stringWithFormat:@"%lu/%lu", ((long)index + 1), (unsigned long)self.viewControllers.count];
 }
 
 #pragma mark - UIPageViewControllerDataSource
@@ -91,10 +98,6 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers{
     self.nextIndex = 0;
     
     [self setTitleWithPageIndex:self.currentIndex];
-}
-
-- (void)setTitleWithPageIndex:(NSInteger)index{
-    self.title= [NSString stringWithFormat:@"%lu/%lu", ((long)index + 1), (unsigned long)self.viewControllers.count];
 }
 
 #pragma mark - Getters & Setters
