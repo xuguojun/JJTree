@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJTSingleViewController">
             <connections>
                 <outlet property="container" destination="ckI-ag-0PK" id="Sfg-FK-6lb"/>
+                <outlet property="gesture" destination="kGl-WE-AP1" id="yae-hi-XAW"/>
                 <outlet property="scrollView" destination="uZ6-tV-gQo" id="ag1-mF-J1D"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -45,12 +46,13 @@
                             </variation>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="ADk-Jh-bs4"/>
+                                <outletCollection property="gestureRecognizers" destination="kGl-WE-AP1" appends="YES" id="tTH-Bw-2LC"/>
                             </connections>
                         </scrollView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" secondItem="ckI-ag-0PK" secondAttribute="height" priority="250" id="1Jb-uO-Eyg"/>
+                        <constraint firstAttribute="height" secondItem="ckI-ag-0PK" secondAttribute="height" id="1Jb-uO-Eyg"/>
                         <constraint firstAttribute="width" secondItem="ckI-ag-0PK" secondAttribute="width" id="drq-lq-IQ8"/>
                         <constraint firstItem="uZ6-tV-gQo" firstAttribute="top" secondItem="i3l-rh-MYV" secondAttribute="top" id="ja2-0A-RkA"/>
                         <constraint firstAttribute="trailing" secondItem="uZ6-tV-gQo" secondAttribute="trailing" id="jvx-8G-pgP"/>
@@ -60,6 +62,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="i3l-rh-MYV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="42B-Od-2lJ"/>
                 <constraint firstAttribute="trailing" secondItem="i3l-rh-MYV" secondAttribute="trailing" id="T2Q-b7-Jxw"/>
@@ -68,5 +71,10 @@
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
         </view>
+        <tapGestureRecognizer numberOfTapsRequired="2" id="kGl-WE-AP1">
+            <connections>
+                <action selector="doubleTap:" destination="-1" id="YvO-1n-4Xj"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>
