@@ -39,7 +39,7 @@
 - (IBAction)singleTap:(id)sender{
     BOOL hidden = self.navigationController.navigationBar.hidden;
     [self.navigationController setNavigationBarHidden:!hidden animated:YES];
-    [[UIApplication sharedApplication] setStatusBarHidden:!hidden withAnimation:UIStatusBarAnimationFade];
+    [[UIApplication sharedApplication] setStatusBarHidden:!hidden withAnimation:UIStatusBarAnimationSlide];
 }
 
 #pragma mark - UIScrollViewDelegate
