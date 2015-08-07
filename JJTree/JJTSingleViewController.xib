@@ -8,24 +8,25 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJTSingleViewController">
             <connections>
                 <outlet property="container" destination="ckI-ag-0PK" id="Sfg-FK-6lb"/>
-                <outlet property="gesture" destination="kGl-WE-AP1" id="yae-hi-XAW"/>
+                <outlet property="doubleTapGesture" destination="kGl-WE-AP1" id="yFo-bU-ubE"/>
                 <outlet property="scrollView" destination="uZ6-tV-gQo" id="ag1-mF-J1D"/>
+                <outlet property="singleTapGesture" destination="u6o-hY-p71" id="j7A-Qo-UfQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+            <rect key="frame" x="0.0" y="64" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3l-rh-MYV" userLabel="Container">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="6" translatesAutoresizingMaskIntoConstraints="NO" id="uZ6-tV-gQo">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckI-ag-0PK" userLabel="Content View">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
@@ -47,6 +48,7 @@
                             <connections>
                                 <outlet property="delegate" destination="-1" id="ADk-Jh-bs4"/>
                                 <outletCollection property="gestureRecognizers" destination="kGl-WE-AP1" appends="YES" id="tTH-Bw-2LC"/>
+                                <outletCollection property="gestureRecognizers" destination="u6o-hY-p71" appends="YES" id="WHp-3a-7Fd"/>
                             </connections>
                         </scrollView>
                     </subviews>
@@ -69,11 +71,15 @@
                 <constraint firstAttribute="bottom" secondItem="i3l-rh-MYV" secondAttribute="bottom" id="sZH-Go-1bK"/>
                 <constraint firstItem="i3l-rh-MYV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yRm-Az-hjw"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
         </view>
         <tapGestureRecognizer numberOfTapsRequired="2" id="kGl-WE-AP1">
             <connections>
                 <action selector="doubleTap:" destination="-1" id="YvO-1n-4Xj"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="u6o-hY-p71">
+            <connections>
+                <action selector="singleTap:" destination="-1" id="c4y-XD-AYm"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

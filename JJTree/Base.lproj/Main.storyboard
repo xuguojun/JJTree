@@ -46,7 +46,7 @@
                             <constraint firstAttribute="trailing" secondItem="oEU-f7-Rcc" secondAttribute="trailing" id="B60-Rg-q2c"/>
                             <constraint firstItem="oEU-f7-Rcc" firstAttribute="top" secondItem="TmD-IC-M6y" secondAttribute="bottom" constant="8" id="VY5-r7-yfK"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="oEU-f7-Rcc" secondAttribute="bottom" id="uGr-3R-bQd"/>
-                            <constraint firstAttribute="centerX" secondItem="TmD-IC-M6y" secondAttribute="centerX" constant="-0.5" id="yQp-c9-QVA"/>
+                            <constraint firstAttribute="centerX" secondItem="TmD-IC-M6y" secondAttribute="centerX" id="yQp-c9-QVA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="机经图谱" id="rEj-fF-aEs">

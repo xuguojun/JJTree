@@ -12,7 +12,8 @@
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIView *container;
-@property (nonatomic, weak) IBOutlet UITapGestureRecognizer *gesture;
+@property (nonatomic, weak) IBOutlet UITapGestureRecognizer *doubleTapGesture;
+@property (nonatomic, weak) IBOutlet UITapGestureRecognizer *singleTapGesture;
 
 @end
 
@@ -23,6 +24,8 @@
     
     [self.container addSubview:self.zoomableView];
     [self addConstraints];
+    
+    [self.singleTapGesture requireGestureRecognizerToFail:self.doubleTapGesture];
 }
 
 - (IBAction)doubleTap:(id)sender{
@@ -31,6 +34,12 @@
     } else {
         [self.scrollView setZoomScale:self.scrollView.maximumZoomScale animated:YES];
     }
+}
+
+- (IBAction)singleTap:(id)sender{
+    BOOL hidden = self.navigationController.navigationBar.hidden;
+    [self.navigationController setNavigationBarHidden:!hidden animated:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:!hidden withAnimation:UIStatusBarAnimationFade];
 }
 
 #pragma mark - UIScrollViewDelegate
