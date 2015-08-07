@@ -7,6 +7,7 @@
 //
 
 #import "JJTSingleViewController.h"
+#import "JJTLabel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface JJTSingleViewController ()<UIScrollViewDelegate>
@@ -14,7 +15,7 @@
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIView *container;
 
-@property (nonatomic, weak) IBOutlet UILabel *plainTextLabel;
+@property (nonatomic, weak) IBOutlet JJTLabel *plainTextLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *photoImageView;
 @property (nonatomic, weak) IBOutlet UIWebView *blockWebView;
 
@@ -28,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    CGFloat margin = 8.f;
+    self.plainTextLabel.edgeInsets = UIEdgeInsetsMake(margin, margin, margin, margin);
+    
     [self show];
     [self.singleTapGesture requireGestureRecognizerToFail:self.doubleTapGesture];
 }
