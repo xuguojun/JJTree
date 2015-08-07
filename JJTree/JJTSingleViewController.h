@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTParagraph.h"
 
 @interface JJTSingleViewController : UIViewController
 
 @property (nonatomic, assign) NSInteger index;
-@property (nonatomic, strong) UIView *zoomableView;
+@property (nonatomic, strong) JJTParagraph *paragraph;
 
 @end

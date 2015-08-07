@@ -55,6 +55,8 @@
 
 - (void)articleTableView:(JJTArticleTableView *)tableView didSelectRowAtIndex:(NSInteger)index{
     JJTFullReadViewController *vc = [JJTFullReadViewController new];
+    vc.article = self.article;
+    vc.selectedIndex = index;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

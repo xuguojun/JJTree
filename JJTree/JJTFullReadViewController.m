@@ -24,23 +24,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
-    for (int i = 0; i < 5; i++) {
-        
-        UILabel *plainText = [UILabel new];
-        
-        plainText.text = [NSString stringWithFormat:@"TEST %d", i];
-        plainText.textAlignment = NSTextAlignmentCenter;
-        plainText.backgroundColor = [UIColor redColor];
+    for (int i = 0; i < self.article.paragraphs.count; i++) {
         
         JJTSingleViewController *single = [JJTSingleViewController new];
-        single.zoomableView = plainText;
+        single.paragraph = [self.article.paragraphs array][i];
         single.index = i;
         
         [self.viewControllers addObject:single];
     }
     
-    [self setTitleWithPageIndex:self.currentIndex];
+    [self setTitleWithPageIndex:self.selectedIndex];
     
     [self addChildViewController:self.pageController];
     [self.view addSubview:self.pageController.view];
@@ -117,7 +110,7 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers{
         _pageController.dataSource = self;
         _pageController.delegate = self;
         
-        [_pageController setViewControllers:@[self.viewControllers[0]]
+        [_pageController setViewControllers:@[self.viewControllers[self.selectedIndex]]
                                   direction:UIPageViewControllerNavigationDirectionForward
                                    animated:YES
                                  completion:^(BOOL finished) {

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTArticle.h"
 
 @interface JJTFullReadViewController : UIViewController
+
+@property (nonatomic, assign) NSInteger selectedIndex;
+@property (nonatomic, strong) JJTArticle *article;
 
 @end
