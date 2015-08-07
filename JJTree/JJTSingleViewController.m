@@ -40,7 +40,7 @@
     if(self.scrollView.zoomScale > self.scrollView.minimumZoomScale){
         [self.scrollView setZoomScale:self.scrollView.minimumZoomScale animated:YES];
     } else {
-        [self.scrollView setZoomScale:self.scrollView.maximumZoomScale animated:YES];
+        [self.scrollView setZoomScale:(self.scrollView.maximumZoomScale / 2) animated:YES];
     }
 }
 
