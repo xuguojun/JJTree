@@ -60,6 +60,7 @@ static float CELL_HEIGHT = (14.017073171f);
     self.webScrollView.delegate = self;
     
     [self.webScrollView setShowsHorizontalScrollIndicator:NO];
+    [self.webScrollView setShowsVerticalScrollIndicator:NO];
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

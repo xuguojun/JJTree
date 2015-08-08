@@ -28,7 +28,7 @@
                     </connections>
                 </tableView>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nv-6y-day">
-                    <rect key="frame" x="20" y="0.0" width="300" height="300"/>
+                    <rect key="frame" x="20" y="0.0" width="292" height="300"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="4cs-7c-UeE"/>
@@ -41,7 +41,7 @@
                 <constraint firstItem="cP6-L5-DME" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Gwy-Ht-hEk"/>
                 <constraint firstItem="cP6-L5-DME" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="H0q-Vi-Ok1"/>
                 <constraint firstItem="6nv-6y-day" firstAttribute="leading" secondItem="cP6-L5-DME" secondAttribute="trailing" id="bgk-fq-Gsz"/>
-                <constraint firstAttribute="trailing" secondItem="6nv-6y-day" secondAttribute="trailing" id="dhV-Rm-vTp"/>
+                <constraint firstAttribute="trailing" secondItem="6nv-6y-day" secondAttribute="trailing" constant="8" id="dhV-Rm-vTp"/>
                 <constraint firstAttribute="bottom" secondItem="6nv-6y-day" secondAttribute="bottom" id="jEL-Q8-ypR"/>
                 <constraint firstAttribute="bottom" secondItem="cP6-L5-DME" secondAttribute="bottom" id="pSK-17-8sl"/>
             </constraints>
