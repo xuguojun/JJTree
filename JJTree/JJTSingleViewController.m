@@ -32,6 +32,8 @@
     CGFloat margin = 8.f;
     self.plainTextLabel.edgeInsets = UIEdgeInsetsMake(margin, margin, margin, margin);
     
+    self.blockWebView.scrollView.backgroundColor = [UIColor clearColor];
+    
     [self show];
     [self.singleTapGesture requireGestureRecognizerToFail:self.doubleTapGesture];
 }
@@ -45,6 +47,7 @@
 }
 
 - (IBAction)singleTap:(id)sender{
+    /*
     BOOL hidden = self.navigationController.navigationBar.hidden;
     [self.navigationController setNavigationBarHidden:!hidden animated:YES];
     [[UIApplication sharedApplication] setStatusBarHidden:!hidden
@@ -53,15 +56,15 @@
     BOOL navigationBarHidden = self.navigationController.navigationBarHidden;
     if (navigationBarHidden) {
         self.plainTextLabel.textColor = [UIColor lightGrayColor];
-//        self.blockWebView.backgroundColor = [UIColor blackColor];
+        self.blockWebView.backgroundColor = [UIColor blackColor];
     } else {
         self.plainTextLabel.textColor = [UIColor blackColor];
-//        self.blockWebView.backgroundColor = [UIColor clearColor];
+        self.blockWebView.backgroundColor = [UIColor clearColor];
     }
     
     if ([self.delegate respondsToSelector:@selector(singleViewController:didHideNavigationBar:)]) {
         [self.delegate singleViewController:self didHideNavigationBar:navigationBarHidden];
-    }
+    }*/
 }
 
 - (void)hideAll{
