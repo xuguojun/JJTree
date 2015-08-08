@@ -42,10 +42,10 @@
                                         </imageView>
                                         <webView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="9VZ-G1-wHU">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="472"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </webView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="9VZ-G1-wHU" firstAttribute="top" secondItem="j4Y-hp-QDe" secondAttribute="top" id="5ht-Y7-otE"/>
                                         <constraint firstAttribute="bottom" secondItem="9VZ-G1-wHU" secondAttribute="bottom" id="ArT-8g-P4w"/>
@@ -62,7 +62,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="j4Y-hp-QDe" firstAttribute="leading" secondItem="uZ6-tV-gQo" secondAttribute="leading" id="DEc-vn-A2K"/>
                                 <constraint firstItem="j4Y-hp-QDe" firstAttribute="top" secondItem="uZ6-tV-gQo" secondAttribute="top" id="Eps-V3-Rdm"/>
@@ -76,7 +76,7 @@
                             </connections>
                         </scrollView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="j4Y-hp-QDe" firstAttribute="height" secondItem="i3l-rh-MYV" secondAttribute="height" id="Uja-ab-9IC"/>
                         <constraint firstItem="uZ6-tV-gQo" firstAttribute="top" secondItem="i3l-rh-MYV" secondAttribute="top" id="ja2-0A-RkA"/>
@@ -87,7 +87,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="i3l-rh-MYV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="42B-Od-2lJ"/>

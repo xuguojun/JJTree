@@ -9,9 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "JJTParagraph.h"
 
+@class JJTSingleViewController;
+@protocol JJTSingleViewControllerDelegate <NSObject>
+
+@required
+- (void)singleViewController:(JJTSingleViewController *)controller didHideNavigationBar:(BOOL)hidden;
+
+@end
 @interface JJTSingleViewController : UIViewController
 
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) JJTParagraph *paragraph;
+
+@property (nonatomic, weak) IBOutlet id<JJTSingleViewControllerDelegate> delegate;
 
 @end

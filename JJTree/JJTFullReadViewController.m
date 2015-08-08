@@ -9,7 +9,7 @@
 #import "JJTFullReadViewController.h"
 #import "JJTSingleViewController.h"
 
-@interface JJTFullReadViewController ()<UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@interface JJTFullReadViewController ()<UIPageViewControllerDataSource, UIPageViewControllerDelegate, JJTSingleViewControllerDelegate>
 
 @property (nonatomic, strong) UIPageViewController *pageController;
 @property (nonatomic, strong) NSMutableArray *viewControllers;
@@ -28,6 +28,7 @@
         
         JJTSingleViewController *single = [JJTSingleViewController new];
         single.paragraph = [self.article.paragraphs array][i];
+        single.delegate = self;
         single.index = i;
         
         [self.viewControllers addObject:single];
@@ -57,6 +58,15 @@
                                      completion:NULL];
         self.currentIndex = self.selectedIndex;
         [self setTitleWithPageIndex:self.currentIndex];
+    }
+}
+
+#pragma mark - JJTSingleViewControllerDelegate
+- (void)singleViewController:(JJTSingleViewController *)controller didHideNavigationBar:(BOOL)hidden{
+    if (hidden) {
+        self.view.backgroundColor = [UIColor blackColor];
+    } else {
+        self.view.backgroundColor = [UIColor whiteColor];
     }
 }
 

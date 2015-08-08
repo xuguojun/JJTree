@@ -50,14 +50,17 @@
     [[UIApplication sharedApplication] setStatusBarHidden:!hidden
                                             withAnimation:UIStatusBarAnimationSlide];
     
-    if (self.navigationController.navigationBarHidden) {
-        self.contentView.backgroundColor = [UIColor blackColor];
+    BOOL navigationBarHidden = self.navigationController.navigationBarHidden;
+    if (navigationBarHidden) {
         self.plainTextLabel.textColor = [UIColor lightGrayColor];
 //        self.blockWebView.backgroundColor = [UIColor blackColor];
     } else {
-        self.contentView.backgroundColor = [UIColor whiteColor];
         self.plainTextLabel.textColor = [UIColor blackColor];
 //        self.blockWebView.backgroundColor = [UIColor clearColor];
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(singleViewController:didHideNavigationBar:)]) {
+        [self.delegate singleViewController:self didHideNavigationBar:navigationBarHidden];
     }
 }
 
