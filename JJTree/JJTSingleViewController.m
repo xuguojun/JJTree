@@ -13,7 +13,7 @@
 @interface JJTSingleViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, weak) IBOutlet UIView *container;
+@property (nonatomic, weak) IBOutlet UIView *contentView;
 
 @property (nonatomic, weak) IBOutlet JJTLabel *plainTextLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *photoImageView;
@@ -82,7 +82,7 @@
 }
 #pragma mark - UIScrollViewDelegate
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
-    return self.container;
+    return self.contentView;
 }
 
 @end
