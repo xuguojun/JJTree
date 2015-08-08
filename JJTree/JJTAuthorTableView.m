@@ -83,7 +83,7 @@
 }
 
 - (void)insertRows:(UITableView *)tableView{
-    [tableView insertRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+    [tableView insertRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationFade)];
 }
 
 - (void)removeArticles{
@@ -100,7 +100,7 @@
 
 - (void)removeRows:(UITableView *)tableView{
     if (self.titles.count > 2) {
-        [tableView deleteRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationMiddle)];
+        [tableView deleteRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
     }
 }
 
@@ -194,6 +194,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (!self.isOpen) {
+        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
         if (indexPath.row == 0) {
             if (self.articles.count > 0) {
                 // add data and then open it
