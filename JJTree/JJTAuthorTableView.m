@@ -95,13 +95,6 @@
             cell.textLabel.text = article.title;
         }
     }
-//    if (indexPath.row == 0 || indexPath.row == (self.articles.count + 1)) {
-//        cell.textLabel.text = self.titles[indexPath.row];
-//    } else {
-//        
-//        JJTArticle *article = self.articles[indexPath.row - 1];
-//        cell.textLabel.text = article.title;
-//    }
     
     return cell;
 }
@@ -146,7 +139,7 @@
 }
 
 - (void)insertArticles{
-    [self.titles insertObject:[self titlesOfArticles] atIndex:1];
+    [self.titles insertObjects:[self titlesOfArticles] atIndexes:[self indexSet]];
 }
 
 - (NSArray *)indexes {
@@ -159,15 +152,28 @@
     return indexes;
 }
 
+- (NSIndexSet *)indexSet{
+    NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
+    for (int i = 0; i < self.articles.count; i++) {
+        [indexes addIndex:(1 + i)];
+    }
+    
+    return indexes;
+}
+
 - (void)insertRows:(UITableView *)tableView{
     [tableView insertRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
 }
 
 - (void)removeArticles{
     if (self.titles.count > 2) {
-
-        NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndexesInRange:NSMakeRange(1, self.articles.count)];
-        [self.titles removeObjectsAtIndexes:indexSet];
+        
+        NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
+        for (int i = 0; i < self.articles.count; i++) {
+            [indexes addIndex:(1 + i)];
+        }
+                                    
+        [self.titles removeObjectsAtIndexes:indexes];
     }
 }
 

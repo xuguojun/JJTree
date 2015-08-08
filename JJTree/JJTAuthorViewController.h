@@ -12,6 +12,5 @@
 @interface JJTAuthorViewController : UIViewController
 
 @property (nonatomic, strong) JJTAuthor *author;
-@property (nonatomic, strong) NSArray *articles;
 
 @end

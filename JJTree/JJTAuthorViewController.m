@@ -8,6 +8,8 @@
 
 #import "JJTAuthorViewController.h"
 #import "JJTAuthorTableView.h"
+#import "JJTArticle.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 @interface JJTAuthorViewController ()
 
@@ -21,9 +23,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSMutableArray *articles = [NSMutableArray new];
+    for (int i = 0; i < 10; i++) {
+        JJTArticle *article = [JJTArticle MR_createEntity];
+        article.articleID = @(i);
+        article.title = [NSString stringWithFormat:@"Article %d", i];
+        article.usefulValue = @(6);
+        article.uselessValue = @(5);
+        article.viewCount = @(99);
+        
+        [articles addObject:article];
+    }
+    
     self.title = self.author.roleName;
     self.authorTableView.author = self.author;
-    self.authorTableView.articles = self.articles;
+    self.authorTableView.articles = articles;
 }
 
 - (IBAction)rewardButtonDidPress:(id)sender {
