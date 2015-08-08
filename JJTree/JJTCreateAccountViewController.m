@@ -7,11 +7,11 @@
 //
 
 #import "JJTCreateAccountViewController.h"
+#import "JJTAboutViewController.h"
 #import "JJTFormTableView.h"
-#import <MWPhotoBrowser.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface JJTCreateAccountViewController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MWPhotoBrowserDelegate>
+@interface JJTCreateAccountViewController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet JJTFormTableView *formTableView;
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
@@ -20,14 +20,12 @@
 
 @property (nonatomic, weak) IBOutlet UIView *avatarContainer;
 @property (nonatomic, strong) UIBarButtonItem *closeButton;
-@property (nonatomic, strong) UIBarButtonItem *videoButton;
+@property (nonatomic, strong) UIBarButtonItem *aboutButton;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *loginButton;
 @property (nonatomic, strong) IBOutlet UIButton *createAccountButton;
 
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @property (nonatomic, strong) UIActionSheet *actionSheet;
-
-@property (nonatomic, strong) NSArray *videos;
 
 @end
 
@@ -40,7 +38,7 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationItem.leftBarButtonItem = self.closeButton;
-    self.navigationItem.rightBarButtonItem = self.videoButton;
+    self.navigationItem.rightBarButtonItem = self.aboutButton;
     
     self.createAccountButton.layer.cornerRadius = 4.0f;
     self.createAccountButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -58,15 +56,6 @@
     self.avatarContainer.layer.shadowColor = [UIColor grayColor].CGColor;
     
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:@"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg"] placeholderImage:nil];
-    
-    MWPhoto *video = [MWPhoto photoWithImage:[UIImage imageNamed:@"demo.png"]];
-    
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *path = [bundle pathForResource:@"iPadDemo" ofType:@"m4v"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    video.videoURL = url;
-    
-    self.videos = @[video];
 }
 
 - (void)closeButtonDidPress:(id)sender{
@@ -76,23 +65,10 @@
     }
 }
 
-- (void)videoButtonDidPress:(id)sender{
+- (void)aboutButtonDidPress:(id)sender{
     
-    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] init];
-    browser.delegate = self;
-    
-    // Set options
-    browser.displayActionButton = NO; // Show action button to allow sharing, copying, etc (defaults to YES)
-    browser.displayNavArrows = YES; // Whether to display left and right nav arrows on toolbar (defaults to NO)
-    browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
-    browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
-    browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
-    browser.enableGrid = YES; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
-    browser.startOnGrid = NO; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
-    browser.autoPlayOnAppear = NO; // Auto-play first video
-    
-    // Present
-    [self.navigationController pushViewController:browser animated:YES];
+    JJTAboutViewController *about = [JJTAboutViewController new];
+    [self.navigationController pushViewController:about animated:YES];
 }
 
 - (IBAction)createAccountButtonDidPress:(id)sender {
@@ -109,15 +85,6 @@
 
 - (IBAction)viewDidPress:(id)sender{
     self.formTableView.displayKeyboard = NO;
-}
-
-#pragma mark - MWPhotoBrowserDelegate
-- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser{
-    return 1;
-}
-
-- (id<MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index{
-    return self.videos[index];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -199,14 +166,14 @@
     return _imagePickerController;
 }
 
-- (UIBarButtonItem *)videoButton{
-    if (!_videoButton) {
-        _videoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemBookmarks)
+- (UIBarButtonItem *)aboutButton{
+    if (!_aboutButton) {
+        _aboutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemBookmarks)
                                                                      target:self
-                                                                     action:@selector(videoButtonDidPress:)];
+                                                                     action:@selector(aboutButtonDidPress:)];
     }
     
-    return _videoButton;
+    return _aboutButton;
 }
 
 @end
