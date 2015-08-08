@@ -39,12 +39,25 @@
     [self.view addSubview:self.pageController.view];
     [self.pageController didMoveToParentViewController:self];
     
+    [self turnToPage:self.selectedIndex];
 //    self.title = self.article.title;
 }
 
 #pragma mark - Private Methods
 - (void)setTitleWithPageIndex:(NSInteger)index{
     self.title= [NSString stringWithFormat:@"%lu/%lu", ((long)index + 1), (unsigned long)self.viewControllers.count];
+}
+
+- (void)turnToPage:(NSInteger)index{
+    
+    if (index >= 0 && index < self.viewControllers.count) {
+        [self.pageController setViewControllers:@[self.viewControllers[index]]
+                                      direction:UIPageViewControllerNavigationDirectionForward
+                                       animated:YES
+                                     completion:NULL];
+        self.currentIndex = self.selectedIndex;
+        [self setTitleWithPageIndex:self.currentIndex];
+    }
 }
 
 #pragma mark - UIPageViewControllerDataSource
@@ -112,13 +125,6 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers{
         
         _pageController.dataSource = self;
         _pageController.delegate = self;
-        
-        [_pageController setViewControllers:@[self.viewControllers[self.selectedIndex]]
-                                  direction:UIPageViewControllerNavigationDirectionForward
-                                   animated:YES
-                                 completion:^(BOOL finished) {
-                                     ;
-                                 }];
     }
     
     return _pageController;

@@ -124,7 +124,7 @@ static NSString *PICTURE = @"PICTURE";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if ([self.delegate respondsToSelector:@selector(articleTableView:didSelectRowAtIndex:)]) {
-        [self.delegate articleTableView:self didSelectRowAtIndex:indexPath.row];
+        [self.delegate articleTableView:self didSelectRowAtIndex:indexPath.section];
     }
 }
 
