@@ -47,7 +47,18 @@
 - (IBAction)singleTap:(id)sender{
     BOOL hidden = self.navigationController.navigationBar.hidden;
     [self.navigationController setNavigationBarHidden:!hidden animated:YES];
-    [[UIApplication sharedApplication] setStatusBarHidden:!hidden withAnimation:UIStatusBarAnimationSlide];
+    [[UIApplication sharedApplication] setStatusBarHidden:!hidden
+                                            withAnimation:UIStatusBarAnimationSlide];
+    
+    if (self.navigationController.navigationBarHidden) {
+        self.contentView.backgroundColor = [UIColor blackColor];
+        self.plainTextLabel.textColor = [UIColor lightGrayColor];
+//        self.blockWebView.backgroundColor = [UIColor blackColor];
+    } else {
+        self.contentView.backgroundColor = [UIColor whiteColor];
+        self.plainTextLabel.textColor = [UIColor blackColor];
+//        self.blockWebView.backgroundColor = [UIColor clearColor];
+    }
 }
 
 - (void)hideAll{
