@@ -14,10 +14,17 @@
 #import "JJTParagraph.h"
 #import <MagicalRecord/MagicalRecord.h>
 
-@interface JJTSearchViewController ()<JJTArticleListTableViewDelegate>
+@interface JJTSearchViewController ()<JJTArticleListTableViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, weak) IBOutlet JJTArticleListTableView *articlesTableView;
 @property (nonatomic, strong) UISearchBar *articleSearchBar;
+
+@property (nonatomic, weak) IBOutlet UIToolbar *filterToolBar;
+
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *usefulButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *uselessButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *readButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *unreadButton;
 
 @end
 
@@ -73,6 +80,7 @@
     }
     
     self.articlesTableView.articles = articles;
+    self.articleSearchBar.inputAccessoryView = self.filterToolBar;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -86,6 +94,12 @@
     [self.articleSearchBar removeFromSuperview];
 }
 
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    self.articleSearchBar.frame = [self articleSearchBarFrame];
+}
+
+#pragma mark - Private Methods
 - (CGRect)articleSearchBarFrame {
     CGFloat height = 44.f;
     CGFloat marginLeft = 32.f;
@@ -96,11 +110,6 @@
     return barFrame;
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    self.articleSearchBar.frame = [self articleSearchBarFrame];
-}
-
 - (NSString *)readFile{
     NSString *path = [[NSBundle mainBundle] pathForResource:@"testText"
                                                      ofType:@"txt"];
@@ -109,6 +118,26 @@
                                                      error:NULL];
     
     return content;
+}
+
+- (IBAction)usefulButtonDidPress:(id)sender{
+    
+}
+
+- (IBAction)uselessButtonDidPress:(id)sender{
+    
+}
+
+- (IBAction)readButtonDidPress:(id)sender{
+    
+}
+
+- (IBAction)unreadButtonDidPress:(id)sender{
+    
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
 }
 
 #pragma mark - JJTArticleListTableViewDelegate
@@ -134,6 +163,7 @@
         _articleSearchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         _articleSearchBar.showsCancelButton = YES;
         _articleSearchBar.placeholder = @"在线搜索机经，请输入关键词";
+        _articleSearchBar.delegate = self;
     }
     
     return _articleSearchBar;

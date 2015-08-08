@@ -8,7 +8,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJTSearchViewController">
             <connections>
                 <outlet property="articlesTableView" destination="LUL-iz-kK6" id="O7I-SC-DZ9"/>
+                <outlet property="filterToolBar" destination="Jme-lW-x5k" id="C0m-17-Kgr"/>
+                <outlet property="readButton" destination="SyV-c4-E30" id="Lwr-Cd-6gi"/>
                 <outlet property="searchDisplayController" destination="aS6-u6-aCW" id="hGB-uN-aHK"/>
+                <outlet property="unreadButton" destination="jMt-BL-Ey3" id="cyj-Wk-eqi"/>
+                <outlet property="usefulButton" destination="bry-Qd-Jjr" id="ahH-pt-hif"/>
+                <outlet property="uselessButton" destination="jfY-bd-QeS" id="iSF-kj-kp0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,5 +50,36 @@
                 <outlet property="searchResultsDelegate" destination="-1" id="frd-LF-SGl"/>
             </connections>
         </searchDisplayController>
+        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Jme-lW-x5k">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+            <items>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="Nl5-3x-fc1"/>
+                <barButtonItem title="有用" id="bry-Qd-Jjr">
+                    <connections>
+                        <action selector="usefulButtonDidPress:" destination="-1" id="FZT-Rw-aj8"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="O9X-Hk-Dg0"/>
+                <barButtonItem title="无用" id="jfY-bd-QeS">
+                    <connections>
+                        <action selector="uselessButtonDidPress:" destination="-1" id="R8S-Rw-gk8"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="Svt-Pv-bPG"/>
+                <barButtonItem title="已阅" id="SyV-c4-E30">
+                    <connections>
+                        <action selector="readButtonDidPress:" destination="-1" id="MZb-Kn-RUs"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="QdR-Oc-Wh2"/>
+                <barButtonItem title="未阅" id="jMt-BL-Ey3">
+                    <connections>
+                        <action selector="unreadButtonDidPress:" destination="-1" id="Atx-hs-8gy"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="KOa-Ss-ANo"/>
+            </items>
+        </toolbar>
     </objects>
 </document>
