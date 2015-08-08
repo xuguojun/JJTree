@@ -8,12 +8,15 @@
 
 #import "JJTAuthorTableView.h"
 #import "JJTAuthorHeader.h"
+#import "JJTArticle.h"
 
 @interface JJTAuthorTableView()<JJTAuthorHeaderDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *authorTableView;
 @property (nonatomic, strong) JJTAuthorHeader *authorHeader;
-@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, strong) NSMutableArray *titles;
+
+@property (nonatomic, assign) BOOL isOpen;
 
 @end
 
@@ -62,7 +65,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    if (self.isOpen) {
+        return self.articles.count + 2;
+    } else {
+        return 2;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -76,7 +83,25 @@
         
     }
     
-    cell.textLabel.text = self.titles[indexPath.row];
+    if (!self.isOpen) {
+        cell.textLabel.text = self.titles[indexPath.row];
+    } else {
+        if (indexPath.row == 0) {
+            cell.textLabel.text = [self.titles firstObject];
+        } else if (indexPath.row == (self.articles.count + 1)) {
+            cell.textLabel.text = [self.titles lastObject];
+        } else {
+            JJTArticle *article = self.articles[indexPath.row - 1];
+            cell.textLabel.text = article.title;
+        }
+    }
+//    if (indexPath.row == 0 || indexPath.row == (self.articles.count + 1)) {
+//        cell.textLabel.text = self.titles[indexPath.row];
+//    } else {
+//        
+//        JJTArticle *article = self.articles[indexPath.row - 1];
+//        cell.textLabel.text = article.title;
+//    }
     
     return cell;
 }
@@ -85,6 +110,81 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (!self.isOpen) {
+        if (indexPath.row == 0) {
+            if (self.articles.count > 0) {
+                // add data and then open it
+                self.isOpen = !self.isOpen;
+                
+                [self insertArticles];
+                [self insertRows:tableView];
+                
+                [tableView reloadData];
+            } else {
+                // do nothing
+            }
+        } else if (indexPath.row == 1){
+            // do nothing
+        }
+    } else {
+        if (indexPath.row == 0) {
+            if (self.articles.count > 0) {
+                // remove data and then close it
+                self.isOpen = !self.isOpen;
+                
+                [self removeArticles];
+                [self removeRows:tableView];
+                
+                [tableView reloadData];
+            } else {
+                // do nothing
+            }
+        } else if (indexPath.row == self.articles.count + 1) {
+            // do nothing
+        }
+    }
+}
+
+- (void)insertArticles{
+    [self.titles insertObject:[self titlesOfArticles] atIndex:1];
+}
+
+- (NSArray *)indexes {
+
+    NSMutableArray *indexes = [NSMutableArray new];
+    for (int i = 0; i < self.articles.count; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(1 + i) inSection:0];
+        [indexes addObject:indexPath];
+    }
+    return indexes;
+}
+
+- (void)insertRows:(UITableView *)tableView{
+    [tableView insertRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+}
+
+- (void)removeArticles{
+    if (self.titles.count > 2) {
+
+        NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndexesInRange:NSMakeRange(1, self.articles.count)];
+        [self.titles removeObjectsAtIndexes:indexSet];
+    }
+}
+
+- (void)removeRows:(UITableView *)tableView{
+    if (self.titles.count > 2) {
+        [tableView deleteRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+    }
+}
+
+- (NSArray *)titlesOfArticles{
+    
+    NSMutableArray *array = [NSMutableArray new];
+    for (JJTArticle *article in self.articles) {
+        [array addObject:article.title];
+    }
+    
+    return array;
 }
 
 #pragma mark - JJTAuthorHeaderDelegate
@@ -121,7 +221,7 @@
 
 - (NSArray *)titles{
     if (!_titles) {
-        _titles = @[@"机经总量", @"获得打赏总金额"];
+        _titles = [[NSMutableArray alloc] initWithArray:@[@"机经总量", @"获得打赏总金额"]];
     }
     
     return _titles;

@@ -50,6 +50,7 @@
 - (void)articleTableViewDidSelectAuthorHeader:(JJTArticleTableView *)tableView{
     JJTAuthorViewController *authorVC = [JJTAuthorViewController new];
     authorVC.author = self.author;
+    authorVC.articles = @[self.article];
     [self.navigationController pushViewController:authorVC animated:YES];
 }
 

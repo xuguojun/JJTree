@@ -23,6 +23,7 @@
     
     self.title = self.author.roleName;
     self.authorTableView.author = self.author;
+    self.authorTableView.articles = self.articles;
 }
 
 - (IBAction)rewardButtonDidPress:(id)sender {
