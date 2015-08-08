@@ -8,7 +8,7 @@
 
 #import "JJTAboutViewController.h"
 #import "JJTRoleTableViewCell.h"
-
+#import "UIColor+JJTColor.h"
 #import <MWPhotoBrowser.h>
 
 static NSString *ABOUT_JJTREE = @"元机经是一个程序员们记录和分享编程开发知识点和解决方案的平台。\n\n它不是问答社区，也不是发表文章的平台，它专注于记录某个具体而客观的知识点或解决方案。\n\n如果你愿意，我们鼓励你将个人编写的机经分享至互联网，以为其他网友提供方便。与此同时，你也可能收获网友们打赏的金钱或其他回报。\n\n用户在使用元机经平台的过程中将被分配为以下3种角色：";
@@ -158,9 +158,18 @@ static NSString *ABOUT_JJTREE = @"元机经是一个程序员们记录和分享�
 
 - (UIBarButtonItem *)videoButton{
     if (!_videoButton) {
-        _videoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemPlay)
-                                                                     target:self
-                                                                     action:@selector(videoButtonDidPress:)];
+        
+        UIImage *image = [UIImage imageNamed:@"video"];
+        
+        UIButton *button = [[UIButton alloc] init];
+        
+        [button setFrame:CGRectMake(0, 0, 26, 18)];
+        [button setImage:[image imageWithRenderingMode:(UIImageRenderingModeAlwaysTemplate)]
+                forState:UIControlStateNormal];
+//        [button setTintColor:UIColorFromRGB(0xE8A433)];
+        [button addTarget:self action:@selector(videoButtonDidPress:) forControlEvents:UIControlEventTouchUpInside];
+        
+        _videoButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
     
     return _videoButton;
