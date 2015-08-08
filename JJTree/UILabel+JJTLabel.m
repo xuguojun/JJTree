@@ -42,4 +42,16 @@
     return [self bounds].size;
 }
 
+- (void)setRichText:(NSString *)htmlString withPlainText:(NSString *)text{
+    NSError *err = nil;
+    self.attributedText = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUTF8StringEncoding]
+                                                           options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
+                                                documentAttributes:nil
+                                                             error:&err];
+    
+    if (err) {
+        self.text = text;
+    }
+}
+
 @end

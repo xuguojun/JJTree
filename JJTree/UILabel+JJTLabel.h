@@ -18,5 +18,6 @@
 @interface UILabel (JJTLabel)
 
 - (CGSize)sizeOfMultiLineLabel;
+- (void)setRichText:(NSString *)htmlString withPlainText:(NSString *)text;
 
 @end
