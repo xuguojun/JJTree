@@ -59,6 +59,61 @@
     self.authorTableView.tableHeaderView = self.authorHeader;
 }
 
+- (void)insertArticles{
+    [self.titles insertObjects:[self titlesOfArticles] atIndexes:[self indexSet]];
+}
+
+- (NSArray *)indexes {
+    
+    NSMutableArray *indexes = [NSMutableArray new];
+    for (int i = 0; i < self.articles.count; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(1 + i) inSection:0];
+        [indexes addObject:indexPath];
+    }
+    return indexes;
+}
+
+- (NSIndexSet *)indexSet{
+    NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
+    for (int i = 0; i < self.articles.count; i++) {
+        [indexes addIndex:(1 + i)];
+    }
+    
+    return indexes;
+}
+
+- (void)insertRows:(UITableView *)tableView{
+    [tableView insertRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+}
+
+- (void)removeArticles{
+    if (self.titles.count > 2) {
+        
+        NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
+        for (int i = 0; i < self.articles.count; i++) {
+            [indexes addIndex:(1 + i)];
+        }
+        
+        [self.titles removeObjectsAtIndexes:indexes];
+    }
+}
+
+- (void)removeRows:(UITableView *)tableView{
+    if (self.titles.count > 2) {
+        [tableView deleteRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+    }
+}
+
+- (NSArray *)titlesOfArticles{
+    
+    NSMutableArray *array = [NSMutableArray new];
+    for (JJTArticle *article in self.articles) {
+        [array addObject:article.title];
+    }
+    
+    return array;
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -134,63 +189,15 @@
             }
         } else if (indexPath.row == self.articles.count + 1) {
             // do nothing
+        } else {
+            if ([self.delegate respondsToSelector:@selector(authorTableView:didSelectArticle:atIndex:)]) {
+                
+                NSInteger index = indexPath.row - 1;
+                JJTArticle *article = self.articles[index];
+                [self.delegate authorTableView:self didSelectArticle:article atIndex:(index)];
+            }
         }
     }
-}
-
-- (void)insertArticles{
-    [self.titles insertObjects:[self titlesOfArticles] atIndexes:[self indexSet]];
-}
-
-- (NSArray *)indexes {
-
-    NSMutableArray *indexes = [NSMutableArray new];
-    for (int i = 0; i < self.articles.count; i++) {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(1 + i) inSection:0];
-        [indexes addObject:indexPath];
-    }
-    return indexes;
-}
-
-- (NSIndexSet *)indexSet{
-    NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
-    for (int i = 0; i < self.articles.count; i++) {
-        [indexes addIndex:(1 + i)];
-    }
-    
-    return indexes;
-}
-
-- (void)insertRows:(UITableView *)tableView{
-    [tableView insertRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
-}
-
-- (void)removeArticles{
-    if (self.titles.count > 2) {
-        
-        NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
-        for (int i = 0; i < self.articles.count; i++) {
-            [indexes addIndex:(1 + i)];
-        }
-                                    
-        [self.titles removeObjectsAtIndexes:indexes];
-    }
-}
-
-- (void)removeRows:(UITableView *)tableView{
-    if (self.titles.count > 2) {
-        [tableView deleteRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
-    }
-}
-
-- (NSArray *)titlesOfArticles{
-    
-    NSMutableArray *array = [NSMutableArray new];
-    for (JJTArticle *article in self.articles) {
-        [array addObject:article.title];
-    }
-    
-    return array;
 }
 
 #pragma mark - JJTAuthorHeaderDelegate

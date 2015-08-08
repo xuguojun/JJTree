@@ -8,10 +8,11 @@
 
 #import "JJTAuthorViewController.h"
 #import "JJTAuthorTableView.h"
+#import "JJTArticleViewController.h"
 #import "JJTArticle.h"
 #import <MagicalRecord/MagicalRecord.h>
 
-@interface JJTAuthorViewController ()
+@interface JJTAuthorViewController ()<JJTAuthorTableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet JJTAuthorTableView *authorTableView;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *rewardAuthorButton;
@@ -41,6 +42,15 @@
 }
 
 - (IBAction)rewardButtonDidPress:(id)sender {
+}
+
+#pragma mark - JJTAuthorTableViewDelegate
+- (void)authorTableView:(JJTAuthorTableView *)tableView didSelectArticle:(JJTArticle *)article atIndex:(NSInteger)index{
+    JJTArticleViewController *articleVC = [JJTArticleViewController new];
+    articleVC.article = article;
+    articleVC.author = self.author;
+    
+    [self.navigationController pushViewController:articleVC animated:YES];
 }
 
 @end

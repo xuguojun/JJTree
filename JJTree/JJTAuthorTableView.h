@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "JJTAuthor.h"
+#import "JJTArticle.h"
 
 @class JJTAuthorTableView;
 
 @protocol JJTAuthorTableViewDelegate <NSObject>
 
 @required
-- (void)authorTableView:(JJTAuthorTableView *)tableView didSelectRowAtIndex:(NSInteger)index;
+- (void)authorTableView:(JJTAuthorTableView *)tableView
+       didSelectArticle:(JJTArticle *)article
+                atIndex:(NSInteger)index;
 
 @end
 @interface JJTAuthorTableView : UIView
