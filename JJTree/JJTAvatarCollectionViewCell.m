@@ -62,7 +62,7 @@
         _avatarURL = avatarURL;
         
         [self unhighlightView:self.avatarImageView];
-        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarURL] placeholderImage:nil];
+        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarURL] placeholderImage:[UIImage imageNamed:@"Icon-Default"]];
     }
 }
 

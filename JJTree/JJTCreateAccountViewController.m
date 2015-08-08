@@ -9,7 +9,6 @@
 #import "JJTCreateAccountViewController.h"
 #import "JJTAboutViewController.h"
 #import "JJTFormTableView.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface JJTCreateAccountViewController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -55,7 +54,7 @@
     self.avatarContainer.layer.shadowOpacity = .55f;
     self.avatarContainer.layer.shadowColor = [UIColor grayColor].CGColor;
     
-    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:@"http://d1oi7t5trwfj5d.cloudfront.net/91/a9/5a2c1503496da25094b88e9eda5f/avatar.jpeg"] placeholderImage:nil];
+    self.avatarImageView.image = [UIImage imageNamed:@"Icon-Avatar"];
 }
 
 - (void)closeButtonDidPress:(id)sender{

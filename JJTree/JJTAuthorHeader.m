@@ -87,7 +87,8 @@ static NSString *UNWATCH = @"取消关注";
 - (void)setAvatarURL:(NSString *)avatarURL{
     if (_avatarURL != avatarURL) {
         _avatarURL = avatarURL;
-        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarURL] placeholderImage:nil];
+        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarURL]
+                                placeholderImage:[UIImage imageNamed:@"Icon-Default"]];
     }
 }
 
