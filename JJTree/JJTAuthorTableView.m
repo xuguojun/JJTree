@@ -131,9 +131,6 @@
     return string;
 }
 
-- (void)reloadData{
-    [self.authorTableView reloadData];
-}
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -198,6 +195,10 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
         if (indexPath.row == 0) {
+            
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            cell.detailTextLabel.attributedText = [self totalAmount:NO];
+            
             if (self.articles.count > 0) {
                 // add data and then open it
                 self.isOpen = !self.isOpen;

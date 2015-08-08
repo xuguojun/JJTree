@@ -18,6 +18,8 @@
 @property (nonatomic, weak) IBOutlet UITableView *articlesTableView;
 @property (nonatomic, strong) UIRefreshControl *loadMoreControl;
 
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+
 @end
 
 @implementation JJTArticleListTableView
@@ -75,6 +77,15 @@
     return readBehavior;
 }
 
+- (void)keepSelectedCellAsHighlighted {
+    if (self.selectedIndexPath) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.articlesTableView selectRowAtIndexPath:self.selectedIndexPath
+                                                animated:NO
+                                          scrollPosition:UITableViewScrollPositionNone];
+        });
+    }
+}
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -103,7 +114,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    self.selectedIndexPath = indexPath;
+    
     if ([self.delegate respondsToSelector:@selector(articleTableView:didSelectRowAtIndex:withArticle:)]) {
         [self.delegate articleTableView:self
                     didSelectRowAtIndex:indexPath.row
@@ -125,10 +139,14 @@
 }
 
 #pragma mark - Getters & Setters
+
 - (void)setArticles:(NSArray *)articles{
     if (_articles != articles) {
         _articles = articles;
+        
         [self.articlesTableView reloadData];
+        
+        [self keepSelectedCellAsHighlighted];
     }
 }
 

@@ -12,7 +12,9 @@
 @implementation NSManagedObject (JJTManagedObject)
 
 - (void)saveAndWait{
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    });
 }
 
 @end

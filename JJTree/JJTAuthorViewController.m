@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     NSMutableArray *articles = [NSMutableArray new];
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10; i++) {
         JJTArticle *article = [JJTArticle MR_createEntity];
         article.articleID = @(i);
         article.title = [NSString stringWithFormat:@"Article %d", i];
