@@ -83,7 +83,7 @@
 }
 
 - (void)insertRows:(UITableView *)tableView{
-    [tableView insertRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationRight)];
+    [tableView insertRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
 }
 
 - (void)removeArticles{
@@ -131,6 +131,9 @@
     return string;
 }
 
+- (void)reloadData{
+    [self.authorTableView reloadData];
+}
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -189,7 +192,6 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (!self.isOpen) {
         if (indexPath.row == 0) {
@@ -199,8 +201,6 @@
                 
                 [self insertArticles];
                 [self insertRows:tableView];
-                
-                [tableView reloadData];
             } else {
                 // do nothing
             }
@@ -215,7 +215,7 @@
                 
                 [self removeArticles];
                 [self removeRows:tableView];
-                
+ 
                 [tableView reloadData];
             } else {
                 // do nothing
