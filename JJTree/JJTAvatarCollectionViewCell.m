@@ -7,6 +7,7 @@
 //
 
 #import "JJTAvatarCollectionViewCell.h"
+#import "UIColor+JJTColor.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface JJTAvatarCollectionViewCell()
@@ -35,7 +36,7 @@
 - (void)highlightView:(UIView *)view{
     view.layer.cornerRadius = view.bounds.size.width / 2.0f;
     view.layer.borderColor = [UIColor orangeColor].CGColor;
-    view.layer.borderWidth = 3.f;
+    view.layer.borderWidth = 2.4f;
     view.layer.masksToBounds = YES;
 }
 

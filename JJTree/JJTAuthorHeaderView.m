@@ -53,8 +53,8 @@
     
     self.avatarImageView.layer.cornerRadius = self.avatarImageView.bounds.size.width / 2.0f;
     self.avatarImageView.layer.masksToBounds = YES;
-    self.avatarImageView.layer.borderColor = [UIColor orangeColor].CGColor;
-    self.avatarImageView.layer.borderWidth = 0.8f;
+    self.avatarImageView.layer.borderColor = UIColorFromRGB(0xE8A433).CGColor;
+    self.avatarImageView.layer.borderWidth = 1.6f;
     
     self.layer.shadowOffset = CGSizeMake(.0f, 0.3f);
     self.layer.shadowRadius = 0.3f;

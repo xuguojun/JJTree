@@ -7,6 +7,7 @@
 //
 
 #import "JJTAuthorHeader.h"
+#import "UIColor+JJTColor.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *WATCH = @"关注TA";
@@ -60,8 +61,8 @@ static NSString *UNWATCH = @"取消关注";
     
     self.avatarImageView.layer.cornerRadius = self.avatarImageView.bounds.size.width / 2.0f;
     self.avatarImageView.layer.masksToBounds = YES;
-    self.avatarImageView.layer.borderColor = [UIColor orangeColor].CGColor;
-    self.avatarImageView.layer.borderWidth = 0.8f;
+    self.avatarImageView.layer.borderColor = UIColorFromRGB(0xE8A433).CGColor;
+    self.avatarImageView.layer.borderWidth = 1.6f;
     
     self.watchButton.layer.cornerRadius = 4.0f;
     self.watchButton.layer.borderColor = [UIColor grayColor].CGColor;
