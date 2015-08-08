@@ -49,6 +49,7 @@
 		9A834F581B5F6D4F005D6E2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A834F571B5F6D4F005D6E2F /* Images.xcassets */; };
 		9A834F5B1B5F6D4F005D6E2F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A834F591B5F6D4F005D6E2F /* LaunchScreen.xib */; };
 		9A834F671B5F6D4F005D6E2F /* JJTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F661B5F6D4F005D6E2F /* JJTreeTests.m */; };
+		9A8A0E4E1B75D10A0073BF70 /* libMMMarkdown-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8A0E4D1B75D10A0073BF70 /* libMMMarkdown-iOS.a */; };
 		9A90502E1B6C7F9D004DED27 /* JJTAvatarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A90502C1B6C7F9D004DED27 /* JJTAvatarCollectionView.m */; };
 		9A90502F1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A90502D1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib */; };
 		9A9050331B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9050311B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m */; };
@@ -176,6 +177,7 @@
 		9A834F601B5F6D4F005D6E2F /* JJTreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JJTreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A834F651B5F6D4F005D6E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A834F661B5F6D4F005D6E2F /* JJTreeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTreeTests.m; sourceTree = "<group>"; };
+		9A8A0E4D1B75D10A0073BF70 /* libMMMarkdown-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libMMMarkdown-iOS.a"; path = "MMMarkdown/build/Debug-iphoneos/libMMMarkdown-iOS.a"; sourceTree = "<group>"; };
 		9A90502B1B6C7F9D004DED27 /* JJTAvatarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTAvatarCollectionView.h; sourceTree = "<group>"; };
 		9A90502C1B6C7F9D004DED27 /* JJTAvatarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAvatarCollectionView.m; sourceTree = "<group>"; };
 		9A90502D1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAvatarCollectionView.xib; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8A0E4E1B75D10A0073BF70 /* libMMMarkdown-iOS.a in Frameworks */,
 				2845C02480D7EE171EF4C73C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +284,7 @@
 		4B3D61A468E2D61878529218 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A8A0E4D1B75D10A0073BF70 /* libMMMarkdown-iOS.a */,
 				5A3E9DDCF0F65FA1492EE4A2 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -1035,6 +1039,10 @@
 				INFOPLIST_FILE = JJTree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MMMarkdown/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1052,6 +1060,10 @@
 				INFOPLIST_FILE = JJTree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MMMarkdown/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

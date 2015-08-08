@@ -8,6 +8,7 @@
 
 #import "JJTRoleTableViewCell.h"
 #import "UILabel+JJTLabel.h"
+#import <MMMarkdown/MMMarkdown.h>
 
 @interface JJTRoleTableViewCell()
 
@@ -80,15 +81,27 @@
     if (role == RoleAuthor) {
         self.roleImageView.image = [UIImage imageNamed:@"author"];
         self.roleTagImageView.image = [UIImage imageNamed:@"author_tag"];
-        self.roleDescLabel.text = [self roleAuthor];
+        
+        NSString *rawString = [self roleAuthor];
+        NSString *htmlString = [MMMarkdown HTMLStringWithMarkdown:rawString error:nil];
+        [self.roleDescLabel setRichText:htmlString withPlainText:rawString];
+        
     } else if (role == RoleRead){
         self.roleImageView.image = [UIImage imageNamed:@"read"];
         self.roleTagImageView.image = [UIImage imageNamed:@"read_tag"];
-        self.roleDescLabel.text = [self roleRead];
+        
+        NSString *rawString = [self roleRead];
+        NSString *htmlString = [MMMarkdown HTMLStringWithMarkdown:rawString error:nil];
+        
+        [self.roleDescLabel setRichText:htmlString withPlainText:rawString];
     } else if (role == RoleEditor){
         self.roleImageView.image = [UIImage imageNamed:@"editor"];
         self.roleTagImageView.image = [UIImage imageNamed:@"editor_tag"];
-        self.roleDescLabel.text = [self roleEditor];
+        
+        NSString *rawString = [self roleEditor];
+        NSString *htmlString = [MMMarkdown HTMLStringWithMarkdown:rawString error:nil];
+        
+        [self.roleDescLabel setRichText:htmlString withPlainText:rawString];
     }
 }
 

@@ -45,7 +45,7 @@
 - (void)setRichText:(NSString *)htmlString withPlainText:(NSString *)text{
     NSError *err = nil;
     self.attributedText = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUTF8StringEncoding]
-                                                           options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
+                                                           options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding) }
                                                 documentAttributes:nil
                                                              error:&err];
     
