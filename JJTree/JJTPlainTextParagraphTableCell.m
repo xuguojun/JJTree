@@ -7,10 +7,12 @@
 //
 
 #import "JJTPlainTextParagraphTableCell.h"
+#import "UILabel+JJTLabel.h"
 
 @interface JJTPlainTextParagraphTableCell()
 
 @property (nonatomic, weak) IBOutlet UILabel *plainTextLabel;
+@property (nonatomic, assign) CGSize plainTextLabelSize;
 
 @end
 @implementation JJTPlainTextParagraphTableCell
@@ -44,6 +46,10 @@
         
         self.plainTextLabel.text = text;
     }
+}
+
+- (CGSize)plainTextLabelSize{
+    return [self.plainTextLabel sizeOfMultiLineLabel];
 }
 
 @end

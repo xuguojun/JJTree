@@ -25,6 +25,8 @@ static NSString *PICTURE = @"PICTURE";
 @property (nonatomic, strong) JJTAuthorHeaderView *authorHeaderView;
 @property (nonatomic, strong) NSArray *paragraphs;
 
+@property (nonatomic, strong) JJTPlainTextParagraphTableCell *plainTextParagraphTableCell;
+
 @end
 
 @implementation JJTArticleTableView
@@ -88,6 +90,7 @@ static NSString *PICTURE = @"PICTURE";
                                                          reuseIdentifier:PLAIN_TEXT];
         }
         
+        self.plainTextParagraphTableCell = cell;
         cell.text = paragrah.content;
         
         return cell;
@@ -98,7 +101,7 @@ static NSString *PICTURE = @"PICTURE";
             cell = [[JJTBlockParagraphTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                                          reuseIdentifier:PLAIN_TEXT];
         }
-        
+
         cell.blockURL = paragrah.content;
         
         return cell;
@@ -132,7 +135,8 @@ static NSString *PICTURE = @"PICTURE";
     
     JJTParagraph *paragrah = self.paragraphs[indexPath.section];
     if ([paragrah.type isEqualToNumber:@(JJTParagraphPlainText)]) {// PLAIN TEXT
-        return 120;
+        
+        return 16 + self.plainTextParagraphTableCell.plainTextLabelSize.height;
     } else if ([paragrah.type isEqualToNumber:@(JJTParagraphBlock)]){// BLOCK
         return 240;
     } else if ([paragrah.type isEqualToNumber:@(JJTParagraphPicture)]){
@@ -187,4 +191,12 @@ static NSString *PICTURE = @"PICTURE";
         self.authorHeaderView.author = author;
     }
 }
+
+//- (NSMutableArray *)cells{
+//    if (!_cells) {
+//        _cells = [NSMutableArray new];
+//    }
+//    
+//    return _cells;
+//}
 @end

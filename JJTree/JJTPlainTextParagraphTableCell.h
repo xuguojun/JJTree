@@ -11,5 +11,6 @@
 @interface JJTPlainTextParagraphTableCell : UITableViewCell
 
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic, assign, readonly) CGSize plainTextLabelSize;
 
 @end
