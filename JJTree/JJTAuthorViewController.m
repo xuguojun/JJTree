@@ -29,8 +29,8 @@
         JJTArticle *article = [JJTArticle MR_createEntity];
         article.articleID = @(i);
         article.title = [NSString stringWithFormat:@"Article %d", i];
-        article.usefulValue = @(6);
-        article.uselessValue = @(5);
+        article.usefulValue = @(6 + i);
+        article.uselessValue = @(5 + i);
         article.viewCount = @(99);
         
         [articles addObject:article];

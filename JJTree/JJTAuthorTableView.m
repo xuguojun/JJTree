@@ -83,7 +83,7 @@
 }
 
 - (void)insertRows:(UITableView *)tableView{
-    [tableView insertRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+    [tableView insertRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationRight)];
 }
 
 - (void)removeArticles{
@@ -100,7 +100,7 @@
 
 - (void)removeRows:(UITableView *)tableView{
     if (self.titles.count > 2) {
-        [tableView deleteRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+        [tableView deleteRowsAtIndexPaths:[self indexes] withRowAnimation:(UITableViewRowAnimationMiddle)];
     }
 }
 
@@ -112,6 +112,23 @@
     }
     
     return array;
+}
+
+- (NSMutableAttributedString *)totalAmount:(BOOL)up{
+    
+    NSString *text = [NSString stringWithFormat:@"%lu篇 %@", (unsigned long)self.articles.count, up ? @"⊻" : @"⊼"];
+    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text];
+    
+    NSRange rang = NSMakeRange(text.length - 1, 1);
+    [string addAttribute:NSFontAttributeName
+                   value:[UIFont boldSystemFontOfSize:20]
+                   range:rang];
+    
+    [string addAttribute:NSForegroundColorAttributeName
+                   value:[UIColor lightGrayColor]
+                   range:rang];
+    
+    return string;
 }
 
 #pragma mark - UITableViewDataSource
@@ -133,21 +150,37 @@
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                       reuseIdentifier:cellIdentifier];
         
     }
     
     if (!self.isOpen) {
         cell.textLabel.text = self.titles[indexPath.row];
+
+        if (indexPath.row == 0) {
+            cell.detailTextLabel.attributedText = [self totalAmount:YES];
+        } else {
+            cell.detailTextLabel.text = @"💰￥999.00";
+        }
+        
+        cell.accessoryType = UITableViewCellAccessoryNone;
     } else {
         if (indexPath.row == 0) {
             cell.textLabel.text = [self.titles firstObject];
+            cell.detailTextLabel.attributedText = [self totalAmount:NO];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            
         } else if (indexPath.row == (self.articles.count + 1)) {
             cell.textLabel.text = [self.titles lastObject];
+            cell.detailTextLabel.text = @"💰￥999.00";
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            
         } else {
             JJTArticle *article = self.articles[indexPath.row - 1];
             cell.textLabel.text = article.title;
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"👍%@", article.usefulValue];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     }
     
