@@ -123,6 +123,11 @@ static NSString *LOGOUT = @"退出登录";
             JJTBehaviorViewController *behavior = [JJTBehaviorViewController new];
             [self.navigationController pushViewController:behavior animated:YES];
         }
+        
+        if (indexPath.row == 1) {
+            JJTBehaviorViewController *behavior = [JJTBehaviorViewController new];
+            [self.navigationController pushViewController:behavior animated:YES];
+        }
     }
     
     if (indexPath.section == 2) {

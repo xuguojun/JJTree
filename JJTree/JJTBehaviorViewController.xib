@@ -24,7 +24,7 @@
                         <outlet property="delegate" destination="-1" id="heP-MR-BSK"/>
                     </connections>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRw-nL-PZ9" customClass="JJTBehaviorsTableView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRw-nL-PZ9" customClass="JJTBehaviorsTableView">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>

@@ -62,7 +62,7 @@
         _author = author;
         
         [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:author.avatarURL]
-                                placeholderImage:[UIImage imageNamed:@"Icon-Avatar"]];
+                                placeholderImage:[UIImage imageNamed:@"Icon-Default"]];
         self.authorNameLabel.text = author.roleName;
 
     }
