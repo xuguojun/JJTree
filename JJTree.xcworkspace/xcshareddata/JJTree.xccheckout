@@ -22,7 +22,7 @@
 		<key>43E10A7BE4AEB007761D6C373194C775C9E25D70</key>
 		<string>..</string>
 		<key>8E756A5F3B3088D21C2995D34B375B49B53EB485</key>
-		<string>../MMMarkdown/</string>
+		<string>../MMMarkdown</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/xuguojun/JJTree.git</string>

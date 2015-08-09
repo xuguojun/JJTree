@@ -8,6 +8,7 @@
 
 #import "JJTProfileViewController.h"
 #import "JJTPreferenceViewController.h"
+#import "JJTBehaviorViewController.h"
 #import "JJTAboutViewController.h"
 
 static NSString *LOGOUT = @"退出登录";
@@ -110,6 +111,14 @@ static NSString *LOGOUT = @"退出登录";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            // fans
+            JJTBehaviorViewController *behavior = [JJTBehaviorViewController new];
+            [self.navigationController pushViewController:behavior animated:YES];
+        }
+    }
     
     if (indexPath.section == 3) {
         [self about];
