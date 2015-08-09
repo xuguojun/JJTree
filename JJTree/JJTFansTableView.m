@@ -9,6 +9,8 @@
 #import "JJTFansTableView.h"
 #import "JJTFansTableViewCell.h"
 
+static NSString *HAS_FANS_COUNT = @"共拥有粉丝%lu位";
+
 @interface JJTFansTableView()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *fansTableView;
@@ -72,17 +74,21 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
- 
+    //    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if ([self.delegate respondsToSelector:@selector(fansTableView:didSelectRowAtIndex:)]) {
         [self.delegate fansTableView:self didSelectRowAtIndex:indexPath.row];
     }
 }
 
-#pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 55.f;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return [NSString stringWithFormat:HAS_FANS_COUNT, (unsigned long)self.fans.count];
 }
 
 #pragma mark - Getters & Setters
