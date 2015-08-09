@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJTBehaviorViewController">
             <connections>
+                <outlet property="behaviorsTableView" destination="QRw-nL-PZ9" id="1OF-iH-3Ci"/>
                 <outlet property="fansTableView" destination="xy0-Jc-oHd" id="38a-v3-zWN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,13 +24,24 @@
                         <outlet property="delegate" destination="-1" id="heP-MR-BSK"/>
                     </connections>
                 </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRw-nL-PZ9" customClass="JJTBehaviorsTableView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="ea2-EP-chW"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="xy0-Jc-oHd" secondAttribute="bottom" id="1IX-hm-S81"/>
                 <constraint firstAttribute="trailing" secondItem="xy0-Jc-oHd" secondAttribute="trailing" id="5yl-P2-EnO"/>
+                <constraint firstAttribute="trailing" secondItem="QRw-nL-PZ9" secondAttribute="trailing" id="FLR-fM-CJq"/>
                 <constraint firstItem="xy0-Jc-oHd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TEj-he-AQd"/>
+                <constraint firstItem="QRw-nL-PZ9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bja-HR-ul7"/>
                 <constraint firstItem="xy0-Jc-oHd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gKY-cv-d7Q"/>
+                <constraint firstItem="QRw-nL-PZ9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="or8-UJ-B47"/>
+                <constraint firstAttribute="bottom" secondItem="QRw-nL-PZ9" secondAttribute="bottom" id="wvd-Kl-p9J"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
         </view>

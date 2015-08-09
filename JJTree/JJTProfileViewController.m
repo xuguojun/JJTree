@@ -112,12 +112,22 @@ static NSString *LOGOUT = @"退出登录";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (indexPath.section == 0) {
+        JJTBehaviorViewController *behavior = [JJTBehaviorViewController new];
+        [self.navigationController pushViewController:behavior animated:YES];
+    }
+    
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             // fans
             JJTBehaviorViewController *behavior = [JJTBehaviorViewController new];
             [self.navigationController pushViewController:behavior animated:YES];
         }
+    }
+    
+    if (indexPath.section == 2) {
+        JJTBehaviorViewController *behavior = [JJTBehaviorViewController new];
+        [self.navigationController pushViewController:behavior animated:YES];
     }
     
     if (indexPath.section == 3) {
