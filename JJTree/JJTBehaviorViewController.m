@@ -54,6 +54,12 @@
     
     self.behaviorsTableView.articles = articles;
     self.behaviorsTableView.authors = fans;
+    
+    if (self.behaviorType == JJTBehaviorArticle) {
+        self.fansTableView.hidden = YES;
+    } else if (self.behaviorType == JJTBehaviorAuthor) {
+        self.behaviorsTableView.hidden = YES;
+    }
 }
 
 #pragma mark - JJTFansTableViewDelegate

@@ -121,6 +121,7 @@ static NSString *LOGOUT = @"退出登录";
         if (indexPath.row == 0) {
             // fans
             JJTBehaviorViewController *behavior = [JJTBehaviorViewController new];
+            behavior.behaviorType = JJTBehaviorAuthor;
             [self.navigationController pushViewController:behavior animated:YES];
         }
         

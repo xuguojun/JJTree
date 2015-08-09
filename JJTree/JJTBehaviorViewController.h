@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    JJTBehaviorArticle,
+    JJTBehaviorAuthor
+} JJTBehaviorType;
+
 @interface JJTBehaviorViewController : UIViewController
+
+@property (nonatomic, assign) JJTBehaviorType behaviorType;
 
 @end
