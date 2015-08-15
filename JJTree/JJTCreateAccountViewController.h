@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JJTBaseViewController.h"
 
 @class JJTCreateAccountViewController;
 
@@ -16,7 +17,7 @@
 - (void)createAccountViewControllerDidClose:(JJTCreateAccountViewController *)controller;
 
 @end
-@interface JJTCreateAccountViewController : UIViewController
+@interface JJTCreateAccountViewController : JJTBaseViewController
 
 @property (nonatomic, weak) IBOutlet id<JJTCreateAccountViewControllerDelegate> delegate;
 

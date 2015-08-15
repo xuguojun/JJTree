@@ -11,6 +11,7 @@
 #import "NSManagedObject+JJTManagedObject.h"
 #import "JJTUser.h"
 #import "JJTUser+JJTAddition.h"
+#import "JJTHttpManager.h"
 
 static NSString *ARRANGE_BY_USELESS_VALUE = @"ARRANGE_BY_USELESS_VALUE";
 static NSString *ARRANGE_BY_UPDATE_DATE = @"ARRANGE_BY_UPDATE_DATE";
@@ -20,5 +21,6 @@ static NSString *BLOCK_STYLE_INDEX = @"BLOCK_STYLE_INDEX";
 
 @property (nonatomic, strong, readonly) NSUserDefaults *prefs;
 @property (nonatomic, strong, readonly) JJTUser *currentUser;
+@property (nonatomic, strong, readonly) JJTHttpManager *httpManager;
 
 @end

@@ -30,6 +30,7 @@
 
 @implementation JJTCreateAccountViewController
 
+#pragma mar - Life Cycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -57,6 +58,7 @@
     self.avatarImageView.image = [UIImage imageNamed:@"Icon-Avatar"];
 }
 
+#pragma mark - Private Methods
 - (void)closeButtonDidPress:(id)sender{
     [self dismissViewControllerAnimated:NO completion:NULL];
     if ([self.delegate respondsToSelector:@selector(createAccountViewControllerDidClose:)]) {
@@ -71,7 +73,16 @@
 }
 
 - (IBAction)createAccountButtonDidPress:(id)sender {
-
+    
+    static NSString *url = @"accounts";
+    
+    NSDictionary *params = @{@"account" : self.formTableView.account, @"password" : self.formTableView.password};
+    
+    [self.httpManager requestUrlPath:url method:METHOD_POST param:params fromCache:NO requestSuccess:^(id result, AFHTTPRequestOperation *operation) {
+        ;
+    } requestFailure:^(id result, AFHTTPRequestOperation *operation) {
+        ;
+    }];
 }
 
 - (IBAction)loginButtonDidPress:(id)sender {

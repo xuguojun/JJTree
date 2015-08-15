@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSUserDefaults *prefs;
 @property (nonatomic, strong) JJTUser *currentUser;
+@property (nonatomic, strong) JJTHttpManager *httpManager;
 
 @end
 
@@ -36,4 +37,11 @@
     return _currentUser;
 }
 
+- (JJTHttpManager *)httpManager{
+    if (!_httpManager) {
+        _httpManager = [JJTHttpManager sharedInstance];
+    }
+    
+    return _httpManager;
+}
 @end

@@ -8,9 +8,6 @@
 
 #import "JJTHttpManager.h"
 
-typedef void (^successBlock)(id result, AFHTTPRequestOperation *operation);
-typedef void (^failureBlock)(id result, AFHTTPRequestOperation *operation);
-
 #ifdef DEBUG
     #define HOST @"http://localhost:8080/JJTree/"
 #else
@@ -69,7 +66,7 @@ static NSString *PREFIX_HTTP = @"http";
         requestFailure:(failureBlock)responseFailureBlock {
     
     if (![urlPath hasPrefix:PREFIX_HTTP]) {
-        urlPath = [NSString stringWithFormat:@"%@%@", PREFIX_HTTP, urlPath];
+        urlPath = [NSString stringWithFormat:@"%@%@", HOST, urlPath];
     }
     
     [self.requestSerializer setCachePolicy:fromCache ? NSURLRequestReturnCacheDataElseLoad : NSURLRequestReloadIgnoringCacheData];

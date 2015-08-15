@@ -72,11 +72,11 @@ static NSString *PASSWORD_PLACEHOLDER = @"密码";
 }
 
 - (void)setText:(NSString *)text{
-    if (_text != text) {
-        _text = text;
-        
-        self.formTextField.text = text;
-    }
+    self.formTextField.text = text;
+}
+
+- (NSString *)text{
+    return self.formTextField.text;
 }
 
 - (void)setDisplayKeyboard:(BOOL)displayKeyboard{
