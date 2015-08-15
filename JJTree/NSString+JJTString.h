@@ -20,4 +20,6 @@
 - (BOOL)looksLikeEmailFormat;
 - (NSArray *)splitByNewLine;
 
++ (NSString *)randomStringWithLength:(int)length;
+
 @end

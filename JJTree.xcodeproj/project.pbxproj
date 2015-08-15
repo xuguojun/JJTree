@@ -51,6 +51,7 @@
 		9A834F671B5F6D4F005D6E2F /* JJTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F661B5F6D4F005D6E2F /* JJTreeTests.m */; };
 		9A8A0E4E1B75D10A0073BF70 /* libMMMarkdown-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8A0E4D1B75D10A0073BF70 /* libMMMarkdown-iOS.a */; };
 		9A8CBF9C1B7F74D7009ED63B /* JJTHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CBF9B1B7F74D7009ED63B /* JJTHttpManager.m */; };
+		9A8CBF9F1B7F883D009ED63B /* UIImage+JJTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CBF9E1B7F883D009ED63B /* UIImage+JJTImage.m */; };
 		9A90502E1B6C7F9D004DED27 /* JJTAvatarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A90502C1B6C7F9D004DED27 /* JJTAvatarCollectionView.m */; };
 		9A90502F1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A90502D1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib */; };
 		9A9050331B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9050311B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m */; };
@@ -191,6 +192,8 @@
 		9A8A0E4D1B75D10A0073BF70 /* libMMMarkdown-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libMMMarkdown-iOS.a"; path = "MMMarkdown/build/Debug-iphoneos/libMMMarkdown-iOS.a"; sourceTree = "<group>"; };
 		9A8CBF9A1B7F74D7009ED63B /* JJTHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTHttpManager.h; sourceTree = "<group>"; };
 		9A8CBF9B1B7F74D7009ED63B /* JJTHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTHttpManager.m; sourceTree = "<group>"; };
+		9A8CBF9D1B7F883D009ED63B /* UIImage+JJTImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JJTImage.h"; sourceTree = "<group>"; };
+		9A8CBF9E1B7F883D009ED63B /* UIImage+JJTImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JJTImage.m"; sourceTree = "<group>"; };
 		9A90502B1B6C7F9D004DED27 /* JJTAvatarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTAvatarCollectionView.h; sourceTree = "<group>"; };
 		9A90502C1B6C7F9D004DED27 /* JJTAvatarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAvatarCollectionView.m; sourceTree = "<group>"; };
 		9A90502D1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAvatarCollectionView.xib; sourceTree = "<group>"; };
@@ -698,6 +701,8 @@
 				9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */,
 				9AB4AE1C1B726B0F00E6AE3A /* UILabel+JJTLabel.h */,
 				9AB4AE1D1B726B0F00E6AE3A /* UILabel+JJTLabel.m */,
+				9A8CBF9D1B7F883D009ED63B /* UIImage+JJTImage.h */,
+				9A8CBF9E1B7F883D009ED63B /* UIImage+JJTImage.m */,
 				9A8CBF9A1B7F74D7009ED63B /* JJTHttpManager.h */,
 				9A8CBF9B1B7F74D7009ED63B /* JJTHttpManager.m */,
 			);
@@ -930,6 +935,7 @@
 			files = (
 				9A2852111B666C9100C827A5 /* JJTLoginViewController.m in Sources */,
 				9A29A04B1B65370A006FA11B /* JJTPlainTextParagraphTableCell.m in Sources */,
+				9A8CBF9F1B7F883D009ED63B /* UIImage+JJTImage.m in Sources */,
 				9AFD8F971B77A1E400969352 /* JJTFansTableView.m in Sources */,
 				9AD292A91B6DBA6400508A85 /* JJTUser+JJTAddition.m in Sources */,
 				9AA1A3CA1B64E337007BBA25 /* JJTReader.m in Sources */,

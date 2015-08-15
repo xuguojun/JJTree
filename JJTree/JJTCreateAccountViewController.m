@@ -9,6 +9,7 @@
 #import "JJTCreateAccountViewController.h"
 #import "JJTAboutViewController.h"
 #import "JJTFormTableView.h"
+#import "UIImage+JJTImage.h"
 
 @interface JJTCreateAccountViewController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -25,6 +26,8 @@
 
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @property (nonatomic, strong) UIActionSheet *actionSheet;
+
+@property (nonatomic, strong) NSData *avatarData;
 
 @end
 
@@ -76,7 +79,7 @@
     
     static NSString *url = @"accounts";
     
-    NSDictionary *params = @{@"account" : self.formTableView.account, @"password" : self.formTableView.password};
+    NSDictionary *params = @{@"attachement" : self.avatarData, @"account" : self.formTableView.account, @"password" : self.formTableView.password};
     
     [self.httpManager requestUrlPath:url method:METHOD_POST param:params fromCache:NO requestSuccess:^(id result, AFHTTPRequestOperation *operation) {
         ;
@@ -101,6 +104,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage *image = info[UIImagePickerControllerEditedImage];
     self.avatarImageView.image = image;
+    
+    self.avatarData = UIImagePNGRepresentation([image fixOrientation]);
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }

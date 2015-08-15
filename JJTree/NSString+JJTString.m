@@ -8,6 +8,8 @@
 
 #import "NSString+JJTString.h"
 
+static NSString *LETTERS = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
 @implementation NSString (JJTString)
 
 - (BOOL)matchPasswordFormat{
@@ -57,4 +59,16 @@
     return [self componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
 }
 
++ (NSString *)randomStringWithLength:(int)length{
+    
+    NSMutableString *s = [NSMutableString stringWithCapacity:length];
+    
+    for (NSUInteger i = 0U; i < length; i++) {
+        u_int32_t r = arc4random() % [LETTERS length];
+        unichar c = [LETTERS characterAtIndex:r];
+        [s appendFormat:@"%C", c];
+    }
+    
+    return s;
+}
 @end

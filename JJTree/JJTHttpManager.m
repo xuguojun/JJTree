@@ -7,6 +7,7 @@
 //
 
 #import "JJTHttpManager.h"
+#import "NSString+JJTString.h"
 
 #ifdef DEBUG
     #define HOST @"http://localhost:8080/JJTree/"
@@ -15,6 +16,7 @@
 #endif
 
 static NSString *PREFIX_HTTP = @"http";
+static NSString *ATTACHEMENT = @"attachement";
 
 @implementation JJTHttpManager
 
@@ -72,25 +74,40 @@ static NSString *PREFIX_HTTP = @"http";
     [self.requestSerializer setCachePolicy:fromCache ? NSURLRequestReturnCacheDataElseLoad : NSURLRequestReloadIgnoringCacheData];
     
     if ([method isEqualToString:METHOD_GET]) {
-        [self GET:urlPath
-       parameters:nil
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              responseSuccessBlock(responseObject, operation);
-          }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              responseFailureBlock (error, operation);
-          }];
+        [self GET:urlPath parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            responseSuccessBlock(responseObject, operation);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            responseFailureBlock (error, operation);
+        }];
+        
     } else if ([method isEqualToString:METHOD_POST]) {
         [self configureHeaders];
         
-        [self POST:urlPath
-        parameters:param
-           success:^(AFHTTPRequestOperation *operation, id responseObject) {
-               responseSuccessBlock(responseObject, operation);
-           }
-           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-               responseFailureBlock(error, operation);
-           }];
+        NSData *attachement = [param objectForKey:ATTACHEMENT];
+        if (attachement) {   // REGISTER
+            [self POST:urlPath parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                
+                NSString *fileName = [NSString stringWithFormat:@"%@.png", [NSString randomStringWithLength:20]];
+                [formData appendPartWithFileData:attachement name:@"file" fileName:fileName mimeType:@"image/png"];
+                
+            } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                responseSuccessBlock(responseObject, operation);
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                responseFailureBlock(error, operation);
+            }];
+            
+        } else {
+            [self POST:urlPath parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                responseSuccessBlock(responseObject, operation);
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                responseFailureBlock(error, operation);
+            }];
+        }
+        
+        
+        
     } else if ([method isEqualToString:METHOD_DELETE]){
         
         [self configureHeaders];
