@@ -11,6 +11,8 @@
 #import "JJTAuthor.h"
 #import "JJTArticle.h"
 
+static NSString *HAS_ARTICLE_COUNT = @"共有%lu篇机经";
+
 @interface JJTBehaviorsTableView()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *behaviorsTableView;
@@ -78,17 +80,21 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if ([self.delegate respondsToSelector:@selector(behaviorTableView:didSelectRowAtIndex:)]) {
         [self.delegate behaviorTableView:self didSelectRowAtIndex:indexPath.row];
     }
 }
 
-#pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 55.f;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return [NSString stringWithFormat:HAS_ARTICLE_COUNT, (unsigned long)self.articles.count];
 }
 
 #pragma mark - Getters & Setters

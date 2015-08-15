@@ -50,6 +50,7 @@
 		9A834F5B1B5F6D4F005D6E2F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A834F591B5F6D4F005D6E2F /* LaunchScreen.xib */; };
 		9A834F671B5F6D4F005D6E2F /* JJTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A834F661B5F6D4F005D6E2F /* JJTreeTests.m */; };
 		9A8A0E4E1B75D10A0073BF70 /* libMMMarkdown-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8A0E4D1B75D10A0073BF70 /* libMMMarkdown-iOS.a */; };
+		9A8CBF9C1B7F74D7009ED63B /* JJTHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CBF9B1B7F74D7009ED63B /* JJTHttpManager.m */; };
 		9A90502E1B6C7F9D004DED27 /* JJTAvatarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A90502C1B6C7F9D004DED27 /* JJTAvatarCollectionView.m */; };
 		9A90502F1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A90502D1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib */; };
 		9A9050331B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9050311B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m */; };
@@ -188,6 +189,8 @@
 		9A834F651B5F6D4F005D6E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A834F661B5F6D4F005D6E2F /* JJTreeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTreeTests.m; sourceTree = "<group>"; };
 		9A8A0E4D1B75D10A0073BF70 /* libMMMarkdown-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libMMMarkdown-iOS.a"; path = "MMMarkdown/build/Debug-iphoneos/libMMMarkdown-iOS.a"; sourceTree = "<group>"; };
+		9A8CBF9A1B7F74D7009ED63B /* JJTHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTHttpManager.h; sourceTree = "<group>"; };
+		9A8CBF9B1B7F74D7009ED63B /* JJTHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTHttpManager.m; sourceTree = "<group>"; };
 		9A90502B1B6C7F9D004DED27 /* JJTAvatarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTAvatarCollectionView.h; sourceTree = "<group>"; };
 		9A90502C1B6C7F9D004DED27 /* JJTAvatarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTAvatarCollectionView.m; sourceTree = "<group>"; };
 		9A90502D1B6C7F9D004DED27 /* JJTAvatarCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJTAvatarCollectionView.xib; sourceTree = "<group>"; };
@@ -695,6 +698,8 @@
 				9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */,
 				9AB4AE1C1B726B0F00E6AE3A /* UILabel+JJTLabel.h */,
 				9AB4AE1D1B726B0F00E6AE3A /* UILabel+JJTLabel.m */,
+				9A8CBF9A1B7F74D7009ED63B /* JJTHttpManager.h */,
+				9A8CBF9B1B7F74D7009ED63B /* JJTHttpManager.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -946,6 +951,7 @@
 				9A834F501B5F6D4F005D6E2F /* JJTree.xcdatamodeld in Sources */,
 				9A6614CF1B6D20840059DCC2 /* JJTBaseViewController.m in Sources */,
 				9AB4AE1E1B726B0F00E6AE3A /* UILabel+JJTLabel.m in Sources */,
+				9A8CBF9C1B7F74D7009ED63B /* JJTHttpManager.m in Sources */,
 				9A28521D1B666DDC00C827A5 /* JJTFormTableViewCell.m in Sources */,
 				9A29A0551B653B01006FA11B /* JJTPictureParagraphTableViewCell.m in Sources */,
 				9A9271181B67D57D00901A71 /* JJTBlockLineTableViewCell.m in Sources */,
