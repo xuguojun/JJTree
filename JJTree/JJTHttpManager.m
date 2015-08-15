@@ -87,9 +87,17 @@ static NSString *ATTACHEMENT = @"attachement";
         
         NSData *attachement = [param objectForKey:ATTACHEMENT];
         if (attachement) {   // REGISTER
-            [self POST:urlPath parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-                
+            
+            self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", nil];
+            
+            [self POST:urlPath parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+
+                NSString *account = [param objectForKey:@"account"];
+                NSString *password = [param objectForKey:@"password"];
                 NSString *fileName = [NSString stringWithFormat:@"%@.png", [NSString randomStringWithLength:20]];
+                
+                [formData appendPartWithFormData:[account dataUsingEncoding:NSUTF8StringEncoding] name:@"account"];
+                [formData appendPartWithFormData:[password dataUsingEncoding:NSUTF8StringEncoding] name:@"password"];
                 [formData appendPartWithFileData:attachement name:@"file" fileName:fileName mimeType:@"image/png"];
                 
             } success:^(AFHTTPRequestOperation *operation, id responseObject) {
