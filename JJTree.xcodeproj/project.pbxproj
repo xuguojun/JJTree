@@ -96,6 +96,7 @@
 		9AA8BDF31B7519B500C2EA0B /* JJTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8BDF21B7519B500C2EA0B /* JJTLabel.m */; };
 		9AB4AE1B1B7253C100E6AE3A /* css.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4AE1A1B7253C100E6AE3A /* css.txt */; };
 		9AB4AE1E1B726B0F00E6AE3A /* UILabel+JJTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4AE1D1B726B0F00E6AE3A /* UILabel+JJTLabel.m */; };
+		9ABFA2581B838493004EB38F /* JJTBaseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFA2571B838493004EB38F /* JJTBaseParser.m */; };
 		9AD292A91B6DBA6400508A85 /* JJTUser+JJTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292A81B6DBA6400508A85 /* JJTUser+JJTAddition.m */; };
 		9AD292AC1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */; };
 		9AD292B01B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AD292AE1B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld */; };
@@ -263,6 +264,8 @@
 		9AB4AE1A1B7253C100E6AE3A /* css.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = css.txt; sourceTree = "<group>"; };
 		9AB4AE1C1B726B0F00E6AE3A /* UILabel+JJTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+JJTLabel.h"; sourceTree = "<group>"; };
 		9AB4AE1D1B726B0F00E6AE3A /* UILabel+JJTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+JJTLabel.m"; sourceTree = "<group>"; };
+		9ABFA2561B838493004EB38F /* JJTBaseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTBaseParser.h; sourceTree = "<group>"; };
+		9ABFA2571B838493004EB38F /* JJTBaseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTBaseParser.m; sourceTree = "<group>"; };
 		9AD292A71B6DBA6400508A85 /* JJTUser+JJTAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JJTUser+JJTAddition.h"; sourceTree = "<group>"; };
 		9AD292A81B6DBA6400508A85 /* JJTUser+JJTAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JJTUser+JJTAddition.m"; sourceTree = "<group>"; };
 		9AD292AA1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+JJTManagedObject.h"; sourceTree = "<group>"; };
@@ -653,6 +656,8 @@
 			children = (
 				9AA1A3D21B64E9C4007BBA25 /* NSDate+JJTDate.h */,
 				9AA1A3D31B64E9C4007BBA25 /* NSDate+JJTDate.m */,
+				9ABFA2561B838493004EB38F /* JJTBaseParser.h */,
+				9ABFA2571B838493004EB38F /* JJTBaseParser.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -978,6 +983,7 @@
 				9A90502E1B6C7F9D004DED27 /* JJTAvatarCollectionView.m in Sources */,
 				9A2852211B66771500C827A5 /* NSString+JJTString.m in Sources */,
 				9AA1A3D41B64E9C4007BBA25 /* NSDate+JJTDate.m in Sources */,
+				9ABFA2581B838493004EB38F /* JJTBaseParser.m in Sources */,
 				9AA1A3B71B64D9C0007BBA25 /* JJTUser.xcdatamodeld in Sources */,
 				9A29A0501B653A22006FA11B /* JJTBlockParagraphTableViewCell.m in Sources */,
 				9AFD8F8C1B779BBA00969352 /* JJTBehaviorViewController.m in Sources */,

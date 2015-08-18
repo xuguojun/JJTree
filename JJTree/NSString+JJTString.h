@@ -22,4 +22,6 @@
 
 + (NSString *)randomStringWithLength:(int)length;
 
+- (NSDate *)toDate;
+
 @end

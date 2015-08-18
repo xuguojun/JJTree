@@ -13,6 +13,7 @@
 @implementation JJTArticle
 
 @dynamic createdAt;
+@dynamic updatedAt;
 @dynamic articleID;
 @dynamic title;
 @dynamic usefulValue;

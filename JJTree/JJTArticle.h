@@ -14,6 +14,7 @@
 @interface JJTArticle : NSManagedObject
 
 @property (nonatomic, retain) NSDate * createdAt;
+@property (nonatomic, retain) NSDate * updatedAt;
 @property (nonatomic, retain) NSNumber * articleID;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSNumber * usefulValue;
