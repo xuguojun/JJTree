@@ -82,7 +82,7 @@ static NSString *PICTURE = @"PICTURE";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     JJTParagraph *paragrah = self.paragraphs[indexPath.section];
-    if ([paragrah.type isEqualToNumber:@(JJTParagraphPlainText)]) {// PLAIN TEXT
+    if ([paragrah.type isEqualToString:JJTParagraphPlainText]) {// PLAIN TEXT
         JJTPlainTextParagraphTableCell *cell = (JJTPlainTextParagraphTableCell *)[tableView dequeueReusableCellWithIdentifier:PLAIN_TEXT];
     
         if (!cell) {
@@ -94,7 +94,7 @@ static NSString *PICTURE = @"PICTURE";
         cell.text = paragrah.content;
         
         return cell;
-    } else if ([paragrah.type isEqualToNumber:@(JJTParagraphBlock)]){// BLOCK
+    } else if ([paragrah.type isEqualToString:JJTParagraphBlock]){// BLOCK
         JJTBlockParagraphTableViewCell *cell = (JJTBlockParagraphTableViewCell *)[tableView dequeueReusableCellWithIdentifier:BLOCK];
         
         if (!cell) {
@@ -105,7 +105,7 @@ static NSString *PICTURE = @"PICTURE";
         cell.blockURL = paragrah.content;
         
         return cell;
-    } else if ([paragrah.type isEqualToNumber:@(JJTParagraphPicture)]){
+    } else if ([paragrah.type isEqualToString:JJTParagraphPicture]){
         JJTPictureParagraphTableViewCell *cell = (JJTPictureParagraphTableViewCell *)[tableView dequeueReusableCellWithIdentifier:BLOCK];
         
         if (!cell) {
@@ -134,12 +134,12 @@ static NSString *PICTURE = @"PICTURE";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     JJTParagraph *paragrah = self.paragraphs[indexPath.section];
-    if ([paragrah.type isEqualToNumber:@(JJTParagraphPlainText)]) {// PLAIN TEXT
+    if ([paragrah.type isEqualToString:JJTParagraphPlainText]) {// PLAIN TEXT
         
         return 16 + self.plainTextParagraphTableCell.plainTextLabelSize.height;
-    } else if ([paragrah.type isEqualToNumber:@(JJTParagraphBlock)]){// BLOCK
+    } else if ([paragrah.type isEqualToString:JJTParagraphBlock]){// BLOCK
         return 240;
-    } else if ([paragrah.type isEqualToNumber:@(JJTParagraphPicture)]){
+    } else if ([paragrah.type isEqualToString:JJTParagraphPicture]){
         return 120;
     }
     

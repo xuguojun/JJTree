@@ -8,6 +8,7 @@
 
 #import "JJTBaseParser.h"
 #import "JJTUser.h"
+#import "JJTParagraph.h"
 #import <MagicalRecord.h>
 #import "NSString+JJTString.h"
 
@@ -16,11 +17,7 @@
 + (JJTArticle *)parseArticle:(NSDictionary *)dict{
     
     NSNumber *articleID = [dict objectForKey:@"articleID"];
-    
-//    NSString *preface = [dict objectForKey:@"preface"];
     NSString *title = [dict objectForKey:@"title"];
-//    NSString *refs = [dict objectForKey:@"refs"];
-//    NSString *seeAlso = [dict objectForKey:@"seeAlso"];
     
     NSNumber *usefulValue = [dict objectForKey:@"usefulValue"];
     NSNumber *uselessValue = [dict objectForKey:@"uselessValue"];
@@ -44,7 +41,7 @@
     return article;
 }
 
-+ (JJTUser *)parserAccount:(NSDictionary *)dict{
++ (JJTUser *)parseAccount:(NSDictionary *)dict{
     
     NSNumber *accountID = [dict objectForKey:@"accountID"];
     NSString *password = [dict objectForKey:@"password"];
@@ -62,6 +59,21 @@
     account.userAvatarURL = avatarURL;
     
     return account;
+}
+
++ (JJTParagraph *)parseParagraph:(NSDictionary *)dict{
+    NSNumber *pID = [dict objectForKey:@"paragraphID"];
+    NSNumber *position = [dict objectForKey:@"position"];
+    NSString *type = [dict objectForKey:@"type"];
+    NSString *content = [dict objectForKey:@"content"];
+    
+    JJTParagraph *p = [JJTParagraph MR_createEntity];
+    p.paragraphID = pID;
+    p.position = position;
+    p.type = type;
+    p.content = content;
+    
+    return p;
 }
 
 @end

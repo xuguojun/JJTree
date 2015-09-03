@@ -59,32 +59,32 @@
         article.viewCount = @(1009);
         
         JJTParagraph *p1 = [JJTParagraph MR_createEntity];
-        p1.type = @(JJTParagraphPlainText);
+        p1.type = JJTParagraphPlainText;
         p1.content = [self readFile];
         p1.position = @0;
         
         JJTParagraph *p2 = [JJTParagraph MR_createEntity];
-        p2.type = @(JJTParagraphBlock);
+        p2.type = JJTParagraphBlock;
         p2.content = [NSString stringWithFormat:@"http://localhost:8080/JJTree/Block.jsp?style=%@", [self css][index]];
         p2.position = @1;
         
         JJTParagraph *p3 = [JJTParagraph MR_createEntity];
-        p3.type = @(JJTParagraphPicture);
+        p3.type = JJTParagraphPicture;
         p3.content = @"https://upload.wikimedia.org/wikipedia/commons/d/d7/IPad_2_Smart_Cover_at_unveiling_crop.jpg";
         p3.position = @2;
         
         JJTParagraph *p4 = [JJTParagraph MR_createEntity];
-        p4.type = @(JJTParagraphPicture);
+        p4.type = JJTParagraphPicture;
         p4.content = @"https://upload.wikimedia.org/wikipedia/commons/d/d7/IPad_2_Smart_Cover_at_unveiling_crop.jpg";
         p4.position = @2;
         
         JJTParagraph *p5 = [JJTParagraph MR_createEntity];
-        p5.type = @(JJTParagraphBlock);
+        p5.type = JJTParagraphBlock;
         p5.content = [NSString stringWithFormat:@"http://localhost:8080/JJTree/Block.jsp?style=%@", [self css][index]];
         p5.position = @1;
         
         JJTParagraph *p6 = [JJTParagraph MR_createEntity];
-        p6.type = @(JJTParagraphPlainText);
+        p6.type = JJTParagraphPlainText;
         p6.content = [self readFile];
         p6.position = @0;
         
