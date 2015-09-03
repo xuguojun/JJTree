@@ -8,6 +8,6 @@
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../../../Downloads/MMMarkdown/MMMarkdown.xcodeproj">
+      location = "group:MMMarkdown/MMMarkdown.xcodeproj">
    </FileRef>
 </Workspace>
