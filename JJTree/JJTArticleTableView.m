@@ -184,7 +184,7 @@ static NSString *PICTURE = @"PICTURE";
     [self.articleTableView reloadData];
 }
 
-- (void)setAuthor:(JJTAuthor *)author{
+- (void)setAuthor:(JJTUser *)author{
     if (_author != author) {
         _author = author;
         

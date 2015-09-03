@@ -8,7 +8,7 @@
 
 #import "JJTArticleListViewController.h"
 #import "JJTArticleListTableView.h"
-#import "JJTAuthor.h"
+#import "JJTUser.h"
 #import "JJTArticle.h"
 #import "JJTParagraph.h"
 #import "JJTArticleViewController.h"
@@ -159,9 +159,9 @@
     articleVC.delegate = self;
     articleVC.article = article;
     
-    JJTAuthor *author = [JJTAuthor MR_createEntity];
-    author.roleName = @"Guojun";
-    author.avatarURL = @"http://www.moviecricket.com/wp-content/uploads/2014/09/James-Cameron-Looking-To-Shoot-Avatar-Sequels-In-120-FPS.jpg";
+    JJTUser *author = [JJTUser MR_createEntity];
+    author.userName = @"Guojun";
+    author.userAvatarURL = @"http://www.moviecricket.com/wp-content/uploads/2014/09/James-Cameron-Looking-To-Shoot-Avatar-Sequels-In-120-FPS.jpg";
     
     articleVC.author = author;
     [self.navigationController pushViewController:articleVC animated:YES];

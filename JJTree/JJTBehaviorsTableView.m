@@ -8,7 +8,7 @@
 
 #import "JJTBehaviorsTableView.h"
 #import "JJTBehaviorTableViewCell.h"
-#import "JJTAuthor.h"
+#import "JJTUser.h"
 #import "JJTArticle.h"
 
 static NSString *HAS_ARTICLE_COUNT = @"共有%lu篇机经";
@@ -71,7 +71,7 @@ static NSString *HAS_ARTICLE_COUNT = @"共有%lu篇机经";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    JJTAuthor *author = self.authors[indexPath.row];
+    JJTUser *author = self.authors[indexPath.row];
     JJTArticle *article = self.articles[indexPath.row];
     
     cell.author = author;

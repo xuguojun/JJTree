@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JJTAuthor.h"
+#import "JJTUser.h"
 #import "JJTArticle.h"
 
 @class JJTAuthorTableView;
@@ -22,7 +22,7 @@
 @end
 @interface JJTAuthorTableView : UIView
 
-@property (nonatomic, strong) JJTAuthor *author;
+@property (nonatomic, strong) JJTUser *author;
 @property (nonatomic, strong) NSArray *articles;
 
 @property (nonatomic, weak) IBOutlet id<JJTAuthorTableViewDelegate> delegate;

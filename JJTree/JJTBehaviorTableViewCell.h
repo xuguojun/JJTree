@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "JJTArticle.h"
-#import "JJTAuthor.h"
+#import "JJTUser.h"
 
 @class JJTBehaviorTableViewCell;
 
 @interface JJTBehaviorTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) JJTArticle *article;
-@property (nonatomic, strong) JJTAuthor *author;
+@property (nonatomic, strong) JJTUser *author;
 
 @end

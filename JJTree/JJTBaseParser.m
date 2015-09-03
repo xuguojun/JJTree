@@ -7,6 +7,7 @@
 //
 
 #import "JJTBaseParser.h"
+#import "JJTUser.h"
 #import <MagicalRecord.h>
 #import "NSString+JJTString.h"
 
@@ -41,6 +42,26 @@
     article.viewCount = viewCount;
     
     return article;
+}
+
++ (JJTUser *)parserAccount:(NSDictionary *)dict{
+    
+    NSNumber *accountID = [dict objectForKey:@"accountID"];
+    NSString *password = [dict objectForKey:@"password"];
+    NSString *avatarURL = [dict objectForKey:@"avatarURL"];
+    NSString *mobile = [dict objectForKey:@"mobile"];
+    NSString *name = [dict objectForKey:@"name"];
+    NSString *email = [dict objectForKey:@"email"];
+    
+    JJTUser *account = [JJTUser MR_createEntity];
+    account.userID = accountID;
+    account.userPassword = password;
+    account.userMobile = mobile;
+    account.userEmail = email;
+    account.userName = name;
+    account.userAvatarURL = avatarURL;
+    
+    return account;
 }
 
 @end

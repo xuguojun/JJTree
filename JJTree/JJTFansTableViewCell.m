@@ -48,14 +48,14 @@ static NSString *HAS_ARTICLE_COUNT = @"拥有%@篇机经";
 }
 
 #pragma mark - Getters & Setters
-- (void)setFan:(JJTAuthor *)fan{
+- (void)setFan:(JJTUser *)fan{
     if (_fan != fan) {
         _fan = fan;
         
-        [self.fanAvatarImageView sd_setImageWithURL:[NSURL URLWithString:fan.avatarURL]
+        [self.fanAvatarImageView sd_setImageWithURL:[NSURL URLWithString:fan.userAvatarURL]
                                    placeholderImage:[UIImage imageNamed:@"Icon-Default"]];
-        self.fanNameLabel.text = fan.roleName;
-        self.articlesCountLabel.text = [NSString stringWithFormat:HAS_ARTICLE_COUNT, fan.articlePublishedCount];
+        self.fanNameLabel.text = fan.userName;
+        self.articlesCountLabel.text = [NSString stringWithFormat:HAS_ARTICLE_COUNT, fan.userArticleCountPublished];
     }
 }
 

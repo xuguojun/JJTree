@@ -1,46 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="JJTAuthor" representedClassName="JJTAuthor" parentEntity="JJTRole" syncable="YES">
-        <attribute name="articlePublishedCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="rewardGotAmount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="whichUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTUser" inverseName="roleAuthor" inverseEntity="JJTUser" syncable="YES"/>
-    </entity>
-    <entity name="JJTEditor" representedClassName="JJTEditor" parentEntity="JJTRole" syncable="YES">
-        <attribute name="articlesAdoptedCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="editArticlesCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="rewardGotAmount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="whichUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTUser" inverseName="roleEditor" inverseEntity="JJTUser" syncable="YES"/>
-    </entity>
-    <entity name="JJTReader" representedClassName="JJTReader" parentEntity="JJTRole" syncable="YES">
-        <attribute name="collectArticlesCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="markAsUsefulCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="markAsUselessCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="rewardAmount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="viewArticlesCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="whichUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTUser" inverseName="roleReader" inverseEntity="JJTUser" syncable="YES"/>
-    </entity>
-    <entity name="JJTRole" representedClassName="JJTRole" syncable="YES">
-        <attribute name="avatarURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="roleID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="roleName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="roleTitle" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <entity name="JJTUser" representedClassName="JJTUser" syncable="YES">
         <attribute name="hasLogined" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="userArticleCountAdopter" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticleCountEdited" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticleCountMarkAsUseful" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticleCountMarkAsUseless" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticleCountPublished" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticleCountViewed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticlesCountCollected" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userAvatarURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userEmail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="userMobile" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userPassword" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="roleAuthor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTAuthor" inverseName="whichUser" inverseEntity="JJTAuthor" syncable="YES"/>
-        <relationship name="roleEditor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTEditor" inverseName="whichUser" inverseEntity="JJTEditor" syncable="YES"/>
-        <relationship name="roleReader" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTReader" inverseName="whichUser" inverseEntity="JJTReader" syncable="YES"/>
+        <attribute name="userRewardAmount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userRewardedAmount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="JJTAuthor" positionX="-11810" positionY="4428" width="128" height="88"/>
-        <element name="JJTEditor" positionX="-11774" positionY="4811" width="128" height="103"/>
-        <element name="JJTReader" positionX="-11727" positionY="4574" width="128" height="133"/>
-        <element name="JJTRole" positionX="-11495" positionY="4581" width="128" height="103"/>
-        <element name="JJTUser" positionX="-12033" positionY="4572" width="128" height="178"/>
+        <element name="JJTUser" positionX="-12033" positionY="4572" width="128" height="283"/>
     </elements>
 </model>
