@@ -90,6 +90,8 @@
 		9AA1A3E41B652DE0007BBA25 /* JJTArticleTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA1A3E31B652DE0007BBA25 /* JJTArticleTableView.xib */; };
 		9AA8BDF31B7519B500C2EA0B /* JJTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8BDF21B7519B500C2EA0B /* JJTLabel.m */; };
 		9AAFDAF11B9887CD00CD6F9F /* JJTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAFDAF01B9887CD00CD6F9F /* JJTUser.m */; };
+		9AAFDAF41B988F1200CD6F9F /* JJTArticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAFDAF31B988F1200CD6F9F /* JJTArticleManager.m */; };
+		9AAFDAF71B98907B00CD6F9F /* JJTBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAFDAF61B98907B00CD6F9F /* JJTBaseManager.m */; };
 		9AB4AE1B1B7253C100E6AE3A /* css.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4AE1A1B7253C100E6AE3A /* css.txt */; };
 		9AB4AE1E1B726B0F00E6AE3A /* UILabel+JJTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4AE1D1B726B0F00E6AE3A /* UILabel+JJTLabel.m */; };
 		9ABFA2581B838493004EB38F /* JJTBaseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFA2571B838493004EB38F /* JJTBaseParser.m */; };
@@ -249,6 +251,10 @@
 		9AA8BDF21B7519B500C2EA0B /* JJTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTLabel.m; sourceTree = "<group>"; };
 		9AAFDAEF1B9887CD00CD6F9F /* JJTUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTUser.h; sourceTree = "<group>"; };
 		9AAFDAF01B9887CD00CD6F9F /* JJTUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTUser.m; sourceTree = "<group>"; };
+		9AAFDAF21B988F1200CD6F9F /* JJTArticleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTArticleManager.h; sourceTree = "<group>"; };
+		9AAFDAF31B988F1200CD6F9F /* JJTArticleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTArticleManager.m; sourceTree = "<group>"; };
+		9AAFDAF51B98907B00CD6F9F /* JJTBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTBaseManager.h; sourceTree = "<group>"; };
+		9AAFDAF61B98907B00CD6F9F /* JJTBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTBaseManager.m; sourceTree = "<group>"; };
 		9AB4AE1A1B7253C100E6AE3A /* css.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = css.txt; sourceTree = "<group>"; };
 		9AB4AE1C1B726B0F00E6AE3A /* UILabel+JJTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+JJTLabel.h"; sourceTree = "<group>"; };
 		9AB4AE1D1B726B0F00E6AE3A /* UILabel+JJTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+JJTLabel.m"; sourceTree = "<group>"; };
@@ -703,6 +709,8 @@
 		9AAFDAEB1B98811600CD6F9F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				9AAFDAF21B988F1200CD6F9F /* JJTArticleManager.h */,
+				9AAFDAF31B988F1200CD6F9F /* JJTArticleManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -712,6 +720,8 @@
 			children = (
 				9A6614CD1B6D20840059DCC2 /* JJTBaseViewController.h */,
 				9A6614CE1B6D20840059DCC2 /* JJTBaseViewController.m */,
+				9AAFDAF51B98907B00CD6F9F /* JJTBaseManager.h */,
+				9AAFDAF61B98907B00CD6F9F /* JJTBaseManager.m */,
 				9AAFDAEA1B987F5600CD6F9F /* Network */,
 				9AAFDAE91B987F3C00CD6F9F /* Utilities */,
 			);
@@ -983,6 +993,7 @@
 				9A9271121B67D49400901A71 /* JJTBlockWebView.m in Sources */,
 				9A90502E1B6C7F9D004DED27 /* JJTAvatarCollectionView.m in Sources */,
 				9A2852211B66771500C827A5 /* NSString+JJTString.m in Sources */,
+				9AAFDAF71B98907B00CD6F9F /* JJTBaseManager.m in Sources */,
 				9AA1A3D41B64E9C4007BBA25 /* NSDate+JJTDate.m in Sources */,
 				9ABFA2581B838493004EB38F /* JJTBaseParser.m in Sources */,
 				9AA1A3B71B64D9C0007BBA25 /* JJTUser.xcdatamodeld in Sources */,
@@ -995,6 +1006,7 @@
 				9AA1A3A51B64D153007BBA25 /* JJTArticleViewController.m in Sources */,
 				9A2735601B6E64CC00774075 /* JJTFullReadViewController.m in Sources */,
 				9A9050331B6C7FA6004DED27 /* JJTAvatarCollectionViewCell.m in Sources */,
+				9AAFDAF41B988F1200CD6F9F /* JJTArticleManager.m in Sources */,
 				9AD292B01B6DDE9100508A85 /* JJTUserBehavior.xcdatamodeld in Sources */,
 				9A2735651B6E64F600774075 /* JJTSingleViewController.m in Sources */,
 			);
