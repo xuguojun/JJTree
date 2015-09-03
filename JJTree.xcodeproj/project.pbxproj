@@ -693,23 +693,39 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		9AD292AD1B6DDC1F00508A85 /* Common */ = {
+		9AAFDAE91B987F3C00CD6F9F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				9A28521F1B66771500C827A5 /* NSString+JJTString.h */,
 				9A2852201B66771500C827A5 /* NSString+JJTString.m */,
 				9AD292B51B6DEF8F00508A85 /* UIColor+JJTColor.h */,
 				9AD292B61B6DEF8F00508A85 /* UIColor+JJTColor.m */,
-				9A6614CD1B6D20840059DCC2 /* JJTBaseViewController.h */,
-				9A6614CE1B6D20840059DCC2 /* JJTBaseViewController.m */,
 				9AD292AA1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.h */,
 				9AD292AB1B6DBC4E00508A85 /* NSManagedObject+JJTManagedObject.m */,
 				9AB4AE1C1B726B0F00E6AE3A /* UILabel+JJTLabel.h */,
 				9AB4AE1D1B726B0F00E6AE3A /* UILabel+JJTLabel.m */,
 				9A8CBF9D1B7F883D009ED63B /* UIImage+JJTImage.h */,
 				9A8CBF9E1B7F883D009ED63B /* UIImage+JJTImage.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		9AAFDAEA1B987F5600CD6F9F /* Network */ = {
+			isa = PBXGroup;
+			children = (
 				9A8CBF9A1B7F74D7009ED63B /* JJTHttpManager.h */,
 				9A8CBF9B1B7F74D7009ED63B /* JJTHttpManager.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		9AD292AD1B6DDC1F00508A85 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9A6614CD1B6D20840059DCC2 /* JJTBaseViewController.h */,
+				9A6614CE1B6D20840059DCC2 /* JJTBaseViewController.m */,
+				9AAFDAEA1B987F5600CD6F9F /* Network */,
+				9AAFDAE91B987F3C00CD6F9F /* Utilities */,
 			);
 			name = Common;
 			sourceTree = "<group>";
