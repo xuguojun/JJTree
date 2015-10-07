@@ -7,6 +7,7 @@
 //
 
 #import "AFHTTPRequestOperationManager.h"
+#import "JJTBaseParser.h"
 
 typedef void (^successBlock)(id result, AFHTTPRequestOperation *operation);
 typedef void (^failureBlock)(id result, AFHTTPRequestOperation *operation);

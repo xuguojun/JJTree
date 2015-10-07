@@ -11,6 +11,9 @@
 
 @interface JJTBaseParser : NSObject
 
++ (instancetype)sharedInstance;
+
++ (NSArray *)parseArticles:(NSDictionary *)dict;
 + (JJTArticle *)parseArticle:(NSDictionary *)dict;
 
 @end

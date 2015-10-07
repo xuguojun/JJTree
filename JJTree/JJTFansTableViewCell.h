@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JJTAuthor.h"
+#import "JJTUser.h"
 
 @interface JJTFansTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) JJTAuthor *fan;
+@property (nonatomic, strong) JJTUser *fan;
 
 @end

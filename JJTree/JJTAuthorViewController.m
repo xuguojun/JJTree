@@ -36,7 +36,7 @@
         [articles addObject:article];
     }
     
-    self.title = self.author.roleName;
+    self.title = self.author.userName;
     self.authorTableView.author = self.author;
     self.authorTableView.articles = articles;
 }

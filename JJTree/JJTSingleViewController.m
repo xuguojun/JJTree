@@ -79,19 +79,19 @@
 }
 
 - (void)show{
-    if ([self.paragraph.type isEqualToNumber:@(JJTParagraphPlainText)]) {
+    if ([self.paragraph.type isEqualToString:JJTParagraphPlainText]) {
         // plain text
         self.plainTextLabel.text = self.paragraph.content;
         [self showView:self.plainTextLabel];
     }
     
-    if ([self.paragraph.type isEqualToNumber:@(JJTParagraphBlock)]) {
+    if ([self.paragraph.type isEqualToString:JJTParagraphBlock]) {
         // block
         [self.blockWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.paragraph.content]]];
         [self showView:self.blockWebView];
     }
     
-    if ([self.paragraph.type isEqualToNumber:@(JJTParagraphPicture)]) {
+    if ([self.paragraph.type isEqualToString:JJTParagraphPicture]) {
         [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:self.paragraph.content]];
         [self showView:self.photoImageView];
     }

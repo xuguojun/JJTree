@@ -9,7 +9,7 @@
 #import "JJTSearchViewController.h"
 #import "JJTArticleListTableView.h"
 #import "JJTArticleViewController.h"
-#import "JJTAuthor.h"
+#import "JJTUser.h"
 #import "JJTArticle.h"
 #import "JJTParagraph.h"
 #import <MagicalRecord/MagicalRecord.h>
@@ -45,32 +45,32 @@
         article.viewCount = @(1009);
         
         JJTParagraph *p1 = [JJTParagraph MR_createEntity];
-        p1.type = @(JJTParagraphPlainText);
+        p1.type = JJTParagraphPlainText;
         p1.content = [self readFile];
         p1.position = @0;
         
         JJTParagraph *p2 = [JJTParagraph MR_createEntity];
-        p2.type = @(JJTParagraphBlock);
+        p2.type = JJTParagraphBlock;
         p2.content = @"http://localhost:8080/JJTree/index.html";
         p2.position = @1;
         
         JJTParagraph *p3 = [JJTParagraph MR_createEntity];
-        p3.type = @(JJTParagraphPicture);
+        p3.type = JJTParagraphPicture;
         p3.content = @"https://upload.wikimedia.org/wikipedia/commons/d/d7/IPad_2_Smart_Cover_at_unveiling_crop.jpg";
         p3.position = @2;
         
         JJTParagraph *p4 = [JJTParagraph MR_createEntity];
-        p4.type = @(JJTParagraphPicture);
+        p4.type = JJTParagraphPicture;
         p4.content = @"https://upload.wikimedia.org/wikipedia/commons/d/d7/IPad_2_Smart_Cover_at_unveiling_crop.jpg";
         p4.position = @2;
         
         JJTParagraph *p5 = [JJTParagraph MR_createEntity];
-        p5.type = @(JJTParagraphBlock);
+        p5.type = JJTParagraphBlock;
         p5.content = @"http://localhost:8080/JJTree/index.html";
         p5.position = @1;
         
         JJTParagraph *p6 = [JJTParagraph MR_createEntity];
-        p6.type = @(JJTParagraphPlainText);
+        p6.type = JJTParagraphPlainText;
         p6.content = [self readFile];
         p6.position = @0;
         
@@ -146,9 +146,9 @@
     JJTArticleViewController *articleVC = [JJTArticleViewController new];
     articleVC.article = article;
     
-    JJTAuthor *author = [JJTAuthor MR_createEntity];
-    author.roleName = @"Guojun";
-    author.avatarURL = @"http://www.moviecricket.com/wp-content/uploads/2014/09/James-Cameron-Looking-To-Shoot-Avatar-Sequels-In-120-FPS.jpg";
+    JJTUser *author = [JJTUser MR_createEntity];
+    author.userName = @"Guojun";
+    author.userAvatarURL = @"http://www.moviecricket.com/wp-content/uploads/2014/09/James-Cameron-Looking-To-Shoot-Avatar-Sequels-In-120-FPS.jpg";
     
     articleVC.author = author;
     [self.navigationController pushViewController:articleVC animated:YES];

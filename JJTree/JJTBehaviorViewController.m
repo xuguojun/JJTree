@@ -11,7 +11,7 @@
 #import "JJTArticleViewController.h"
 #import "JJTFansTableView.h"
 #import "JJTBehaviorsTableView.h"
-#import "JJTAuthor.h"
+#import "JJTUser.h"
 #import <MagicalRecord.h>
 
 @interface JJTBehaviorViewController ()<JJTFansTableViewDelegate, JJTBehaviorsTableViewDelegate>
@@ -31,10 +31,10 @@
     NSMutableArray *articles = [NSMutableArray new];
     
     for (int i = 0; i < 10; i++) {
-        JJTAuthor *author = [JJTAuthor MR_createEntity];
-        author.avatarURL = @"http://img1.imgtn.bdimg.com/it/u=209848973,3062288546&fm=23&gp=0.jpg";
-        author.roleName = @"GJ";
-        author.articlePublishedCount = @(i + 1);
+        JJTUser *author = [JJTUser MR_createEntity];
+        author.userAvatarURL = @"http://img1.imgtn.bdimg.com/it/u=209848973,3062288546&fm=23&gp=0.jpg";
+        author.userName = @"GJ";
+        author.userArticleCountPublished = @(i + 1);
         
         [fans addObject:author];
         

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JJTArticle.h"
-#import "JJTAuthor.h"
+#import "JJTUser.h"
 #import "JJTBaseViewController.h"
 
 @class JJTArticleViewController;
@@ -21,7 +21,7 @@
 @interface JJTArticleViewController : JJTBaseViewController
 
 @property (nonatomic, strong) JJTArticle *article;
-@property (nonatomic, strong) JJTAuthor *author;
+@property (nonatomic, strong) JJTUser *author;
 
 @property (nonatomic, weak) IBOutlet id<JJTArticleViewControllerDelegate> delegate;
 

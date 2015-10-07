@@ -129,13 +129,13 @@
     self.createdAtLabel.text = [article.createdAt toString];
 }
 
-- (void)setAuthor:(JJTAuthor *)author{
+- (void)setAuthor:(JJTUser *)author{
     if (_author != author) {
         _author = author;
         
-        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:author.avatarURL]
+        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:author.userAvatarURL]
                                 placeholderImage:[UIImage imageNamed:@"Icon-Default"]];
-        self.authorNameLabel.text = author.roleName;
+        self.authorNameLabel.text = author.userName;
     }
 }
 

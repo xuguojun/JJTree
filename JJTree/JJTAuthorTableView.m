@@ -261,11 +261,11 @@
     }
 }
 
-- (void)setAuthor:(JJTAuthor *)author{
+- (void)setAuthor:(JJTUser *)author{
     if (_author != author) {
         _author = author;
         
-        self.authorHeader.avatarURL = author.avatarURL;
+        self.authorHeader.avatarURL = author.userAvatarURL;
     }
 }
 

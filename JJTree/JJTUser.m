@@ -2,22 +2,32 @@
 //  JJTUser.m
 //  JJTree
 //
-//  Created by guojun on 7/26/15.
+//  Created by guojun on 9/3/15.
 //  Copyright (c) 2015 guojunxu. All rights reserved.
 //
 
 #import "JJTUser.h"
+#import "JJTArticle.h"
+
 
 @implementation JJTUser
 
-@dynamic userID;
-@dynamic userName;
-@dynamic userEmail;
-@dynamic userPassword;
-@dynamic userMobile;
 @dynamic hasLogined;
-@dynamic roleAuthor;
-@dynamic roleReader;
-@dynamic roleEditor;
+@dynamic userArticleCountAdopter;
+@dynamic userArticleCountEdited;
+@dynamic userArticleCountMarkAsUseful;
+@dynamic userArticleCountMarkAsUseless;
+@dynamic userArticleCountPublished;
+@dynamic userArticleCountViewed;
+@dynamic userArticlesCountCollected;
+@dynamic userAvatarURL;
+@dynamic userEmail;
+@dynamic userID;
+@dynamic userMobile;
+@dynamic userName;
+@dynamic userPassword;
+@dynamic userRewardAmount;
+@dynamic userRewardedAmount;
+@dynamic whichArticle;
 
 @end
