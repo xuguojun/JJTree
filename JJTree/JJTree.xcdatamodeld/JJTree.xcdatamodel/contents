@@ -10,6 +10,7 @@
         <attribute name="usefulValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="uselessValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="viewCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTUser" inverseName="whichArticle" inverseEntity="JJTUser" syncable="YES"/>
         <relationship name="paragraphs" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="JJTParagraph" inverseName="whichArticle" inverseEntity="JJTParagraph" syncable="YES"/>
     </entity>
     <entity name="JJTParagraph" representedClassName="JJTParagraph" syncable="YES">
@@ -19,8 +20,28 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="whichArticle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTArticle" inverseName="paragraphs" inverseEntity="JJTArticle" syncable="YES"/>
     </entity>
+    <entity name="JJTUser" representedClassName="JJTUser" syncable="YES">
+        <attribute name="hasLogined" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="userArticleCountAdopter" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticleCountEdited" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticleCountMarkAsUseful" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticleCountMarkAsUseless" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticleCountPublished" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticleCountViewed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userArticlesCountCollected" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userAvatarURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userMobile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPassword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userRewardAmount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userRewardedAmount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="whichArticle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JJTArticle" inverseName="author" inverseEntity="JJTArticle" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="JJTArticle" positionX="0" positionY="0" width="128" height="193"/>
+        <element name="JJTArticle" positionX="0" positionY="0" width="128" height="73"/>
         <element name="JJTParagraph" positionX="358" positionY="-90" width="128" height="118"/>
+        <element name="JJTUser" positionX="171" positionY="-324" width="128" height="298"/>
     </elements>
 </model>

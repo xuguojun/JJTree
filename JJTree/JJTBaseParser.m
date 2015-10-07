@@ -14,6 +14,31 @@
 
 @implementation JJTBaseParser
 
++ (instancetype)sharedInstance {
+    static JJTBaseParser *singleton = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        singleton = [[JJTBaseParser alloc] init];
+    });
+    
+    return singleton;
+}
+
++ (NSArray *)parseArticles:(NSDictionary *)dict{
+    
+    NSArray *articles = [dict objectForKey:@"articles"];
+    
+    NSMutableArray *as = [NSMutableArray new];
+    for (NSDictionary *aD in articles) {
+        
+       JJTArticle *article = [self parseArticle:aD];
+        [as addObject:article];
+    }
+    
+    return as;
+}
+
 + (JJTArticle *)parseArticle:(NSDictionary *)dict{
     
     NSNumber *articleID = [dict objectForKey:@"articleID"];
@@ -26,6 +51,17 @@
     NSString *createdAt = [dict objectForKey:@"createdAt"];
     NSString *updatedAt = [dict objectForKey:@"updatedAt"];
     
+    NSDictionary *authorD = [dict objectForKey:@"author"];
+    JJTUser *author = [self parseAccount:authorD];
+    
+    NSArray *paragraphs = [dict objectForKey:@"paragraphs"];
+    
+    NSMutableArray *ps = [NSMutableArray new];
+    for (NSDictionary *pD in paragraphs) {
+        JJTParagraph *p = [self  parseParagraph:pD];
+        [ps addObject:p];
+    }
+    
     JJTArticle *article = [JJTArticle MR_createEntity];
     
     article.articleID = articleID;
@@ -37,6 +73,8 @@
     article.usefulValue = usefulValue;
     article.uselessValue = uselessValue;
     article.viewCount = viewCount;
+    article.author = author;
+    article.paragraphs = [[NSOrderedSet alloc] initWithArray:ps];
     
     return article;
 }

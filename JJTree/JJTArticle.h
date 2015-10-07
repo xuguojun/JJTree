@@ -1,28 +1,29 @@
 //
-//  JJArticle.h
+//  JJTArticle.h
 //  JJTree
 //
-//  Created by guojun on 7/26/15.
+//  Created by guojun on 9/3/15.
 //  Copyright (c) 2015 guojunxu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class JJTParagraph;
+@class JJTParagraph, JJTUser;
 
 @interface JJTArticle : NSManagedObject
 
-@property (nonatomic, retain) NSDate * createdAt;
-@property (nonatomic, retain) NSDate * updatedAt;
 @property (nonatomic, retain) NSNumber * articleID;
+@property (nonatomic, retain) NSDate * createdAt;
+@property (nonatomic, retain) NSNumber * isPrivate;
+@property (nonatomic, retain) NSNumber * rewardGotAmount;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSDate * updatedAt;
 @property (nonatomic, retain) NSNumber * usefulValue;
 @property (nonatomic, retain) NSNumber * uselessValue;
 @property (nonatomic, retain) NSNumber * viewCount;
-@property (nonatomic, retain) NSNumber * isPrivate;
-@property (nonatomic, retain) NSNumber * rewardGotAmount;
 @property (nonatomic, retain) NSOrderedSet *paragraphs;
+@property (nonatomic, retain) JJTUser *author;
 @end
 
 @interface JJTArticle (CoreDataGeneratedAccessors)

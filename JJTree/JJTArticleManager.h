@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "JJTBaseManager.h"
 
-#define TOP_ARTICLES @"top";
-#define RECENT_ARTICLES @"recent";
+#define TOP_ARTICLES @"top"
+#define RECENT_ARTICLES @"recent"
 
 @interface JJTArticleManager : JJTBaseManager
 

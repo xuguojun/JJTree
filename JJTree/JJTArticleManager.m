@@ -27,12 +27,17 @@
 
     NSString *url = [NSString stringWithFormat:@"/articles?pageSize=%ld&pageIndex=%ld&category=%@", (long)pageSize, (long)pageIndex, category];
     
-    
     [self.httpManager requestUrlPath:url method:METHOD_GET param:nil fromCache:NO requestSuccess:^(id result, AFHTTPRequestOperation *operation) {
         
-        
+        NSArray *articles = [JJTBaseParser parseArticles:(NSDictionary *)result];
+        if ([self.delegate respondsToSelector:@selector(manager:didFetchDataSuccess:)]) {
+            [self.delegate manager:self didFetchDataSuccess:articles];
+        }
     } requestFailure:^(id result, AFHTTPRequestOperation *operation) {
         
+        if ([self.delegate respondsToSelector:@selector(manager:didFetchDataSuccess:)]) {
+            [self.delegate manager:self didFetchDataFailure:FETCH_DATA_FAILURE];
+        }
     }];
 }
 

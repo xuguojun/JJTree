@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "JJTHttpManager.h"
+#import "JJTBaseParser.h"
+
+#define FETCH_DATA_FAILURE @"获取数据失败"
 
 @class JJTBaseManager;
 @protocol JJTBaseManagerDelegate <NSObject>
